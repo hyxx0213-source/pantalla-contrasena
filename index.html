@@ -89,37 +89,31 @@ h1 {
 }
 
 .etiquetas {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    align-items: center;
-    justify-items: stretch;
+    display: flex;
+    width: 100%;
     margin-bottom: 17px;
     color: #dfa5ce;
     font-size: 14px;
     font-weight: bold;
 }
 
-.etiquetas span {
-    grid-column: span 2;
+.etiquetas span:nth-child(1),
+.etiquetas span:nth-child(2) {
+    width: 25%;
     text-align: center;
 }
 
-.etiquetas span:last-child {
-    grid-column: span 4;
+.etiquetas span:nth-child(3) {
+    width: 50%;
     text-align: center;
 }
-
-.etiquetas span:last-child {
-    grid-column: span 4;
-
-}
-
 
 .puntos {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: clamp(5px, 1.7vw, 8px);
+    width: 100%;
 }
 
 .punto {
