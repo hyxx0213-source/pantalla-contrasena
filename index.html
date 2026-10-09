@@ -118,12 +118,16 @@ h1 {
 }
 
 
+
 .puntos {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    justify-items: center;
     align-items: center;
-    gap: clamp(5px, 1.7vw, 8px);
+    width: 100%;
+    gap: 0;
 }
+
 
 .punto {
     width: clamp(11px, 3.2vw, 14px);
