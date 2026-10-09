@@ -421,24 +421,31 @@ tapa-regalo {
     position: absolute;
     z-index: 5;
     bottom: 25px;
-    left: 50%;
     pointer-events: none;
-    color: #d86eaa;
-    font-size: 23px;
-    animation: subir-corazon 1.2s ease-out forwards;
+    color: #e879b5;
+    font-size: 25px;
+    text-shadow: 0 3px 8px #e879b588;
+    animation: subir-corazon 1.4s ease-out forwards;
 }
 
 @keyframes subir-corazon {
-    from {
-        opacity: 1;
-        transform: translate(-50%, 0) scale(.7);
-    }
-    to {
+    0% {
         opacity: 0;
-        transform: translate(var(--desplazamiento), -115px) scale(1.4);
+        transform: translate(-50%, 10px) scale(0.4) rotate(-15deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(
+            var(--desplazamiento),
+            -130px
+        ) scale(1.5) rotate(20deg);
     }
 }
-
 .carta-regalo {
     margin-top: 18px;
     padding: 20px;
