@@ -235,6 +235,170 @@ h1 {
         padding-right: 9px;
     }
 }
+
+/* Cajita de regalo */
+.zona-regalo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 190px;
+    overflow: hidden;
+}
+
+.caja-regalo-boton {
+    position: relative;
+    border: 0;
+    background: transparent;
+    padding: 25px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.regalo {
+    position: relative;
+    display: block;
+    width: 125px;
+    height: 105px;
+    transition: transform .3s ease;
+}
+
+.caja-regalo {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    width: 115px;
+    height: 72px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f3a6cf;
+    border: 2px solid #df86b8;
+    border-radius: 5px 5px 12px 12px;
+    color: white;
+    font-size: 29px;
+    box-shadow: 0 7px 0 #e8b1d0;
+}
+
+.tapa-regalo {
+    position: absolute;
+    z-index: 3;
+    top: 18px;
+    left: 0;
+    width: 125px;
+    height: 25px;
+    box-sizing: border-box;
+    background: #f8c5e0;
+    border: 2px solid #df86b8;
+    border-radius: 5px;
+    transform-origin: 12% 100%;
+    transition: transform .7s ease;
+}
+
+.lazo-regalo {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 43px;
+    width: 37px;
+    height: 26px;
+    border: 5px solid #c968a2;
+    border-radius: 50% 50% 10% 50%;
+    transform: rotate(-18deg);
+    transition: opacity .3s, transform .5s;
+}
+
+.cinta-vertical {
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left: 52px;
+    width: 21px;
+    height: 84px;
+    background: #d978b1;
+}
+
+.cinta-horizontal {
+    position: absolute;
+    z-index: 2;
+    bottom: 32px;
+    left: 5px;
+    width: 115px;
+    height: 17px;
+    background: #d978b1;
+}
+
+.caja-regalo-boton:active .regalo {
+    transform: scale(.94);
+}
+
+.caja-regalo-boton.abierto .tapa-regalo {
+    transform: translate(30px, -35px) rotate(25deg);
+}
+
+.caja-regalo-boton.abierto .lazo-regalo {
+    opacity: 0;
+    transform: translate(20px, -45px) rotate(90deg);
+}
+
+.caja-regalo-boton.abierto .regalo {
+    transform: translateY(-8px);
+}
+
+#contador-regalo {
+    color: #dfa5ce;
+    font-size: 14px;
+    text-align: center;
+}
+
+.corazon-animado {
+    position: absolute;
+    z-index: 5;
+    bottom: 25px;
+    left: 50%;
+    pointer-events: none;
+    color: #d86eaa;
+    font-size: 23px;
+    animation: subir-corazon 1.2s ease-out forwards;
+}
+
+@keyframes subir-corazon {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(.7);
+    }
+    to {
+        opacity: 0;
+        transform: translate(var(--desplazamiento), -115px) scale(1.4);
+    }
+}
+
+.carta-regalo {
+    margin-top: 18px;
+    padding: 20px;
+    border: 1px solid #efc5dc;
+    border-radius: 12px;
+    background: #fff7fb;
+    color: #741451;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.foto-avatares-placeholder {
+    margin-top: 16px;
+    padding: 35px 12px;
+    border: 1px dashed #df9bc5;
+    border-radius: 12px;
+    color: #b65c95;
+    text-align: center;
+    background: #fff7fb;
+}
+
+#sorpresa-contenido h2 {
+    color: #b65c95;
+    text-align: center;
+}
 </style>
 </head>
 
@@ -318,17 +482,61 @@ h1 {
         <p class="mensaje" id="mensaje" 
         <p class="mensaje" id="mensaje" aria-live="polite"></p>
 
-    </section>
 
-    <section class="tarjeta" id="siguiente-pantalla" hidden>
-        <div class="corazon">♡</div>
-        <h1>¡Lo lograste!</h1>
-        <p class="subtitulo">
-            Has desbloqueado tu sorpresa ♡
-        </p>
-    </section>
+  
+<section class="tarjeta" id="siguiente-pantalla" hidden>
+    <div class="corazon">♡</div>
+
+    <h1>Un regalo para ti</h1>
+    <p class="subtitulo" id="mensaje-regalo">
+        Toca la cajita 10 veces para descubrir tu sorpresa ♡
+    </p>
+
+    <div class="zona-regalo">
+        <button type="button" id="caja-regalo-boton"
+                class="caja-regalo-boton"
+                aria-label="Toca para abrir tu regalo">
+            <span class="corazon-flotante" aria-hidden="true"></span>
+            <span class="regalo">
+                <span class="tapa-regalo"></span>
+                <span class="lazo-regalo"></span>
+                <span class="cinta-vertical"></span>
+                <span class="cinta-horizontal"></span>
+                <span class="caja-regalo">♡</span>
+            </span>
+        </button>
+    </div>
+
+    <p id="contador-regalo">0 / 10 toques</p>
+
+    <div id="sorpresa-contenido" hidden>
+        <h2>¡Una sorpresa para ti! 💗</h2>
+
+        <div class="carta-regalo">
+            <p>Para alguien muy especial ♡</p>
+            <p>
+               Feliz año amor
+No sabes lo feliz q me has hecho este año, espero seguir así y que nuestro amor no tenga fin, pues por mi parte tengo mucho amor que darte.
+Gracias por darme la oportunidad de conocerme y de ser tu novia, enserio que te estoy muy agradecida ya que gracias a eso pude conocer más al amor de mi vida.
+Quiero tenerte conmigo toda la vida sin importar la distancia, se que un día vamos a estar juntos y cuando llegue ese día darte todo el amor que te mereces.
+Te amo mucho bb.
+Posdata: Quería regalarte algo diferente,
+                un pequeño detalle hecho con mucho cariño.
+                Espero que te saque una sonrisa y te recuerde
+                lo importante que eres para mí.
+            </p>
+            <p>Con amor, para ti. 💌</p>
+        </div>
+
+        <div class="foto-avatares-placeholder">
+            Aquí pondremos la foto de sus avatares ♡
+        </div>
+    </div>
+</section>
+
 
 </main>
+  
 
 <script>
 const CONTRASENA = "19122025";
@@ -382,6 +590,64 @@ function verificar() {
 
 document.getElementById("confirmar").addEventListener("click", verificar);
 document.getElementById("descubrir").addEventListener("click", verificar);
+
+const botonRegalo = document.getElementById("caja-regalo-boton");
+const zonaRegalo = document.querySelector(".zona-regalo");
+const contadorRegalo = document.getElementById("contador-regalo");
+const mensajeRegalo = document.getElementById("mensaje-regalo");
+const contenidoRegalo = document.getElementById("sorpresa-contenido");
+
+let toquesRegalo = 0;
+
+botonRegalo.addEventListener("click", function () {
+    if (toquesRegalo >= 10) return;
+
+    toquesRegalo++;
+
+    contadorRegalo.textContent = toquesRegalo + " / 10 toques";
+
+    // Aparece un corazón en cada toque
+    const corazon = document.createElement("span");
+    corazon.className = "corazon-animado";
+    corazon.textContent = "♥";
+    corazon.style.left = (20 + Math.random() * 60) + "%";
+    corazon.style.setProperty(
+        "--desplazamiento",
+        (Math.random() * 100 - 50) + "px"
+    );
+
+    zonaRegalo.appendChild(corazon);
+    setTimeout(() => corazon.remove(), 1300);
+
+    // Pequeño movimiento de la caja
+    const regalo = botonRegalo.querySelector(".regalo");
+    regalo.animate(
+        [
+            { transform: "rotate(0deg)" },
+            { transform: "rotate(-5deg)" },
+            { transform: "rotate(5deg)" },
+            { transform: "rotate(0deg)" }
+        ],
+        { duration: 300 }
+    );
+
+    // Al décimo toque se abre el regalo
+    if (toquesRegalo === 10) {
+        botonRegalo.classList.add("abierto");
+        botonRegalo.disabled = true;
+        mensajeRegalo.textContent = "¡Tu regalo se está abriendo! ♡";
+
+        setTimeout(function () {
+            contenidoRegalo.hidden = false;
+            contadorRegalo.textContent = "¡Regalo desbloqueado! ♡";
+            mensajeRegalo.textContent = "Una sorpresa hecha para ti 💗";
+            contenidoRegalo.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        }, 850);
+    }
+});
 </script>
 
 </body>
