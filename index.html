@@ -236,21 +236,28 @@ h1 {
     }
 }
 
-/* Cajita de regalo */
+
+/* Cajita de regalo: diseño romántico */
 .zona-regalo {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 190px;
+    min-height: 210px;
     overflow: hidden;
+    background: radial-gradient(
+        circle,
+        #fff5fb 0%,
+        #fff 72%
+    );
+    border-radius: 16px;
 }
 
 .caja-regalo-boton {
     position: relative;
     border: 0;
     background: transparent;
-    padding: 25px;
+    padding: 30px;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
@@ -258,76 +265,107 @@ h1 {
 .regalo {
     position: relative;
     display: block;
-    width: 125px;
-    height: 105px;
-    transition: transform .3s ease;
+    width: 140px;
+    height: 125px;
+    filter: drop-shadow(0 8px 5px #e9b5d455);
+    transition: transform .4s ease;
 }
 
 .caja-regalo {
     position: absolute;
     bottom: 0;
     left: 5px;
-    width: 115px;
-    height: 72px;
-    box-sizing: border-box;
+    width: 130px;
+    height: 82px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f3a6cf;
+    background: linear-gradient(
+        135deg,
+        #f8c5e0,
+        #ed91c4
+    );
     border: 2px solid #df86b8;
     border-radius: 5px 5px 12px 12px;
-    color: white;
-    font-size: 29px;
-    box-shadow: 0 7px 0 #e8b1d0;
+    color: #fff8fd;
+    font-size: 30px;
+    box-shadow: inset 0 5px 9px #ffffff55;
 }
 
 .tapa-regalo {
     position: absolute;
     z-index: 3;
-    top: 18px;
+    top: 24px;
     left: 0;
-    width: 125px;
-    height: 25px;
-    box-sizing: border-box;
-    background: #f8c5e0;
+    width: 140px;
+    height: 27px;
+    background: linear-gradient(
+        180deg,
+        #ffdaec,
+        #f4b4d8
+    );
     border: 2px solid #df86b8;
-    border-radius: 5px;
+    border-radius: 6px;
     transform-origin: 12% 100%;
     transition: transform .7s ease;
+    box-shadow: 0 3px 5px #d98ab633;
 }
 
 .lazo-regalo {
     position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 43px;
-    width: 37px;
-    height: 26px;
+    z-index: 5;
+    top: -2px;
+    left: 48px;
+    width: 23px;
+    height: 31px;
     border: 5px solid #c968a2;
-    border-radius: 50% 50% 10% 50%;
-    transform: rotate(-18deg);
+    border-radius: 80% 20% 70% 25%;
+    transform: rotate(-35deg);
     transition: opacity .3s, transform .5s;
+}
+
+.lazo-regalo::after {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 31px;
+    left: 13px;
+    top: -7px;
+    border: 5px solid #d77db2;
+    border-radius: 20% 80% 25% 70%;
+    transform: rotate(65deg);
 }
 
 .cinta-vertical {
     position: absolute;
-    z-index: 2;
-    top: 20px;
-    left: 52px;
-    width: 21px;
-    height: 84px;
-    background: #d978b1;
+    z-index: 4;
+    top: 26px;
+    left: 58px;
+    width: 24px;
+    height: 99px;
+    background: linear-gradient(
+        90deg,
+        #d978b1,
+        #f1a6d1,
+        #d978b1
+    );
 }
 
 .cinta-horizontal {
     position: absolute;
-    z-index: 2;
-    bottom: 32px;
+    z-index: 4;
+    bottom: 36px;
     left: 5px;
-    width: 115px;
-    height: 17px;
-    background: #d978b1;
+    width: 130px;
+    height: 18px;
+    background: linear-gradient(
+        180deg,
+        #e998c7,
+        #d978b1
+    );
+    pointer-events: none;
 }
+
 
 .caja-regalo-boton:active .regalo {
     transform: scale(.94);
