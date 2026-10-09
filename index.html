@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,93 +14,81 @@
 body {
     margin: 0;
     min-height: 100vh;
-    padding: 20px 12px;
+    padding: 22px 14px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fbe6f1;
-    font-family: Georgia, "Times New Roman", serif;
-    color: #741451;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f9dce8, #e8dafa, #d8e8ff);
+    color: #9f6689;
 }
 
 .pantalla {
     width: 100%;
     max-width: 390px;
-    padding: 18px 15px 12px;
-    background: #f9e0ee;
     text-align: center;
-    border: 1px solid #f3d0e5;
 }
 
 .encabezado {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    margin: 0 0 26px;
-    font-size: 18px;
-}
-
-.linea {
-    height: 2px;
-    flex: 1;
-    background: #e9b5d7;
+    margin-bottom: 18px;
+    color: #b87fa4;
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: bold;
 }
 
 .tarjeta {
     width: 100%;
-    padding: 16px 12px 12px;
-    background: #fff;
-    border-radius: 15px;
+    padding: 28px 24px 24px;
+    border: 1px solid rgba(255,255,255,.9);
+    border-radius: 28px;
+    background: rgba(255,255,255,.94);
+    box-shadow: 0 12px 35px rgba(179, 126, 166, .16);
 }
 
 .corazon {
-    width: 58px;
-    height: 58px;
-    margin: 0 auto 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background: #fbeafa;
-    color: #d99bcf;
-    font-family: Arial, sans-serif;
-    font-size: 45px;
-    line-height: 1;
+    color: #e7a6cd;
+    font-size: 36px;
+    margin-bottom: 12px;
 }
 
 h1 {
-    margin: 8px 0 5px;
-    font-size: clamp(25px, 7vw, 29px);
-    line-height: 1.12;
-    font-weight: bold;
-    color: #741451;
+    margin: 0 0 10px;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: normal;
+    color: #bd80a6;
 }
 
 .subtitulo {
-    margin: 8px 0 17px;
-    font-size: 10px;
+    margin: 0 auto 25px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #b79aae;
 }
 
 .caja-fecha {
-    padding: 6px 5px 15px;
-    border: 2px solid #efc3e2;
-    border-radius: 6px;
-    background: #fff8fd;
+    width: 100%;
+    padding: 10px 5px 17px;
+    margin-bottom: 18px;
+    border: 1px solid #f4d9e8;
+    border-radius: 17px;
+    background: #fffafd;
 }
 
-.etiquetas {
+.etiquetas,
+.puntos {
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     width: 100%;
-    margin-bottom: 17px;
-    color: #dfa5ce;
-    font-size: 14px;
-    font-weight: bold;
 }
 
-.etiquetas span {
-    text-align: center;
+.etiquetas {
+    margin-bottom: 16px;
+    color: #d49abd;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .etiquetas span:nth-child(1) {
@@ -113,21 +102,11 @@ h1 {
 .etiquetas span:nth-child(3) {
     grid-column: 5 / 9;
 }
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: clamp(5px, 1.7vw, 8px);
-    width: 100%;
-}
-
 
 .puntos {
-    display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 0;
-    width: 100%;
-    margin: 0 auto;
     justify-items: center;
+    align-items: center;
 }
 
 .punto {
@@ -136,91 +115,91 @@ h1 {
     border: 2px solid #e7a6cd;
     border-radius: 50%;
     background: transparent;
-    box-sizing: border-box;
 }
 
 .punto.lleno {
     background: #e7a6cd;
 }
 
-
 .teclado {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 11px 16px;
-    margin: 14px 7px 25px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 0 auto 19px;
 }
 
 .tecla {
-    height: 47px;
-    border: none;
-    border-radius: 12px;
-    background: #fceafa;
-    color: #874a79;
-    font-family: Arial, sans-serif;
-    font-size: 30px;
-    font-weight: 600;
+    min-height: 57px;
+    border: 1px solid #f4dce9;
+    border-radius: 15px;
+    background: #fff5fa;
+    color: #b779a0;
+    font-size: 22px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    -webkit-tap-highlight-color: transparent;
-    transition: background .12s, transform .12s;
+    transition: background .15s, transform .15s;
 }
 
 .tecla:active {
-    background: #f2d3eb;
+    background: #f7d9e9;
     transform: scale(.96);
 }
 
-.tecla svg {
-    width: 25px;
-    height: 25px;
-    stroke: currentColor;
-    stroke-width: 2.5;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+.tecla small {
+    display: block;
+    margin-top: 3px;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #c9a4bb;
+}
+
+.tecla.especial {
+    font-size: 17px;
+    background: #fceaf3;
 }
 
 .descubrir {
     width: 100%;
-    min-height: 40px;
+    min-height: 48px;
     border: none;
-    border-radius: 11px;
-    background: #f3d9ee;
-    color: #741451;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
+    border-radius: 15px;
+    background: linear-gradient(100deg, #e8b2d1, #d8b6e7);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: .4px;
     cursor: pointer;
-    padding: 9px 5px;
+    box-shadow: 0 5px 12px rgba(203, 153, 198, .2);
 }
 
 .descubrir:active {
-    background: #eac8e4;
+    transform: scale(.98);
 }
 
 .mensaje {
-    min-height: 18px;
-    margin: 8px 0 0;
-    font-size: 12px;
-    color: #874a79;
+    min-height: 22px;
+    margin: 14px 0 0;
+    font-size: 13px;
+    color: #c17da5;
 }
 
-@media (max-width: 340px) {
-    .teclado {
-        gap: 9px;
-        margin-left: 3px;
-        margin-right: 3px;
+.pie {
+    margin-top: 18px;
+    font-size: 11px;
+    color: #bd91b0;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 350px) {
+    .tarjeta {
+        padding: 23px 17px;
+    }
+
+    h1 {
+        font-size: 22px;
     }
 
     .tecla {
-        height: 44px;
-    }
-
-    .tarjeta {
-        padding-left: 9px;
-        padding-right: 9px;
+        min-height: 51px;
     }
 }
 </style>
@@ -229,17 +208,13 @@ h1 {
 <body>
 <main class="pantalla">
 
-    <header class="encabezado">
-        <span class="linea"></span>
-        <span>Con Amor</span>
-        <span class="linea"></span>
-    </header>
+    <div class="encabezado">CON AMOR ♡</div>
 
     <section class="tarjeta">
 
         <div class="corazon">♡</div>
 
-        <h1>Introduce la fecha<br>especial</h1>
+        <h1>Introduce la fecha especial</h1>
 
         <p class="subtitulo">
             Una pequeña pista para abrir tu sorpresa
@@ -268,44 +243,34 @@ h1 {
 
         <div class="teclado">
 
-            <button class="tecla" data-num="1">1</button>
-            <button class="tecla" data-num="2">2</button>
-            <button class="tecla" data-num="3">3</button>
+            <button class="tecla" data-num="1">1<small>&nbsp;</small></button>
+            <button class="tecla" data-num="2">2<small>ABC</small></button>
+            <button class="tecla" data-num="3">3<small>DEF</small></button>
 
-            <button class="tecla" data-num="4">4</button>
-            <button class="tecla" data-num="5">5</button>
-            <button class="tecla" data-num="6">6</button>
+            <button class="tecla" data-num="4">4<small>GHI</small></button>
+            <button class="tecla" data-num="5">5<small>JKL</small></button>
+            <button class="tecla" data-num="6">6<small>MNO</small></button>
 
-            <button class="tecla" data-num="7">7</button>
-            <button class="tecla" data-num="8">8</button>
-            <button class="tecla" data-num="9">9</button>
+            <button class="tecla" data-num="7">7<small>PQRS</small></button>
+            <button class="tecla" data-num="8">8<small>TUV</small></button>
+            <button class="tecla" data-num="9">9<small>WXYZ</small></button>
 
-            <button class="tecla" id="borrar"
-                aria-label="Borrar último número">
-                <svg viewBox="0 0 24 24">
-                    <path d="M9 5H21V19H9L2 12Z"/>
-                    <path d="M12 9L18 15M18 9L12 15"/>
-                </svg>
-            </button>
-
-            <button class="tecla" data-num="0">0</button>
-
-            <button class="tecla" id="confirmar"
-                aria-label="Confirmar contraseña">
-                <svg viewBox="0 0 24 24">
-                    <path d="M4 12L10 18L21 6"/>
-                </svg>
-            </button>
+            <button class="tecla especial" id="limpiar">C</button>
+            <button class="tecla" data-num="0">0<small>&nbsp;</small></button>
+            <button class="tecla especial" id="borrar" aria-label="Borrar último número">⌫</button>
 
         </div>
 
-        <button class="descubrir" id="descubrir">
-            Descubrir sorpresa
+        <button class="descubrir" id="confirmar">
+            Descubrir sorpresa ♡
         </button>
 
         <p class="mensaje" id="mensaje" aria-live="polite"></p>
 
     </section>
+
+    <div class="pie">♡ HECHO CON AMOR ♡</div>
+
 </main>
 
 <script>
@@ -317,10 +282,7 @@ const mensaje = document.getElementById("mensaje");
 
 function actualizarPuntos() {
     puntos.forEach((punto, indice) => {
-        punto.classList.toggle(
-            "lleno",
-            indice < entrada.length
-        );
+        punto.classList.toggle("lleno", indice < entrada.length);
     });
 }
 
@@ -344,29 +306,28 @@ function borrarUltimo() {
     actualizarPuntos();
 }
 
-document.getElementById("borrar")
-    .addEventListener("click", borrarUltimo);
+document.getElementById("borrar").addEventListener("click", borrarUltimo);
+
+document.getElementById("limpiar").addEventListener("click", () => {
+    entrada = "";
+    mensaje.textContent = "";
+    actualizarPuntos();
+});
 
 function verificar() {
     if (entrada.length !== 8) {
-        mensaje.textContent =
-            "Completa los ocho números ♡";
+        mensaje.textContent = "Completa los ocho números ♡";
         return;
     }
 
     if (entrada === CONTRASENA) {
         mensaje.textContent = "¡Fecha correcta! ♡";
     } else {
-        mensaje.textContent =
-            "Inténtalo de nuevo ♡";
+        mensaje.textContent = "Inténtalo de nuevo ♡";
     }
 }
 
-document.getElementById("confirmar")
-    .addEventListener("click", verificar);
-
-document.getElementById("descubrir")
-    .addEventListener("click", verificar);
+document.getElementById("confirmar").addEventListener("click", verificar);
 </script>
 
 </body>
