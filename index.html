@@ -311,29 +311,40 @@ h1 {
     box-shadow: 0 3px 5px #d98ab633;
 }
 
+
 .lazo-regalo {
     position: absolute;
     z-index: 5;
-    top: -2px;
-    left: 48px;
-    width: 23px;
-    height: 31px;
-    border: 5px solid #c968a2;
-    border-radius: 80% 20% 70% 25%;
-    transform: rotate(-35deg);
+    top: -5px;
+    left: 47px;
+    width: 18px;
+    height: 18px;
+    background: #c968a2;
+    border-radius: 50%;
     transition: opacity .3s, transform .5s;
 }
 
+.lazo-regalo::before,
 .lazo-regalo::after {
     content: "";
     position: absolute;
-    width: 23px;
-    height: 31px;
-    left: 13px;
     top: -7px;
-    border: 5px solid #d77db2;
-    border-radius: 20% 80% 25% 70%;
-    transform: rotate(65deg);
+    width: 30px;
+    height: 23px;
+    box-sizing: border-box;
+    border: 5px solid #c968a2;
+    background: #f7c2df;
+    border-radius: 80% 50% 70% 35%;
+}
+
+.lazo-regalo::before {
+    left: -27px;
+    transform: rotate(-25deg);
+}
+
+.lazo-regalo::after {
+    left: 15px;
+    transform: scaleX(-1) rotate(-25deg);
 }
 
 .cinta-vertical {
