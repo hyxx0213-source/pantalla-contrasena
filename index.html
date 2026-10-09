@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pantalla de bloqueo</title>
+<title>Con Amor ♡</title>
 
 <style>
 * {
@@ -13,167 +13,285 @@
 body {
     margin: 0;
     min-height: 100vh;
+    padding: 20px 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(160deg, #f9dce8, #e8dafa, #d8e8ff);
-    color: #ffffff;
+    background: #fbe6f1;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #741451;
 }
 
-.celular {
+.pantalla {
     width: 100%;
     max-width: 390px;
-    min-height: 100vh;
-    padding: 35px 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background: linear-gradient(160deg, #f5c8dd, #d5c6f5, #c4dafa);
+    padding: 18px 15px 12px;
+    background: #f9e0ee;
     text-align: center;
+    border: 1px solid #f3d0e5;
 }
 
-.hora {
-    font-size: 58px;
-    font-weight: 300;
-    margin-top: 10px;
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 0 0 26px;
+    font-size: 18px;
 }
 
-.fecha {
-    font-size: 17px;
-    margin-top: -15px;
+.linea {
+    height: 2px;
+    flex: 1;
+    background: #e9b5d7;
 }
 
-.icono {
-    font-size: 42px;
-    margin-top: 10px;
+.tarjeta {
+    width: 100%;
+    padding: 16px 12px 12px;
+    background: #fff;
+    border-radius: 15px;
 }
 
-h2 {
-    font-size: 23px;
-    margin-bottom: 8px;
+.corazon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #fbeafa;
+    color: #d99bcf;
+    font-family: Arial, sans-serif;
+    font-size: 45px;
+    line-height: 1;
 }
 
-p {
+h1 {
+    margin: 8px 0 5px;
+    font-size: clamp(25px, 7vw, 29px);
+    line-height: 1.12;
+    font-weight: bold;
+    color: #741451;
+}
+
+.subtitulo {
+    margin: 8px 0 17px;
+    font-size: 10px;
+}
+
+.caja-fecha {
+    padding: 6px 5px 15px;
+    border: 2px solid #efc3e2;
+    border-radius: 6px;
+    background: #fff8fd;
+}
+
+.etiquetas {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    align-items: center;
+    margin-bottom: 17px;
+    color: #dfa5ce;
     font-size: 14px;
+    font-weight: bold;
+}
+
+.etiquetas span {
+    grid-column: span 2;
+}
+
+.etiquetas span:last-child {
+    grid-column: span 4;
 }
 
 .puntos {
     display: flex;
-    gap: 13px;
-    margin: 25px 0;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(5px, 1.7vw, 8px);
 }
 
 .punto {
-    width: 13px;
-    height: 13px;
-    border: 2px solid white;
+    width: clamp(11px, 3.2vw, 14px);
+    height: clamp(11px, 3.2vw, 14px);
+    flex: 0 0 auto;
+    border: 2px solid #e9acd6;
     border-radius: 50%;
     background: transparent;
+    transition: background .15s, transform .15s;
 }
 
 .punto.lleno {
-    background: white;
+    background: #d88bc1;
+    border-color: #d88bc1;
+    transform: scale(1.04);
 }
 
 .teclado {
     display: grid;
-    grid-template-columns: repeat(3, 70px);
-    gap: 13px;
-    justify-content: center;
-    margin-top: 10px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 11px 16px;
+    margin: 14px 7px 25px;
 }
 
 .tecla {
-    width: 70px;
-    height: 62px;
-    border: 1px solid rgba(255,255,255,0.45);
-    border-radius: 20px;
-    background: rgba(255,255,255,0.25);
-    color: white;
-    font-size: 25px;
+    height: 47px;
+    border: none;
+    border-radius: 12px;
+    background: #fceafa;
+    color: #874a79;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    transition: background .12s, transform .12s;
 }
 
 .tecla:active {
-    background: rgba(255,255,255,0.55);
+    background: #f2d3eb;
+    transform: scale(.96);
 }
 
-.letra {
-    display: block;
-    font-size: 9px;
-    margin-top: 3px;
-    letter-spacing: 2px;
+.tecla svg {
+    width: 25px;
+    height: 25px;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.descubrir {
+    width: 100%;
+    min-height: 40px;
+    border: none;
+    border-radius: 11px;
+    background: #f3d9ee;
+    color: #741451;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 9px 5px;
+}
+
+.descubrir:active {
+    background: #eac8e4;
 }
 
 .mensaje {
-    min-height: 20px;
-    font-size: 14px;
-    margin-top: 15px;
-}
-
-.borrar {
-    font-size: 22px;
-}
-
-.pie {
+    min-height: 18px;
+    margin: 8px 0 0;
     font-size: 12px;
-    margin-top: 20px;
+    color: #874a79;
+}
+
+@media (max-width: 340px) {
+    .teclado {
+        gap: 9px;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    .tecla {
+        height: 44px;
+    }
+
+    .tarjeta {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
 }
 </style>
 </head>
 
 <body>
+<main class="pantalla">
 
-<div class="celular">
+    <header class="encabezado">
+        <span class="linea"></span>
+        <span>Con Amor</span>
+        <span class="linea"></span>
+    </header>
 
-    <div>
-        <div class="hora" id="hora">20:25</div>
-        <div class="fecha" id="fecha">Un día especial ♡</div>
-    </div>
+    <section class="tarjeta">
 
-    <div class="icono">♡</div>
+        <div class="corazon">♡</div>
 
-    <div>
-        <h2>Introduce tu contraseña</h2>
-        <p>Ingresa tu código para continuar</p>
+        <h1>Introduce la fecha<br>especial</h1>
 
-        <div class="puntos" id="puntos">
-            <span class="punto"></span>
-            <span class="punto"></span>
-            <span class="punto"></span>
-            <span class="punto"></span>
-            <span class="punto"></span>
-            <span class="punto"></span>
-            <span class="punto"></span>
-            <span class="punto"></span>
+        <p class="subtitulo">
+            Una pequeña pista para abrir tu sorpresa
+        </p>
+
+        <div class="caja-fecha">
+
+            <div class="etiquetas">
+                <span>DD</span>
+                <span>MM</span>
+                <span>AAAA</span>
+            </div>
+
+            <div class="puntos" id="puntos">
+                <span class="punto"></span>
+                <span class="punto"></span>
+                <span class="punto"></span>
+                <span class="punto"></span>
+                <span class="punto"></span>
+                <span class="punto"></span>
+                <span class="punto"></span>
+                <span class="punto"></span>
+            </div>
+
         </div>
 
         <div class="teclado">
+
             <button class="tecla" data-num="1">1</button>
-            <button class="tecla" data-num="2">2<span class="letra">ABC</span></button>
-            <button class="tecla" data-num="3">3<span class="letra">DEF</span></button>
+            <button class="tecla" data-num="2">2</button>
+            <button class="tecla" data-num="3">3</button>
 
-            <button class="tecla" data-num="4">4<span class="letra">GHI</span></button>
-            <button class="tecla" data-num="5">5<span class="letra">JKL</span></button>
-            <button class="tecla" data-num="6">6<span class="letra">MNO</span></button>
+            <button class="tecla" data-num="4">4</button>
+            <button class="tecla" data-num="5">5</button>
+            <button class="tecla" data-num="6">6</button>
 
-            <button class="tecla" data-num="7">7<span class="letra">PQRS</span></button>
-            <button class="tecla" data-num="8">8<span class="letra">TUV</span></button>
-            <button class="tecla" data-num="9">9<span class="letra">WXYZ</span></button>
+            <button class="tecla" data-num="7">7</button>
+            <button class="tecla" data-num="8">8</button>
+            <button class="tecla" data-num="9">9</button>
 
-            <button class="tecla" id="limpiar">C</button>
+            <button class="tecla" id="borrar"
+                aria-label="Borrar último número">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9 5H21V19H9L2 12Z"/>
+                    <path d="M12 9L18 15M18 9L12 15"/>
+                </svg>
+            </button>
+
             <button class="tecla" data-num="0">0</button>
-            <button class="tecla borrar" id="borrar">⌫</button>
+
+            <button class="tecla" id="confirmar"
+                aria-label="Confirmar contraseña">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 12L10 18L21 6"/>
+                </svg>
+            </button>
+
         </div>
 
-        <div class="mensaje" id="mensaje" aria-live="polite"></div>
-    </div>
+        <button class="descubrir" id="descubrir">
+            Descubrir sorpresa
+        </button>
 
-    <div class="pie">♡ Hecho con amor ♡</div>
+        <p class="mensaje" id="mensaje" aria-live="polite"></p>
 
-</div>
+    </section>
+</main>
 
 <script>
 const CONTRASENA = "19122025";
@@ -184,64 +302,56 @@ const mensaje = document.getElementById("mensaje");
 
 function actualizarPuntos() {
     puntos.forEach((punto, indice) => {
-        punto.classList.toggle("lleno", indice < entrada.length);
+        punto.classList.toggle(
+            "lleno",
+            indice < entrada.length
+        );
     });
 }
 
-function pulsarNumero(numero) {
-    if (entrada.length >= CONTRASENA.length) return;
+function agregarNumero(numero) {
+    if (entrada.length >= 8) return;
 
     entrada += numero;
     mensaje.textContent = "";
     actualizarPuntos();
-
-    if (entrada.length === CONTRASENA.length) {
-        if (entrada === CONTRASENA) {
-            mensaje.textContent = "¡Contraseña correcta! ♡";
-        } else {
-            mensaje.textContent = "Contraseña incorrecta ♡";
-        }
-    }
 }
 
 document.querySelectorAll("[data-num]").forEach(boton => {
     boton.addEventListener("click", () => {
-        pulsarNumero(boton.dataset.num);
+        agregarNumero(boton.dataset.num);
     });
 });
 
-document.getElementById("borrar").addEventListener("click", () => {
+function borrarUltimo() {
     entrada = entrada.slice(0, -1);
     mensaje.textContent = "";
     actualizarPuntos();
-});
-
-document.getElementById("limpiar").addEventListener("click", () => {
-    entrada = "";
-    mensaje.textContent = "";
-    actualizarPuntos();
-});
-
-function actualizarHora() {
-    const ahora = new Date();
-
-    document.getElementById("hora").textContent =
-        ahora.toLocaleTimeString("es-MX", {
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: false
-        });
-
-    document.getElementById("fecha").textContent =
-        ahora.toLocaleDateString("es-MX", {
-            weekday: "long",
-            day: "numeric",
-            month: "long"
-        });
 }
 
-actualizarHora();
-setInterval(actualizarHora, 1000);
+document.getElementById("borrar")
+    .addEventListener("click", borrarUltimo);
+
+function verificar() {
+    if (entrada.length !== 8) {
+        mensaje.textContent =
+            "Completa los ocho números ♡";
+        return;
+    }
+
+    if (entrada === CONTRASENA) {
+        mensaje.textContent = "¡Fecha correcta! ♡";
+    } else {
+        mensaje.textContent =
+            "Inténtalo de nuevo ♡";
+    }
+}
+
+document.getElementById("confirmar")
+    .addEventListener("click", verificar);
+
+document.getElementById("descubrir")
+    .addEventListener("click", verificar);
 </script>
 
 </body>
