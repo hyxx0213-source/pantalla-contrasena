@@ -282,7 +282,7 @@ h1 {
     transition: transform .4s ease;
 }
 
-caja-regalo {
+.caja-regalo {
     position: absolute;
     bottom: 0;
     left: 5px;
@@ -291,12 +291,21 @@ caja-regalo {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(110deg, #fbd8eb, #f5b5d8, #e77fb7);
+    background: linear-gradient(
+        135deg,
+        #ffe5f2 0%,
+        #f8b9da 35%,
+        #e987bd 75%,
+        #d966a5 100%
+    );
     border: 2px solid #df86b8;
     border-radius: 5px 5px 12px 12px;
     color: #fff8fd;
     font-size: 30px;
-    box-shadow: inset 5px 0 8px #ffffff55, inset -7px -3px 10px #b94f8955, 0 9px 14px #b94f8933;
+    box-shadow:
+        inset 6px 0 10px #ffffff66,
+        inset -8px -5px 12px #b94f8955,
+        0 12px 18px #b94f8944;
 }
 
 tapa-regalo {
