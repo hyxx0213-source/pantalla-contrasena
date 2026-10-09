@@ -90,8 +90,9 @@ h1 {
 
 .etiquetas {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(8, minmax(0, 1fr));
     align-items: center;
+    justify-items: center;
     margin-bottom: 17px;
     color: #dfa5ce;
     font-size: 14px;
@@ -100,11 +101,15 @@ h1 {
 
 .etiquetas span {
     grid-column: span 2;
+    width: 100%;
+    text-align: center;
 }
 
 .etiquetas span:last-child {
     grid-column: span 4;
+
 }
+
 
 .puntos {
     display: flex;
