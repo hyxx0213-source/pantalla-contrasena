@@ -89,9 +89,10 @@ h1 {
 }
 
 
+
 .etiquetas {
     display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-columns: repeat(8, 1fr);
     align-items: center;
     margin-bottom: 17px;
     color: #dfa5ce;
@@ -112,20 +113,12 @@ h1 {
     grid-column: 5 / 9;
 }
 
-.etiquetas span {
-    width: 100%;
-    text-align: center;
-}
-
-
 
 .puntos {
-    display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    justify-items: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    gap: 0;
+    gap: clamp(5px, 1.7vw, 8px);
 }
 
 
