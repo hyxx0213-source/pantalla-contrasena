@@ -312,38 +312,44 @@ h1 {
 }
 
 
+
 .lazo-regalo {
     position: absolute;
     z-index: 5;
     top: 15px;
-    left: 58px;
+    left: 61px;
     width: 18px;
-    height: 18px;
+    height: 17px;
     background: #c968a2;
-    border-radius: 50%;
-    transition: opacity .3s, transform .5s;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px #a84c8055;
 }
 
 .lazo-regalo::before,
 .lazo-regalo::after {
     content: "";
     position: absolute;
-    top: -7px;
-    width: 30px;
-    height: 23px;
+    top: -12px;
+    width: 35px;
+    height: 27px;
     box-sizing: border-box;
     border: 5px solid #c968a2;
-    background: #f7c2df;
-    border-radius: 80% 50% 70% 35%;
+    background: linear-gradient(
+        135deg,
+        #ffe1f0,
+        #f4afd5
+    );
+    border-radius: 80% 65% 70% 35%;
+    box-shadow: inset 0 0 3px #ffffff99;
 }
 
 .lazo-regalo::before {
-    left: -27px;
+    left: -31px;
     transform: rotate(-25deg);
 }
 
 .lazo-regalo::after {
-    left: 15px;
+    left: 14px;
     transform: scaleX(-1) rotate(-25deg);
 }
 
@@ -581,9 +587,12 @@ h1 {
             <p>Con amor, para ti. 💌</p>
         </div>
 
-        <div class="foto-avatares-placeholder">
-            Aquí pondremos la foto de sus avatares ♡
-        </div>
+       <div class="foto-avatares-placeholder">
+    <img
+        src="https://i.ibb.co/BH6xGtgL/file-00000000a03881f69dbf8685b8046f9d.png"
+        alt="Nuestra foto de avatares"
+    >
+</div>
     </div>
 </section>
 
