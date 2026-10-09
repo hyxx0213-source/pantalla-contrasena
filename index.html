@@ -120,21 +120,29 @@ h1 {
     width: 100%;
 }
 
+
+.puntos {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 0;
+    width: 100%;
+    margin: 0 auto;
+    justify-items: center;
+}
+
 .punto {
-    width: clamp(11px, 3.2vw, 14px);
-    height: clamp(11px, 3.2vw, 14px);
-    flex: 0 0 auto;
-    border: 2px solid #e9acd6;
+    width: 13px;
+    height: 13px;
+    border: 2px solid #e7a6cd;
     border-radius: 50%;
     background: transparent;
-    transition: background .15s, transform .15s;
+    box-sizing: border-box;
 }
 
 .punto.lleno {
-    background: #d88bc1;
-    border-color: #d88bc1;
-    transform: scale(1.04);
+    background: #e7a6cd;
 }
+
 
 .teclado {
     display: grid;
