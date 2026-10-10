@@ -468,14 +468,30 @@ h1 {
     overflow: hidden;
 }
 
+.foto-avatares-placeholder {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 360px;
+    margin: 20px auto;
+}
+
 .foto-avatares-placeholder img {
     display: block;
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 150px;
+    border-radius: 12px;
     object-fit: contain;
+    background: #fff5fa;
+    padding: 4px;
+    box-sizing: border-box;
 }
 
+#sorpresa-contenido h2 {
+    color: #b65c95;
+    text-align: center;
+}
 #sorpresa-contenido h2 {
     color: #b65c95;
     text-align: center;
