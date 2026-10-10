@@ -4,1050 +4,838 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Con Amor ♡</title>
+<title>Un regalo para ti ♡</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing: border-box; }
-[hidden] { display: none !important; }
+:root {
+    --rosa: #f6dce5;
+    --rosa-fuerte: #d889a6;
+    --rosa-oscuro: #a85e7b;
+    --crema: #fffaf7;
+    --texto: #654653;
+    --blanco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  padding: 20px 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fbe6f1;
-  font-family: 'Playfair Display', serif;
-  color: #741451;
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff5f7, #f8e2e9, #fffaf5);
+    color: var(--texto);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
 .pantalla {
-  width: 100%;
-  max-width: 390px;
-  padding: 18px 15px 16px;
-  background: #f9e0ee;
-  text-align: center;
-  border: 1px solid #f3d0e5;
-  border-radius: 16px;
+    display: none;
+    min-height: 100vh;
+    padding: 28px 16px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: aparecer .7s ease;
 }
 
-.encabezado {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  margin: 0 0 26px;
-  font-size: 18px;
+.pantalla.activa {
+    display: flex;
 }
 
-.linea { height: 2px; flex: 1; background: #e9b5d7; }
-
-.tarjeta {
-  width: 100%;
-  padding: 16px 12px 12px;
-  background: #fff;
-  border-radius: 15px;
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.corazon {
-  width: 58px;
-  height: 58px;
-  margin: 0 auto 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background: #fbeafa;
-  color: #d99bcf;
-  font-family: Arial, sans-serif;
-  font-size: 45px;
-  line-height: 1;
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
 }
 
 h1 {
-  margin: 8px 0 5px;
-  font-size: clamp(25px, 7vw, 29px);
-  line-height: 1.12;
-  color: #741451;
+    font-size: clamp(28px, 7vw, 42px);
+    margin: 10px 0;
 }
 
-h2 { color: #b65c95; text-align: center; }
-
-.subtitulo { margin: 8px 0 17px; font-size: 11px; }
-
-.caja-fecha {
-  padding: 12px 5px 15px;
-  border: 2px solid #efc3e2;
-  border-radius: 6px;
-  background: #fff8fd;
+h2 {
+    font-size: clamp(23px, 5vw, 31px);
 }
 
-.etiquetas {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto 14px;
-  color: #dfa5ce;
-  font-size: 13px;
-  font-weight: bold;
+p {
+    line-height: 1.8;
 }
 
-.etiquetas span { flex: 1; }
+.subtitulo {
+    font-size: 14px;
+    margin: 5px 0 22px;
+}
+
+.tarjeta {
+    width: 100%;
+    max-width: 480px;
+    padding: 28px 22px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .82);
+    box-shadow: 0 10px 35px rgba(168, 94, 123, .13);
+    border: 1px solid rgba(216, 137, 166, .22);
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    border: none;
+    transition: transform .2s, background .2s;
+}
+
+button:active {
+    transform: scale(.97);
+}
+
+.boton {
+    background: var(--rosa-fuerte);
+    color: white;
+    border-radius: 30px;
+    padding: 12px 23px;
+    margin-top: 15px;
+    font-size: 14px;
+    box-shadow: 0 5px 13px rgba(168, 94, 123, .15);
+}
+
+.boton:hover {
+    background: var(--rosa-oscuro);
+}
+
+.boton-secundario {
+    background: #fff0f4;
+    color: var(--rosa-oscuro);
+    border: 1px solid #efc6d5;
+    border-radius: 30px;
+    padding: 11px 19px;
+    margin: 8px 4px;
+    font-size: 13px;
+}
+
+/* PANTALLA DE CONTRASEÑA */
+
+.icono-corazon {
+    color: var(--rosa-fuerte);
+    font-size: 38px;
+    margin-bottom: 3px;
+}
+
+#pantalla-contrasena .tarjeta {
+    max-width: 350px;
+}
 
 .puntos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: clamp(4px, 1.5vw, 7px);
-}
-
-.punto {
-  width: clamp(22px, 5.8vw, 26px);
-  height: clamp(22px, 5.8vw, 26px);
-  flex: 0 0 auto;
-  border: 2px solid #e9acd6;
-  border-radius: 50%;
-  background: transparent;
-  color: #741451;
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background .15s, transform .15s;
-}
-
-.punto.lleno {
-  background: #f7d9eb;
-  border-color: #d88bc1;
-  transform: scale(1.04);
+    min-height: 34px;
+    margin: 20px 0;
+    font-size: 25px;
+    letter-spacing: 8px;
+    color: var(--rosa-oscuro);
 }
 
 .teclado {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 11px 16px;
-  margin: 14px 7px 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 260px;
+    margin: 0 auto;
 }
 
 .tecla {
-  height: 47px;
-  border: none;
-  border-radius: 12px;
-  background: #fceafa;
-  color: #874a79;
-  font-family: Arial, sans-serif;
-  font-size: 30px;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  -webkit-tap-highlight-color: transparent;
+    width: 66px;
+    height: 58px;
+    border-radius: 50%;
+    background: #fff0f4;
+    color: var(--texto);
+    font-size: 19px;
+    border: 1px solid #f0ceda;
 }
 
-.tecla:active { background: #f2d3eb; transform: scale(.96); }
-
-.tecla svg {
-  width: 25px;
-  height: 25px;
-  stroke: currentColor;
-  stroke-width: 2.5;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.tecla:hover {
+    background: #f6dce5;
 }
 
-.descubrir, .boton-secundario {
-  width: 100%;
-  min-height: 42px;
-  border: none;
-  border-radius: 11px;
-  background: #f3d9ee;
-  color: #741451;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 10px 8px;
+.mensaje-error {
+    min-height: 22px;
+    color: #b94d69;
+    font-size: 12px;
+    margin-top: 10px;
 }
 
-.descubrir:active, .boton-secundario:active { background: #eac8e4; }
-
-.mensaje {
-  min-height: 18px;
-  margin: 8px 0 0;
-  font-size: 12px;
-  color: #874a79;
-}
-
-.zona-regalo {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 210px;
-  overflow: hidden;
-  background: radial-gradient(circle, #fff5fb 0%, #fff 72%);
-  border-radius: 16px;
-}
-
-.caja-regalo-boton {
-  position: relative;
-  border: 0;
-  background: transparent;
-  padding: 30px;
-  cursor: pointer;
-  perspective: 800px;
-  animation: flotar-regalo 3s ease-in-out infinite;
-}
-
-@keyframes flotar-regalo {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-.regalo {
-  position: relative;
-  display: block;
-  width: 140px;
-  height: 125px;
-  filter: drop-shadow(0 8px 5px #e9b5d455);
-  transition: transform .4s ease;
-}
+/* CAJA DE REGALO */
 
 .caja-regalo {
-  position: absolute;
-  bottom: 0;
-  left: 5px;
-  width: 130px;
-  height: 82px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #ffe5f2, #f8b9da, #d966a5);
-  border: 2px solid #df86b8;
-  border-radius: 5px 5px 12px 12px;
-  color: #fff8fd;
-  font-size: 30px;
-  box-shadow: inset 6px 0 10px #ffffff66, 0 12px 18px #b94f8944;
+    position: relative;
+    width: 150px;
+    height: 125px;
+    margin: 35px auto 25px;
+    cursor: pointer;
+    user-select: none;
 }
 
-.tapa-regalo {
-  position: absolute;
-  z-index: 3;
-  top: 24px;
-  left: 0;
-  width: 140px;
-  height: 27px;
-  background: linear-gradient(180deg, #ffdaec, #f4b4d8);
-  border: 2px solid #df86b8;
-  border-radius: 6px;
-  transform-origin: 12% 100%;
-  transition: transform .7s ease;
+.caja-base {
+    position: absolute;
+    width: 150px;
+    height: 90px;
+    bottom: 0;
+    left: 0;
+    background: #e9a9bf;
+    border-radius: 7px 7px 13px 13px;
+    box-shadow: 0 9px 17px rgba(168, 94, 123, .18);
 }
 
-.lazo-regalo {
-  position: absolute;
-  z-index: 5;
-  top: 15px;
-  left: 65px;
-  width: 12px;
-  height: 12px;
-  background: #f2b4d3;
-  border-radius: 50%;
+.caja-base::before {
+    content: "";
+    position: absolute;
+    left: 57px;
+    height: 100%;
+    width: 34px;
+    background: #fff2f5;
 }
 
-.lazo-regalo::before, .lazo-regalo::after {
-  content: '';
-  position: absolute;
-  top: -5px;
-  width: 22px;
-  height: 15px;
-  border: 3px solid #f2b4d3;
-  background: linear-gradient(135deg, #fff0f7, #f5c5df);
-  border-radius: 70% 70% 55% 55%;
+.tapa-caja {
+    position: absolute;
+    width: 166px;
+    height: 29px;
+    left: -8px;
+    top: 22px;
+    background: #d889a6;
+    border-radius: 7px;
+    z-index: 2;
+    transition: transform .7s ease;
 }
 
-.lazo-regalo::before { left: -20px; transform: rotate(-25deg); }
-.lazo-regalo::after { left: 10px; transform: scaleX(-1) rotate(-25deg); }
-
-.cinta-vertical {
-  position: absolute;
-  z-index: 4;
-  top: 26px;
-  left: 58px;
-  width: 24px;
-  height: 99px;
-  background: linear-gradient(90deg, #d978b1, #f1a6d1, #d978b1);
+.tapa-caja::before {
+    content: "";
+    position: absolute;
+    left: 65px;
+    width: 35px;
+    height: 100%;
+    background: #fff2f5;
 }
 
-.cinta-horizontal {
-  position: absolute;
-  z-index: 4;
-  bottom: 36px;
-  left: 5px;
-  width: 130px;
-  height: 18px;
-  background: linear-gradient(180deg, #e998c7, #d978b1);
-  pointer-events: none;
+.moño {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 57px;
+    font-size: 42px;
+    color: #a85e7b;
+    transition: transform .7s ease;
 }
 
-.caja-regalo-boton:active .regalo { transform: scale(.94); }
-
-.caja-regalo-boton.abierto .tapa-regalo {
-  transform: translate(0, -20px) rotate(-15deg);
-  z-index: 10;
+.caja-regalo.abierta .tapa-caja {
+    transform: translateY(-45px) rotate(-12deg);
 }
 
-.caja-regalo-boton.abierto .lazo-regalo { opacity: 0; }
-.caja-regalo-boton.abierto .regalo { transform: translateY(-8px) rotateX(-5deg); }
-
-#contador-regalo { color: #dfa5ce; font-size: 14px; }
-
-.carta-regalo {
-  margin-top: 18px;
-  padding: 20px;
-  border: 1px solid #efc5dc;
-  border-radius: 12px;
-  background: #fff7fb;
-  color: #741451;
-  line-height: 1.8;
-  text-align: center;
-  overflow-wrap: anywhere;
+.caja-regalo.abierta .moño {
+    transform: translateY(-50px) rotate(20deg);
 }
 
-.imagen-carta {
-  display: block;
-  width: 100%;
-  max-width: 260px;
-  max-height: 260px;
-  object-fit: contain;
-  margin: 14px auto;
-  border-radius: 12px;
+.contador {
+    font-size: 13px;
+    color: var(--rosa-oscuro);
 }
 
-.entrada-recuerdos { margin-top: 18px; }
-.entrada-recuerdos p { font-size: 13px; }
+.foto-regalo {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 16px;
+    margin: 15px auto;
+    display: block;
+}
+
+/* GALERÍA */
 
 .galeria {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin: 18px auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+    width: 100%;
+    max-width: 440px;
+    margin: 20px auto;
 }
 
-.galeria img {
-  display: block;
-  width: 100%;
-  height: 160px;
-  object-fit: contain;
-  padding: 5px;
-  background: #fff5fa;
-  border: 1px solid #f3d0e5;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform .2s, box-shadow .2s;
-  -webkit-tap-highlight-color: transparent;
+.foto-recuerdo {
+    border: 7px solid white;
+    background: white;
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(168, 94, 123, .13);
 }
 
-.galeria img:active { transform: scale(.96); }
-.galeria img:hover { box-shadow: 0 4px 12px #d98ab655; }
-.pie-galeria { font-size: 12px; }
-
-/* CARTAS INTERACTIVAS */
-
-#pantalla-recuerdos {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 100%;
-  padding: 18px 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #7c3c625e;
-  backdrop-filter: blur(5px);
-  overflow-y: auto;
+.foto-recuerdo img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
 }
 
-.carta-interactiva {
-  position: relative;
-  width: 100%;
-  max-width: 370px;
-  max-height: 92vh;
-  overflow-y: auto;
-  padding: 24px 18px 20px;
-  background: #fff9fd;
-  border: 2px solid #f0c3df;
-  border-radius: 18px;
-  box-shadow: 0 12px 40px #6e285344;
-  animation: aparecer-carta .35s ease-out;
+.foto-recuerdo:hover {
+    transform: translateY(-3px);
 }
 
-@keyframes aparecer-carta {
-  from { opacity: 0; transform: translateY(18px) scale(.96); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+.texto-foto {
+    display: block;
+    padding: 8px 2px;
+    font-size: 11px;
+    color: var(--rosa-oscuro);
 }
 
-.decoracion-carta {
-  margin: 2px 0 10px;
-  color: #d98ab9;
-  font-size: 24px;
-  letter-spacing: 8px;
+/* CARTAS EMERGENTES */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(75, 42, 55, .55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    z-index: 20;
 }
 
-#titulo-recuerdo {
-  margin: 8px 0 14px;
-  font-size: 24px;
-  line-height: 1.3;
+.modal.visible {
+    display: flex;
 }
 
-#foto-grande-recuerdo {
-  display: block;
-  width: 100%;
-  max-height: 230px;
-  object-fit: contain;
-  margin: 0 auto 16px;
-  border-radius: 12px;
-  background: #fbe6f1;
+.contenido-modal {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: #fffaf7;
+    padding: 30px 23px;
+    border-radius: 22px;
+    box-shadow: 0 10px 40px #51283a35;
 }
 
-#mensaje-recuerdo {
-  margin: 12px 0 20px;
-  color: #743052;
-  font-size: 15px;
-  line-height: 1.9;
-  text-align: left;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
+.contenido-modal h2 {
+    margin-top: 8px;
 }
 
-#cerrar-recuerdo {
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  min-height: 44px;
-  border: 0;
-  border-radius: 11px;
-  background: #f3d9ee;
-  color: #741451;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 11px;
+.contenido-modal p {
+    font-size: 14px;
+    text-align: left;
 }
 
-#cerrar-recuerdo:active { background: #eac8e4; }
-
-@keyframes subir-corazon {
-  0% { opacity: 0; transform: translateY(10px) scale(.5); }
-  20% { opacity: 1; }
-  100% { opacity: 0; transform: translateY(-100px) scale(1.4); }
+.cerrar-modal {
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    background: transparent;
+    color: var(--rosa-oscuro);
+    font-size: 27px;
 }
 
-/* CASETE COMPACTO PARA LA PANTALLA FINAL */
+/* PANTALLA FINAL */
+
+#pantalla-final {
+    justify-content: flex-start;
+    padding-top: 25px;
+    padding-bottom: 35px;
+}
+
+.final-contenido {
+    width: 100%;
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
 
 .casete {
-  width: 100%;
-  max-width: 235px;
-  margin: 12px auto 18px;
-  padding: 8px;
-  background: linear-gradient(145deg, #fff8fd, #f7d8e9);
-  border: 2px solid #e9b5d7;
-  border-radius: 12px;
-  box-shadow: 0 5px 12px #b94f8920;
+    width: 100%;
+    max-width: 235px;
+    background: #f8e8ed;
+    border: 2px solid #d9a0b5;
+    border-radius: 13px;
+    padding: 13px;
+    box-shadow: 0 7px 18px rgba(168, 94, 123, .14);
 }
 
 .casete-etiqueta {
-  padding: 6px;
-  background: #fffafd;
-  border: 1px solid #efc3e2;
-  border-radius: 7px;
+    background: #fffaf7;
+    border: 1px solid #e8bdcd;
+    border-radius: 6px;
+    padding: 8px 5px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--rosa-oscuro);
 }
 
-.casete-etiqueta p {
-  margin: 2px;
-  font-size: 9px;
-  letter-spacing: 1px;
+.casete-etiqueta strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    letter-spacing: 3px;
+    margin-bottom: 3px;
 }
 
-.casete-etiqueta h2 {
-  margin: 4px 0;
-  color: #741451;
-  letter-spacing: 2px;
-  font-size: 17px;
+.reproductor {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 7px;
+    display: block;
 }
 
-.carretes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin: 8px auto;
+.carta-final {
+    width: 100%;
+    background: rgba(255, 255, 255, .88);
+    border: 1px solid #f0d1dc;
+    border-radius: 20px;
+    padding: 24px 21px;
+    box-shadow: 0 8px 25px rgba(168, 94, 123, .11);
 }
 
-.carrete {
-  width: 29px;
-  height: 29px;
-  border: 4px solid #df9bc4;
-  background: #fff8fd;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.carta-final h2 {
+    margin-top: 0;
+    color: var(--rosa-oscuro);
 }
 
-.carrete::after {
-  content: "✿";
-  color: #d88bc1;
-  font-size: 13px;
-}
-
-.cinta {
-  width: 25px;
-  height: 4px;
-  border-radius: 8px;
-  background: #df9bc4;
-}
-
-.youtube {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 0;
-  border-radius: 7px;
-  background: #fbe6f1;
-}
-
-.nota-musica {
-  margin: 7px 0 0;
-  font-size: 9px;
-  line-height: 1.5;
-  color: #874a79;
-}
-
-/* IMAGEN PRINCIPAL SIN TEXTO AÑADIDO */
-
-.imagen-final {
-  display: block;
-  width: 100%;
-  max-width: 330px;
-  max-height: 430px;
-  object-fit: contain;
-  margin: 0 auto 14px;
-  border-radius: 12px;
-  background: #fff8fd;
-}
-
-.mensaje-final {
-  padding: 16px 12px;
-  background: #fff7fb;
-  border: 1px solid #efc5dc;
-  border-radius: 12px;
-  line-height: 1.9;
-  text-align: left;
+.carta-final p {
+    font-size: 14px;
+    text-align: left;
+    margin: 15px 0;
 }
 
 .firma-final {
-  color: #b65c95;
-  font-size: 19px;
-  font-style: italic;
-  text-align: center;
+    text-align: center !important;
+    color: var(--rosa-oscuro);
+    font-family: 'Playfair Display', serif;
+    font-size: 19px !important;
 }
 
-@media (max-width: 340px) {
-  .teclado { gap: 9px; margin-left: 3px; margin-right: 3px; }
-  .tecla { height: 44px; }
-  .tarjeta { padding-left: 9px; padding-right: 9px; }
-  .puntos { gap: 4px; }
-  .punto { width: 21px; height: 21px; }
-  .galeria img { height: 130px; }
-  .carta-interactiva { padding: 20px 14px; }
-  #mensaje-recuerdo { font-size: 14px; }
+.imagen-final {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 15px;
+    margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-  }
+@media (max-width: 360px) {
+    .tarjeta {
+        padding: 23px 15px;
+    }
+
+    .teclado {
+        gap: 8px;
+    }
+
+    .tecla {
+        width: 59px;
+        height: 54px;
+    }
+
+    .carta-final {
+        padding: 21px 17px;
+    }
 }
 </style>
 </head>
 
 <body>
-<main class="pantalla">
 
-<header class="encabezado" id="encabezado">
-  <span class="linea"></span>
-  <span>Con Amor</span>
-  <span class="linea"></span>
-</header>
+<!-- PANTALLA 1: CONTRASEÑA -->
 
-<!-- CONTRASEÑA ORIGINAL -->
-<section class="tarjeta" id="pantalla-contrasena">
-  <div class="corazon">♡</div>
-  <h1>Introduce la fecha<br>especial</h1>
-  <p class="subtitulo">Una pequeña pista para abrir tu sorpresa</p>
+<section class="pantalla activa" id="pantalla-contrasena">
+    <div class="tarjeta">
+        <div class="icono-corazon">♡</div>
+        <h1>Un regalo para ti</h1>
+        <p class="subtitulo">Ingresa la fecha especial 💗</p>
 
-  <div class="caja-fecha">
-    <div class="etiquetas">
-      <span>DD</span>
-      <span>MM</span>
-      <span>AAAA</span>
+        <div class="puntos" id="puntos">○ ○ ○ ○ ○ ○ ○ ○</div>
+
+        <div class="teclado">
+            <button class="tecla" onclick="agregarNumero('1')">1</button>
+            <button class="tecla" onclick="agregarNumero('2')">2</button>
+            <button class="tecla" onclick="agregarNumero('3')">3</button>
+            <button class="tecla" onclick="agregarNumero('4')">4</button>
+            <button class="tecla" onclick="agregarNumero('5')">5</button>
+            <button class="tecla" onclick="agregarNumero('6')">6</button>
+            <button class="tecla" onclick="agregarNumero('7')">7</button>
+            <button class="tecla" onclick="agregarNumero('8')">8</button>
+            <button class="tecla" onclick="agregarNumero('9')">9</button>
+            <button class="tecla" onclick="borrarNumero()">⌫</button>
+            <button class="tecla" onclick="agregarNumero('0')">0</button>
+            <button class="tecla" onclick="borrarTodo()">×</button>
+        </div>
+
+        <button class="boton" id="descubrir" onclick="comprobarContrasena()">
+            Descubrir sorpresa
+        </button>
+
+        <p class="mensaje-error" id="mensaje-error"></p>
     </div>
-
-    <div class="puntos" id="puntos" aria-label="Contraseña de ocho números">
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-    </div>
-  </div>
-
-  <div class="teclado">
-    <button type="button" class="tecla" data-num="1">1</button>
-    <button type="button" class="tecla" data-num="2">2</button>
-    <button type="button" class="tecla" data-num="3">3</button>
-    <button type="button" class="tecla" data-num="4">4</button>
-    <button type="button" class="tecla" data-num="5">5</button>
-    <button type="button" class="tecla" data-num="6">6</button>
-    <button type="button" class="tecla" data-num="7">7</button>
-    <button type="button" class="tecla" data-num="8">8</button>
-    <button type="button" class="tecla" data-num="9">9</button>
-
-    <button type="button" class="tecla" id="borrar" aria-label="Borrar último número">
-      <svg viewBox="0 0 24 24">
-        <path d="M9 5H21V19H9L2 12Z"/>
-        <path d="M12 9L18 15M18 9L12 15"/>
-      </svg>
-    </button>
-
-    <button type="button" class="tecla" data-num="0">0</button>
-
-    <button type="button" class="tecla" id="confirmar" aria-label="Confirmar contraseña">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 12L10 18L21 6"/>
-      </svg>
-    </button>
-  </div>
-
-  <button type="button" class="descubrir" id="descubrir">
-    Descubrir sorpresa
-  </button>
-  <p class="mensaje" id="mensaje" aria-live="polite"></p>
 </section>
 
-<!-- REGALO ORIGINAL -->
-<section class="tarjeta" id="pantalla-regalo" hidden>
-  <div class="corazon">♡</div>
-  <h1>Un regalo para ti</h1>
 
-  <p class="subtitulo" id="mensaje-regalo">
-    Toca la cajita 10 veces para descubrir tu sorpresa ♡
-  </p>
+<!-- PANTALLA 2: REGALO -->
 
-  <div class="zona-regalo">
-    <button type="button" id="caja-regalo-boton"
-      class="caja-regalo-boton" aria-label="Toca para abrir tu regalo">
-      <span class="regalo">
-        <span class="tapa-regalo"></span>
-        <span class="lazo-regalo"></span>
-        <span class="cinta-vertical"></span>
-        <span class="cinta-horizontal"></span>
-        <span class="caja-regalo">♡</span>
-      </span>
-    </button>
-  </div>
+<section class="pantalla" id="pantalla-regalo">
+    <div class="tarjeta">
+        <div class="icono-corazon">♡</div>
+        <h1>Una pequeña sorpresa</h1>
+        <p>Toca la cajita 10 veces para abrir tu regalo 🎁</p>
 
-  <p id="contador-regalo">0 / 10 toques</p>
+        <div class="caja-regalo" id="caja-regalo" onclick="tocarCaja()">
+            <div class="moño">🎀</div>
+            <div class="tapa-caja"></div>
+            <div class="caja-base"></div>
+        </div>
 
-  <div id="sorpresa-contenido" hidden>
-    <h2>¡Una sorpresa para ti! 💗</h2>
+        <p class="contador" id="contador">Toques: 0 de 10</p>
 
-    <div class="carta-regalo">
-      <p>Para alguien muy especial ♡</p>
-      <p>
-        Quería regalarte algo diferente, un pequeño detalle
-        hecho con mucho cariño. Espero que te saque una sonrisa
-        y te recuerde lo importante que eres para mí.
-      </p>
+        <div id="contenido-regalo" hidden>
+            <h2>¡Sorpresa, amor! ♡</h2>
+            <p>
+                Preparé este pequeño regalo para ti, con mucho cariño.
+                Espero que te guste y que te recuerde lo especial que eres para mí.
+            </p>
 
-      <img
-        class="imagen-carta"
-        src="https://i.ibb.co/BH6xGtgL/file-00000000a03881f69dbf8685b8046f9d.png"
-        alt="Un detalle especial"
-        onerror="this.hidden=true"
-      >
+            <img
+                class="foto-regalo"
+                src="https://i.ibb.co/BH6xGtgL/file-00000000a03881f69dbf8685b8046f9d.png"
+                alt="Nuestros avatares"
+            >
 
-      <p>Con amor, para ti. 💌</p>
+            <p>Con amor, para ti. 💌</p>
+
+            <button class="boton" onclick="mostrarPantalla('pantalla-galeria')">
+                Ver nuestros recuerdos ♡
+            </button>
+        </div>
     </div>
-
-    <div class="entrada-recuerdos">
-      <p>♡ Hay más momentos que quiero compartir contigo ♡</p>
-      <button type="button" class="boton-secundario" id="boton-recuerdos">
-        Ver nuestros recuerdos ♡
-      </button>
-    </div>
-  </div>
 </section>
 
-<!-- GALERÍA ORIGINAL -->
-<section class="tarjeta" id="galeria-fotos" hidden>
-  <div class="corazon">♡</div>
-  <h1>♡ Nuestros recuerdos ♡</h1>
-  <p class="subtitulo">Toca una foto para abrir tu carta especial 💌</p>
 
-  <div class="galeria" id="contenedor-fotos">
-    <img
-      src="https://i.ibb.co/JRWYk2Sh/IMG-20261009-WA4820.jpg"
-      alt="Recuerdo 1"
-      data-carta="0"
-      tabindex="0"
-      role="button"
-      aria-label="Abrir carta uno"
-    >
+<!-- PANTALLA 3: GALERÍA DE RECUERDOS -->
 
-    <img
-      src="https://i.ibb.co/jvJ90k9T/IMG-20261009-WA3470.jpg"
-      alt="Recuerdo 2"
-      data-carta="1"
-      tabindex="0"
-      role="button"
-      aria-label="Abrir carta dos"
-    >
+<section class="pantalla" id="pantalla-galeria">
+    <div class="tarjeta">
+        <div class="icono-corazon">♡</div>
+        <h1>Nuestros recuerdos</h1>
+        <p class="subtitulo">Cada momento contigo es especial. 💗</p>
 
-    <img
-      src="https://i.ibb.co/DgPXf2Jk/file-000000006eb081f5a35e417954c5b35f.png"
-      alt="Recuerdo 3"
-      data-carta="2"
-      tabindex="0"
-      role="button"
-      aria-label="Abrir carta tres"
-    >
+        <div class="galeria">
 
-    <img
-      src="https://i.ibb.co/gMgc9n0Z/file-00000000e39081f584329b5a0fc7fa71.png"
-      alt="Recuerdo 4"
-      data-carta="3"
-      tabindex="0"
-      role="button"
-      aria-label="Abrir carta cuatro"
-    >
-  </div>
+            <button class="foto-recuerdo" onclick="abrirCarta(0)">
+                <img
+                    src="https://i.ibb.co/JRWYk2Sh/IMG-20261009-WA4820.jpg"
+                    alt="Primer recuerdo"
+                >
+                <span class="texto-foto">Nuestra historia ♡</span>
+            </button>
 
-  <p class="pie-galeria">Con cariño, para ti. ♡</p>
+            <button class="foto-recuerdo" onclick="abrirCarta(1)">
+                <img
+                    src="https://i.ibb.co/jvJ90k9T/IMG-20261009-WA3470.jpg"
+                    alt="Segundo recuerdo"
+                >
+                <span class="texto-foto">Lo que amo de ti 💗</span>
+            </button>
 
-  <button type="button" class="boton-secundario" id="volver-regalo">
-    Volver al regalo ♡
-  </button>
+            <button class="foto-recuerdo" onclick="abrirCarta(2)">
+                <img
+                    src="https://i.ibb.co/DgPXf2Jk/file-000000006eb081f5a35e417954c5b35f.png"
+                    alt="Tercer recuerdo"
+                >
+                <span class="texto-foto">Nuestros momentos ✨</span>
+            </button>
 
-  <button type="button" class="boton-secundario"
-          id="ir-final" style="margin-top:10px">
-    Nuestra canción 🎶
-  </button>
-</section>
+            <button class="foto-recuerdo" onclick="abrirCarta(3)">
+                <img
+                    src="https://i.ibb.co/gMgc9n0Z/file-00000000e39081f584329b5a0fc7fa71.png"
+                    alt="Cuarto recuerdo"
+                >
+                <span class="texto-foto">Mi futuro contigo 💌</span>
+            </button>
 
-<!-- PANTALLA FINAL: IMAGEN, REPRODUCTOR Y CARTA -->
-<section class="tarjeta" id="pantalla-final" hidden>
+        </div>
 
-  <!-- La imagen aparece primero, sin texto añadido -->
-  <img
-    class="imagen-final"
-    src="https://i.ibb.co/208LGTcm/IMG-20261009-WA0449.jpg"
-    alt="Un recuerdo especial"
-    loading="lazy"
-  >
+        <p class="subtitulo">Gracias por formar parte de mi vida. ♡</p>
 
-  <!-- Reproductor pequeño -->
-  <div class="casete">
-    <div class="casete-etiqueta">
-      <p>UNA CANCIÓN ESPECIAL</p>
-      <h2>CAIFANES</h2>
-      <p>Viento ♡</p>
+        <button class="boton" onclick="mostrarPantalla('pantalla-final')">
+            Nuestra canción 🎶
+        </button>
     </div>
+</section>
 
-    <div class="carretes">
-      <span class="carrete"></span>
-      <span class="cinta"></span>
-      <span class="carrete"></span>
+
+<!-- VENTANA DE LAS CARTAS DE CADA FOTO -->
+
+<div class="modal" id="modal-carta" onclick="cerrarSiFondo(event)">
+    <div class="contenido-modal">
+        <button class="cerrar-modal" onclick="cerrarCarta()" aria-label="Cerrar">
+            ×
+        </button>
+        <div class="icono-corazon">♡</div>
+        <h2 id="titulo-carta"></h2>
+        <p id="texto-carta"></p>
+        <button class="boton-secundario" onclick="cerrarCarta()">
+            Cerrar ♡
+        </button>
     </div>
+</div>
 
-    <iframe
-      class="youtube"
-      src="https://www.youtube.com/embed/NMlKHIqtuO0"
-      title="Caifanes - Viento"
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allow="encrypted-media; picture-in-picture"
-      allowfullscreen>
-    </iframe>
 
-    <p class="nota-musica">
-      Pulsa reproducir para escuchar la canción aquí mismo.
-    </p>
-  </div>
+<!-- PANTALLA 4: CANCIÓN, CARTA E IMAGEN FINAL -->
 
-  <!-- Carta original de la pantalla final -->
-  <h1>Feliz año amor</h1>
+<section class="pantalla" id="pantalla-final">
+    <div class="final-contenido">
 
-  <div class="mensaje-final">
-    <p>
-      Gracias por formar parte de mi vida y por todos los
-      momentos bonitos que hemos compartido.
-    </p>
-    <p>
-      Espero que sigamos creando recuerdos juntos y que nunca
-      nos falten razones para sonreír. Este pequeño regalo
-      es una forma de recordarte cuánto significas para mí. ♡
-    </p>
-    <p class="firma-final">Te amo mucho bb ♡</p>
-    <p style="text-align:center">Con amor, para ti. 💌</p>
-  </div>
+        <!-- PRIMERO: REPRODUCTOR DE CAIFANES -->
 
-  <button type="button" class="boton-secundario"
-          id="volver-galeria" style="margin-top:12px">
-    Volver a los recuerdos ♡
-  </button>
+        <div class="casete">
+            <div class="casete-etiqueta">
+                <strong>CAIFANES</strong>
+                Nuestra canción ♡
+            </div>
+
+            <iframe
+                class="reproductor"
+                src="https://www.youtube.com/embed/NMlKHIqtuO0"
+                title="Caifanes - Viento"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+
+        <!-- SEGUNDO: TU CARTA EXACTA -->
+
+        <div class="carta-final">
+            <h2>Feliz año amor</h2>
+
+            <p>
+                No sabes lo feliz q me has hecho este año, espero seguir así
+                y que nuestro amor no tenga fin, pues por mi parte tengo
+                mucho amor que darte.
+            </p>
+
+            <p>
+                Gracias por darme la oportunidad de conocerme y de ser tu
+                novia, enserio que te estoy muy agradecida ya que gracias
+                a eso pude conocer más al amor de mi vida.
+            </p>
+
+            <p>
+                Quiero tenerte conmigo toda la vida sin importar la distancia,
+                se que un día vamos a estar juntos y cuando llegue ese día
+                darte todo el amor que te mereces.
+            </p>
+
+            <p class="firma-final">Te amo mucho bb ♡</p>
+        </div>
+
+
+        <!-- TERCERO: LA IMAGEN AL FINAL, SIN TEXTO ENCIMA -->
+
+        <img
+            class="imagen-final"
+            src="https://i.ibb.co/208LGTcm/IMG-20261009-WA0449.jpg"
+            alt="Un recuerdo especial de nosotros"
+        >
+
+        <button class="boton-secundario" onclick="mostrarPantalla('pantalla-galeria')">
+            Volver a los recuerdos ♡
+        </button>
+
+    </div>
 </section>
 
-</main>
-
-<!-- VENTANA ORIGINAL DE LAS CARTAS -->
-<section id="pantalla-recuerdos" hidden
-  role="dialog" aria-modal="true" aria-labelledby="titulo-recuerdo">
-
-  <div class="carta-interactiva">
-    <div class="decoracion-carta">♡ ✧ ♡</div>
-    <h2 id="titulo-recuerdo">Una carta para ti ♡</h2>
-    <img id="foto-grande-recuerdo" src="" alt="Nuestro recuerdo">
-    <p id="mensaje-recuerdo"></p>
-    <div class="decoracion-carta">♡ ♡ ♡</div>
-
-    <button type="button" id="cerrar-recuerdo">
-      Volver a nuestros recuerdos ♡
-    </button>
-  </div>
-</section>
 
 <script>
-/* CONTRASEÑA ORIGINAL */
-const CONTRASENA = "19122025";
-let entrada = "";
+/* NAVEGACIÓN ENTRE PANTALLAS */
 
-const puntos = document.querySelectorAll("#puntos .punto");
-const mensaje = document.getElementById("mensaje");
-const pantallaContrasena = document.getElementById("pantalla-contrasena");
-const pantallaRegalo = document.getElementById("pantalla-regalo");
-const encabezado = document.getElementById("encabezado");
+function mostrarPantalla(id) {
+    document.querySelectorAll('.pantalla').forEach(function(pantalla) {
+        pantalla.classList.remove('activa');
+    });
+
+    const destino = document.getElementById(id);
+
+    if (destino) {
+        destino.classList.add('activa');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+
+/* CONTRASEÑA: 19122025 */
+
+let contrasenaIngresada = '';
+
+const contrasenaCorrecta = '19122025';
 
 function actualizarPuntos() {
-  puntos.forEach((punto, indice) => {
-    punto.textContent = entrada[indice] || "";
-    punto.classList.toggle("lleno", indice < entrada.length);
-  });
+    const puntos = document.getElementById('puntos');
+    const cantidad = contrasenaIngresada.length;
+
+    let resultado = [];
+
+    for (let i = 0; i < 8; i++) {
+        resultado.push(i < cantidad ? '●' : '○');
+    }
+
+    puntos.textContent = resultado.join(' ');
 }
 
 function agregarNumero(numero) {
-  if (entrada.length >= 8) return;
-  entrada += numero;
-  mensaje.textContent = "";
-  actualizarPuntos();
-}
+    if (contrasenaIngresada.length >= 8) return;
 
-document.querySelectorAll("[data-num]").forEach((boton) => {
-  boton.addEventListener("click", () => agregarNumero(boton.dataset.num));
-});
-
-function borrarUltimo() {
-  entrada = entrada.slice(0, -1);
-  mensaje.textContent = "";
-  actualizarPuntos();
-}
-
-document.getElementById("borrar").addEventListener("click", borrarUltimo);
-
-function verificar() {
-  if (entrada.length !== 8) {
-    mensaje.textContent = "Completa los ocho números ♡";
-    return;
-  }
-
-  if (entrada === CONTRASENA) {
-    pantallaContrasena.hidden = true;
-    encabezado.hidden = true;
-    pantallaRegalo.hidden = false;
-
-    pantallaRegalo.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  } else {
-    mensaje.textContent = "Inténtalo de nuevo ♡";
-    entrada = "";
+    contrasenaIngresada += numero;
     actualizarPuntos();
-  }
+
+    document.getElementById('mensaje-error').textContent = '';
 }
 
-document.getElementById("confirmar").addEventListener("click", verificar);
-document.getElementById("descubrir").addEventListener("click", verificar);
+function borrarNumero() {
+    contrasenaIngresada = contrasenaIngresada.slice(0, -1);
+    actualizarPuntos();
 
-/* REGALO DE DIEZ TOQUES */
-const botonRegalo = document.getElementById("caja-regalo-boton");
-const contadorRegalo = document.getElementById("contador-regalo");
-const mensajeRegalo = document.getElementById("mensaje-regalo");
-const contenidoRegalo = document.getElementById("sorpresa-contenido");
-const zonaRegalo = document.querySelector(".zona-regalo");
+    document.getElementById('mensaje-error').textContent = '';
+}
 
-let toquesRegalo = 0;
+function borrarTodo() {
+    contrasenaIngresada = '';
+    actualizarPuntos();
 
-botonRegalo.addEventListener("click", function () {
-  if (toquesRegalo >= 10) return;
+    document.getElementById('mensaje-error').textContent = '';
+}
 
-  toquesRegalo++;
-  contadorRegalo.textContent = toquesRegalo + " / 10 toques";
+function comprobarContrasena() {
+    const mensaje = document.getElementById('mensaje-error');
 
-  const corazon = document.createElement("span");
-  corazon.textContent = "♥";
-  corazon.style.position = "absolute";
-  corazon.style.left = (20 + Math.random() * 60) + "%";
-  corazon.style.bottom = "20px";
-  corazon.style.color = "#e879b5";
-  corazon.style.fontSize = "24px";
-  corazon.style.pointerEvents = "none";
-  corazon.style.animation = "subir-corazon 1.2s ease-out forwards";
+    if (contrasenaIngresada === contrasenaCorrecta) {
+        mensaje.textContent = '';
+        mostrarPantalla('pantalla-regalo');
+    } else {
+        mensaje.textContent = 'Esa no es la fecha correcta, intenta otra vez ♡';
+        contrasenaIngresada = '';
+        actualizarPuntos();
+    }
+}
 
-  zonaRegalo.appendChild(corazon);
-  setTimeout(() => corazon.remove(), 1300);
 
-  if (toquesRegalo === 10) {
-    botonRegalo.classList.add("abierto");
-    botonRegalo.disabled = true;
-    mensajeRegalo.textContent = "¡Tu regalo se está abriendo! ♡";
+/* CAJA: SE ABRE AL DÉCIMO TOQUE */
 
-    setTimeout(function () {
-      contenidoRegalo.hidden = false;
-      contadorRegalo.textContent = "¡Regalo desbloqueado! ♡";
-      mensajeRegalo.textContent = "Una sorpresa hecha para ti 💗";
+let toquesCaja = 0;
+let cajaAbierta = false;
 
-      contenidoRegalo.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-      });
-    }, 850);
-  }
-});
+function tocarCaja() {
+    if (cajaAbierta) return;
 
-/* NAVEGACIÓN */
-const galeriaFotos = document.getElementById("galeria-fotos");
-const pantallaFinal = document.getElementById("pantalla-final");
+    toquesCaja++;
 
-document.getElementById("boton-recuerdos").addEventListener("click", function () {
-  pantallaRegalo.hidden = true;
-  galeriaFotos.hidden = false;
-  galeriaFotos.scrollIntoView({ behavior: "smooth", block: "start" });
-});
+    document.getElementById('contador').textContent =
+        'Toques: ' + toquesCaja + ' de 10';
 
-document.getElementById("volver-regalo").addEventListener("click", function () {
-  galeriaFotos.hidden = true;
-  pantallaRegalo.hidden = false;
-  pantallaRegalo.scrollIntoView({ behavior: "smooth", block: "start" });
-});
+    crearCorazon();
 
-/* La canción y la carta están juntas en la pantalla final */
-document.getElementById("ir-final").addEventListener("click", function () {
-  galeriaFotos.hidden = true;
-  pantallaFinal.hidden = false;
-  pantallaFinal.scrollIntoView({ behavior: "smooth", block: "start" });
-});
+    if (toquesCaja >= 10) {
+        cajaAbierta = true;
 
-document.getElementById("volver-galeria").addEventListener("click", function () {
-  pantallaFinal.hidden = true;
-  galeriaFotos.hidden = false;
-  galeriaFotos.scrollIntoView({ behavior: "smooth", block: "start" });
-});
+        document.getElementById('caja-regalo').classList.add('abierta');
 
-/* LAS CUATRO CARTAS PERSONALES ORIGINALES */
-const mensajesCartas = [
-  {
-    titulo: "Cómo comenzó nuestra historia ♡",
-    mensaje: `Recuerdo cuando entre al clan y te voy a ser sincera no estaba segura de entrar, pues sabía que no cumpliría con lo horarios pero decidí hacerlo y la verdad no me arrepiento pues conocí a la persona que más amo en mi vida. Cuando me enamoré de ti pensé que sería algo imposible pues no te conocía del todo y mucho menos saber como acercarme a ti. Pero el mini esfuerzo rindió frutos y ahora estamos aquí, cumpliendo un año juntos.`
-  },
-  {
-    titulo: "Lo que amo de ti 💗",
-    mensaje: `Eres una persona muy divertida siempre estas haciéndome reír con tus ocurrencias y es lo que más me gusta de tí. Y no solo eso me gusta también el como eres conmigo, te has vuelto super amoroso y lo sé porque antes no eras así y me encanta ese cambio, porque se que a lo mejor te he dado la confianza para serlo, al igual me tratas muy bien a veces un poco bromista pero me gusta. Por esas y muchas más cosas te amo y siempre lo haré no importa que.`
-  },
-  {
-    titulo: "Nuestros momentos ✨",
-    mensaje: `Cada momento que pasas a mi lado es especial, ya sea que juguemos o platiquemos, o hagamos otras cosas jijiji. Pero lo más importante del caso es q estas siempre para mí y aunque tu no sepas q tuve un mal día porque decido no cortártelo para evitar agobiarte con mis problemas, siempre me sacas una sonrisa y me llenas de felicidad sin tu darte cuenta. Aunque ya me conoces bien y sabes cuando algo me pasa siempre me haces sentir mejor.`
-  },
-  {
-    titulo: "Mi futuro contigo 💌",
-    mensaje: `Se que puede ser muy apresurado y tonto pues soy muy pequeña para decirlo, pero se que eres el indicado y también se que contigo me quiero quedar siempre pues me lo has demostrado en este año. Y se que quiero compartir mi vida a tu lado, quiero hacer tantas cosas a tu lado y quiero formar parte de ti. Te amo 💗`
-  }
+        document.getElementById('contador').textContent =
+            '¡Tu regalo está listo! ♡';
+
+        setTimeout(function() {
+            document.getElementById('contenido-regalo').hidden = false;
+        }, 700);
+    }
+}
+
+function crearCorazon() {
+    const corazon = document.createElement('span');
+
+    corazon.textContent = '♡';
+    corazon.style.position = 'fixed';
+    corazon.style.left = (35 + Math.random() * 30) + '%';
+    corazon.style.top = '45%';
+    corazon.style.color = '#d889a6';
+    corazon.style.fontSize = (18 + Math.random() * 18) + 'px';
+    corazon.style.pointerEvents = 'none';
+    corazon.style.zIndex = '30';
+    corazon.style.transition = 'all 1s ease';
+    document.body.appendChild(corazon);
+
+    requestAnimationFrame(function() {
+        corazon.style.transform =
+            'translateY(-100px) translateX(' +
+            (Math.random() * 70 - 35) + 'px)';
+        corazon.style.opacity = '0';
+    });
+
+    setTimeout(function() {
+        corazon.remove();
+    }, 1100);
+}
+
+
+/* LAS CUATRO CARTAS DE LA GALERÍA */
+
+const cartas = [
+    {
+        titulo: 'Cómo comenzó nuestra historia ♡',
+        texto: 'Recuerdo cuando entre al clan y poco a poco comenzamos a hablar. Nunca imaginé que conocería a alguien tan especial para mí. Me hace feliz pensar en todo lo que hemos vivido y en que estamos cumpliendo un año juntos.'
+    },
+    {
+        titulo: 'Lo que amo de ti 💗',
+        texto: 'Amo tu forma de ser, cómo me haces sonreír y la manera en que me haces sentir especial. Gracias por estar conmigo, por tu cariño y por todos los detalles que hacen que te quiera cada día más, no importa qué.'
+    },
+    {
+        titulo: 'Nuestros momentos ✨',
+        texto: 'Cada momento que compartimos se ha vuelto un recuerdo que guardo con mucho cariño. Incluso en los días difíciles, pensar en ti me alegra y siempre me haces sentir mejor.'
+    },
+    {
+        titulo: 'Mi futuro contigo 💌',
+        texto: 'Sé que puede ser muy apresurado y tonto pues soy muy pequeña para decirlo, pero sé que eres el indicado y también sé que contigo me quiero quedar siempre pues me lo has demostrado en este año. Y sé que quiero compartir mi vida a tu lado, quiero hacer tantas cosas a tu lado y quiero formar parte de ti. Te amo 💗'
+    }
 ];
 
-/* ABRIR Y CERRAR CADA CARTA */
-const fotosGaleria = document.querySelectorAll("#contenedor-fotos img");
-const pantallaCarta = document.getElementById("pantalla-recuerdos");
-const tituloCarta = document.getElementById("titulo-recuerdo");
-const fotoCarta = document.getElementById("foto-grande-recuerdo");
-const mensajeCarta = document.getElementById("mensaje-recuerdo");
-const botonCerrarCarta = document.getElementById("cerrar-recuerdo");
+function abrirCarta(indice) {
+    document.getElementById('titulo-carta').textContent =
+        cartas[indice].titulo;
 
-let fotoAnterior = null;
+    document.getElementById('texto-carta').textContent =
+        cartas[indice].texto;
 
-function abrirCarta(foto) {
-  const indice = Number(foto.dataset.carta);
-  const carta = mensajesCartas[indice];
-  if (!carta) return;
-
-  fotoAnterior = foto;
-  tituloCarta.textContent = carta.titulo;
-  mensajeCarta.textContent = carta.mensaje;
-  fotoCarta.src = foto.src;
-  fotoCarta.alt = foto.alt || carta.titulo;
-
-  pantallaCarta.hidden = false;
-  document.body.style.overflow = "hidden";
-  botonCerrarCarta.focus();
+    document.getElementById('modal-carta').classList.add('visible');
 }
 
 function cerrarCarta() {
-  pantallaCarta.hidden = true;
-  document.body.style.overflow = "";
-  if (fotoAnterior) fotoAnterior.focus();
+    document.getElementById('modal-carta').classList.remove('visible');
 }
 
-fotosGaleria.forEach((foto) => {
-  foto.addEventListener("click", () => abrirCarta(foto));
-
-  foto.addEventListener("keydown", (evento) => {
-    if (evento.key === "Enter" || evento.key === " ") {
-      evento.preventDefault();
-      abrirCarta(foto);
+function cerrarSiFondo(evento) {
+    if (evento.target.id === 'modal-carta') {
+        cerrarCarta();
     }
-  });
-});
+}
 
-botonCerrarCarta.addEventListener("click", cerrarCarta);
 
-document.addEventListener("keydown", (evento) => {
-  if (evento.key === "Escape" && !pantallaCarta.hidden) {
-    cerrarCarta();
-  }
+/* PERMITIR CERRAR LA CARTA CON ESC */
+
+document.addEventListener('keydown', function(evento) {
+    if (evento.key === 'Escape') {
+        cerrarCarta();
+    }
 });
 </script>
 
