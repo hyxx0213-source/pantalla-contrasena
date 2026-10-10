@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,7 +11,6 @@
 
 <style>
 * { box-sizing: border-box; }
-
 [hidden] { display: none !important; }
 
 body {
@@ -808,66 +806,17 @@ h2 {
   </button>
 
   <button type="button" class="boton-secundario"
-    id="ir-musica" style="margin-top:10px">
+    id="ir-final" style="margin-top:10px">
     Nuestra canción 🎶
   </button>
 </section>
 
 
-<!-- PANTALLA DE MÚSICA -->
-
-<section class="tarjeta" id="pantalla-musica" hidden>
-  <div class="corazon">♡</div>
-  <h1>Una canción para ti</h1>
-  <p class="subtitulo">
-    Porque hay canciones que nos recuerdan a alguien especial ♡
-  </p>
-
-  <div class="casete">
-    <div class="casete-etiqueta">
-      <p>UNA CANCIÓN ESPECIAL</p>
-      <h2>CAIFANES</h2>
-      <p>Viento ♡</p>
-    </div>
-
-    <div class="carretes">
-      <span class="carrete"></span>
-      <span class="cinta"></span>
-      <span class="carrete"></span>
-    </div>
-
-    <iframe
-      class="youtube"
-      src="https://www.youtube.com/embed/NMlKHIqtuO0"
-      title="Caifanes - Viento"
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allow="encrypted-media; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-
-    <p class="nota-musica">
-      Pulsa reproducir para escuchar la canción aquí mismo.
-      La disponibilidad depende de que el video permita reproducción integrada.
-    </p>
-  </div>
-
-  <button type="button" class="boton-secundario" id="ir-final">
-    Mi último detalle 💗
-  </button>
-
-  <button type="button" class="boton-secundario"
-    id="volver-galeria" style="margin-top:10px">
-    Volver a los recuerdos ♡
-  </button>
-</section>
-
-
-<!-- PANTALLA FINAL: MÚSICA, CARTA E IMAGEN -->
+<!-- PANTALLA FINAL: CANCIÓN, CARTA E IMAGEN -->
 
 <section class="tarjeta" id="pantalla-final" hidden>
 
-  <!-- PRIMERO: REPRODUCTOR RETRO -->
+  <!-- PRIMERO: CANCIÓN -->
 
   <div class="casete">
     <div class="casete-etiqueta">
@@ -898,7 +847,7 @@ h2 {
   </div>
 
 
-  <!-- SEGUNDO: TU CARTA -->
+  <!-- SEGUNDO: CARTA -->
 
   <div class="mensaje-final">
     <div class="corazon">♡</div>
@@ -927,7 +876,7 @@ h2 {
   </div>
 
 
-  <!-- TERCERO: LA IMAGEN, SIN TEXTO ENCIMA -->
+  <!-- TERCERO: IMAGEN SIN TEXTO ENCIMA -->
 
   <img
     class="imagen-final"
@@ -937,8 +886,8 @@ h2 {
     onerror="this.hidden=true"
   >
 
-  <button type="button" class="boton-secundario" id="volver-musica">
-    Volver a la canción 🎶
+  <button type="button" class="boton-secundario" id="volver-galeria-final">
+    Volver a nuestros recuerdos ♡
   </button>
 </section>
 
@@ -1081,7 +1030,6 @@ botonRegalo.addEventListener("click", function () {
 /* NAVEGACIÓN ENTRE PANTALLAS */
 
 const galeriaFotos = document.getElementById("galeria-fotos");
-const pantallaMusica = document.getElementById("pantalla-musica");
 const pantallaFinal = document.getElementById("pantalla-final");
 
 document.getElementById("boton-recuerdos").addEventListener("click", function () {
@@ -1096,28 +1044,20 @@ document.getElementById("volver-regalo").addEventListener("click", function () {
   pantallaRegalo.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-document.getElementById("ir-musica").addEventListener("click", function () {
-  galeriaFotos.hidden = true;
-  pantallaMusica.hidden = false;
-  pantallaMusica.scrollIntoView({ behavior: "smooth", block: "start" });
-});
-
-document.getElementById("volver-galeria").addEventListener("click", function () {
-  pantallaMusica.hidden = true;
-  galeriaFotos.hidden = false;
-  galeriaFotos.scrollIntoView({ behavior: "smooth", block: "start" });
-});
+/* LA CANCIÓN ABRE DIRECTAMENTE LA PANTALLA FINAL */
 
 document.getElementById("ir-final").addEventListener("click", function () {
-  pantallaMusica.hidden = true;
+  galeriaFotos.hidden = true;
   pantallaFinal.hidden = false;
   pantallaFinal.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-document.getElementById("volver-musica").addEventListener("click", function () {
+/* VOLVER DESDE LA PANTALLA FINAL A LA GALERÍA */
+
+document.getElementById("volver-galeria-final").addEventListener("click", function () {
   pantallaFinal.hidden = true;
-  pantallaMusica.hidden = false;
-  pantallaMusica.scrollIntoView({ behavior: "smooth", block: "start" });
+  galeriaFotos.hidden = false;
+  galeriaFotos.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
 
