@@ -12,7 +12,6 @@
 
 <style>
 * { box-sizing: border-box; }
-
 [hidden] { display: none !important; }
 
 body {
@@ -46,11 +45,7 @@ body {
   font-size: 18px;
 }
 
-.linea {
-  height: 2px;
-  flex: 1;
-  background: #e9b5d7;
-}
+.linea { height: 2px; flex: 1; background: #e9b5d7; }
 
 .tarjeta {
   width: 100%;
@@ -81,15 +76,9 @@ h1 {
   color: #741451;
 }
 
-h2 {
-  color: #b65c95;
-  text-align: center;
-}
+h2 { color: #b65c95; text-align: center; }
 
-.subtitulo {
-  margin: 8px 0 17px;
-  font-size: 11px;
-}
+.subtitulo { margin: 8px 0 17px; font-size: 11px; }
 
 .caja-fecha {
   padding: 12px 5px 15px;
@@ -164,10 +153,7 @@ h2 {
   -webkit-tap-highlight-color: transparent;
 }
 
-.tecla:active {
-  background: #f2d3eb;
-  transform: scale(.96);
-}
+.tecla:active { background: #f2d3eb; transform: scale(.96); }
 
 .tecla svg {
   width: 25px;
@@ -192,9 +178,7 @@ h2 {
   padding: 10px 8px;
 }
 
-.descubrir:active, .boton-secundario:active {
-  background: #eac8e4;
-}
+.descubrir:active, .boton-secundario:active { background: #eac8e4; }
 
 .mensaje {
   min-height: 18px;
@@ -291,15 +275,8 @@ h2 {
   border-radius: 70% 70% 55% 55%;
 }
 
-.lazo-regalo::before {
-  left: -20px;
-  transform: rotate(-25deg);
-}
-
-.lazo-regalo::after {
-  left: 10px;
-  transform: scaleX(-1) rotate(-25deg);
-}
+.lazo-regalo::before { left: -20px; transform: rotate(-25deg); }
+.lazo-regalo::after { left: 10px; transform: scaleX(-1) rotate(-25deg); }
 
 .cinta-vertical {
   position: absolute;
@@ -322,9 +299,7 @@ h2 {
   pointer-events: none;
 }
 
-.caja-regalo-boton:active .regalo {
-  transform: scale(.94);
-}
+.caja-regalo-boton:active .regalo { transform: scale(.94); }
 
 .caja-regalo-boton.abierto .tapa-regalo {
   transform: translate(0, -20px) rotate(-15deg);
@@ -332,15 +307,9 @@ h2 {
 }
 
 .caja-regalo-boton.abierto .lazo-regalo { opacity: 0; }
+.caja-regalo-boton.abierto .regalo { transform: translateY(-8px) rotateX(-5deg); }
 
-.caja-regalo-boton.abierto .regalo {
-  transform: translateY(-8px) rotateX(-5deg);
-}
-
-#contador-regalo {
-  color: #dfa5ce;
-  font-size: 14px;
-}
+#contador-regalo { color: #dfa5ce; font-size: 14px; }
 
 .carta-regalo {
   margin-top: 18px;
@@ -390,7 +359,6 @@ h2 {
 
 .galeria img:active { transform: scale(.96); }
 .galeria img:hover { box-shadow: 0 4px 12px #d98ab655; }
-
 .pie-galeria { font-size: 12px; }
 
 /* CARTAS INTERACTIVAS */
@@ -485,50 +453,51 @@ h2 {
   100% { opacity: 0; transform: translateY(-100px) scale(1.4); }
 }
 
-/* NUEVO: CASETE DE MÚSICA */
+/* CASETE COMPACTO PARA LA PANTALLA FINAL */
 
 .casete {
-  margin: 18px auto;
-  padding: 13px;
   width: 100%;
+  max-width: 235px;
+  margin: 12px auto 18px;
+  padding: 8px;
   background: linear-gradient(145deg, #fff8fd, #f7d8e9);
   border: 2px solid #e9b5d7;
-  border-radius: 14px;
-  box-shadow: 0 7px 18px #b94f8920;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px #b94f8920;
 }
 
 .casete-etiqueta {
-  padding: 12px 8px;
+  padding: 6px;
   background: #fffafd;
   border: 1px solid #efc3e2;
-  border-radius: 8px;
+  border-radius: 7px;
 }
 
 .casete-etiqueta p {
-  margin: 3px;
-  font-size: 11px;
-  letter-spacing: 2px;
+  margin: 2px;
+  font-size: 9px;
+  letter-spacing: 1px;
 }
 
 .casete-etiqueta h2 {
-  margin: 6px 0;
+  margin: 4px 0;
   color: #741451;
-  letter-spacing: 3px;
-  font-size: 23px;
+  letter-spacing: 2px;
+  font-size: 17px;
 }
 
 .carretes {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-  margin: 16px auto;
+  gap: 10px;
+  margin: 8px auto;
 }
 
 .carrete {
-  width: 52px;
-  height: 52px;
-  border: 6px solid #df9bc4;
+  width: 29px;
+  height: 29px;
+  border: 4px solid #df9bc4;
   background: #fff8fd;
   border-radius: 50%;
   display: flex;
@@ -539,12 +508,12 @@ h2 {
 .carrete::after {
   content: "✿";
   color: #d88bc1;
-  font-size: 20px;
+  font-size: 13px;
 }
 
 .cinta {
-  width: 40px;
-  height: 6px;
+  width: 25px;
+  height: 4px;
   border-radius: 8px;
   background: #df9bc4;
 }
@@ -554,29 +523,28 @@ h2 {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
-  border-radius: 9px;
+  border-radius: 7px;
   background: #fbe6f1;
 }
 
 .nota-musica {
-  font-size: 11px;
-  line-height: 1.7;
+  margin: 7px 0 0;
+  font-size: 9px;
+  line-height: 1.5;
   color: #874a79;
 }
 
-/* NUEVO: IMAGEN FINAL */
+/* IMAGEN PRINCIPAL SIN TEXTO AÑADIDO */
 
 .imagen-final {
   display: block;
   width: 100%;
-  max-width: 310px;
-  max-height: 380px;
+  max-width: 330px;
+  max-height: 430px;
   object-fit: contain;
-  margin: 18px auto;
-  border: 3px solid #f3d0e5;
+  margin: 0 auto 14px;
   border-radius: 12px;
   background: #fff8fd;
-  box-shadow: 0 6px 18px #b94f8922;
 }
 
 .mensaje-final {
@@ -585,39 +553,24 @@ h2 {
   border: 1px solid #efc5dc;
   border-radius: 12px;
   line-height: 1.9;
+  text-align: left;
 }
 
 .firma-final {
   color: #b65c95;
   font-size: 19px;
   font-style: italic;
+  text-align: center;
 }
 
 @media (max-width: 340px) {
-  .teclado {
-    gap: 9px;
-    margin-left: 3px;
-    margin-right: 3px;
-  }
-
+  .teclado { gap: 9px; margin-left: 3px; margin-right: 3px; }
   .tecla { height: 44px; }
-
-  .tarjeta {
-    padding-left: 9px;
-    padding-right: 9px;
-  }
-
+  .tarjeta { padding-left: 9px; padding-right: 9px; }
   .puntos { gap: 4px; }
-
-  .punto {
-    width: 21px;
-    height: 21px;
-  }
-
+  .punto { width: 21px; height: 21px; }
   .galeria img { height: 130px; }
-
   .carta-interactiva { padding: 20px 14px; }
-
   #mensaje-recuerdo { font-size: 14px; }
 }
 
@@ -639,7 +592,7 @@ h2 {
   <span class="linea"></span>
 </header>
 
-<!-- CONTRASEÑA -->
+<!-- CONTRASEÑA ORIGINAL -->
 <section class="tarjeta" id="pantalla-contrasena">
   <div class="corazon">♡</div>
   <h1>Introduce la fecha<br>especial</h1>
@@ -697,7 +650,7 @@ h2 {
   <p class="mensaje" id="mensaje" aria-live="polite"></p>
 </section>
 
-<!-- REGALO -->
+<!-- REGALO ORIGINAL -->
 <section class="tarjeta" id="pantalla-regalo" hidden>
   <div class="corazon">♡</div>
   <h1>Un regalo para ti</h1>
@@ -801,21 +754,24 @@ h2 {
     Volver al regalo ♡
   </button>
 
-  <!-- NUEVO BOTÓN PARA CONTINUAR A LA MÚSICA -->
   <button type="button" class="boton-secundario"
-          id="ir-musica" style="margin-top:10px">
+          id="ir-final" style="margin-top:10px">
     Nuestra canción 🎶
   </button>
 </section>
 
-<!-- NUEVA PANTALLA DE MÚSICA -->
-<section class="tarjeta" id="pantalla-musica" hidden>
-  <div class="corazon">♡</div>
-  <h1>Una canción para ti</h1>
-  <p class="subtitulo">
-    Porque hay canciones que nos recuerdan a alguien especial ♡
-  </p>
+<!-- PANTALLA FINAL: IMAGEN, REPRODUCTOR Y CARTA -->
+<section class="tarjeta" id="pantalla-final" hidden>
 
+  <!-- La imagen aparece primero, sin texto añadido -->
+  <img
+    class="imagen-final"
+    src="https://i.ibb.co/208LGTcm/IMG-20261009-WA0449.jpg"
+    alt="Un recuerdo especial"
+    loading="lazy"
+  >
+
+  <!-- Reproductor pequeño -->
   <div class="casete">
     <div class="casete-etiqueta">
       <p>UNA CANCIÓN ESPECIAL</p>
@@ -841,23 +797,10 @@ h2 {
 
     <p class="nota-musica">
       Pulsa reproducir para escuchar la canción aquí mismo.
-      La disponibilidad depende de que el video permita reproducción integrada.
     </p>
   </div>
 
-  <button type="button" class="boton-secundario" id="ir-final">
-    Mi último detalle 💗
-  </button>
-
-  <button type="button" class="boton-secundario"
-          id="volver-galeria" style="margin-top:10px">
-    Volver a los recuerdos ♡
-  </button>
-</section>
-
-<!-- NUEVA PANTALLA FINAL -->
-<section class="tarjeta" id="pantalla-final" hidden>
-  <div class="corazon">♡</div>
+  <!-- Carta original de la pantalla final -->
   <h1>Feliz año amor</h1>
 
   <div class="mensaje-final">
@@ -870,22 +813,13 @@ h2 {
       nos falten razones para sonreír. Este pequeño regalo
       es una forma de recordarte cuánto significas para mí. ♡
     </p>
+    <p class="firma-final">Te amo mucho bb ♡</p>
+    <p style="text-align:center">Con amor, para ti. 💌</p>
   </div>
 
-  <img
-    class="imagen-final"
-    src="https://i.ibb.co/208LGTcm/IMG-20261009-WA0449.jpg"
-    alt="Un recuerdo especial"
-    loading="lazy"
-  >
-
-  <p class="firma-final">Te amo mucho bb ♡</p>
-  <p>Con amor, para ti. 💌</p>
-
-  <div class="corazon">♡</div>
-
-  <button type="button" class="boton-secundario" id="volver-musica">
-    Volver a la canción 🎶
+  <button type="button" class="boton-secundario"
+          id="volver-galeria" style="margin-top:12px">
+    Volver a los recuerdos ♡
   </button>
 </section>
 
@@ -909,7 +843,7 @@ h2 {
 </section>
 
 <script>
-/* CONTRASEÑA */
+/* CONTRASEÑA ORIGINAL */
 const CONTRASENA = "19122025";
 let entrada = "";
 
@@ -934,9 +868,7 @@ function agregarNumero(numero) {
 }
 
 document.querySelectorAll("[data-num]").forEach((boton) => {
-  boton.addEventListener("click", () => {
-    agregarNumero(boton.dataset.num);
-  });
+  boton.addEventListener("click", () => agregarNumero(boton.dataset.num));
 });
 
 function borrarUltimo() {
@@ -1018,9 +950,8 @@ botonRegalo.addEventListener("click", function () {
   }
 });
 
-/* NAVEGACIÓN ORIGINAL */
+/* NAVEGACIÓN */
 const galeriaFotos = document.getElementById("galeria-fotos");
-const pantallaMusica = document.getElementById("pantalla-musica");
 const pantallaFinal = document.getElementById("pantalla-final");
 
 document.getElementById("boton-recuerdos").addEventListener("click", function () {
@@ -1035,32 +966,20 @@ document.getElementById("volver-regalo").addEventListener("click", function () {
   pantallaRegalo.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-/* NUEVA NAVEGACIÓN: GALERÍA, MÚSICA Y FINAL */
-document.getElementById("ir-musica").addEventListener("click", function () {
-  galeriaFotos.hidden = true;
-  pantallaMusica.hidden = false;
-  pantallaMusica.scrollIntoView({ behavior: "smooth", block: "start" });
-});
-
-document.getElementById("volver-galeria").addEventListener("click", function () {
-  pantallaMusica.hidden = true;
-  galeriaFotos.hidden = false;
-  galeriaFotos.scrollIntoView({ behavior: "smooth", block: "start" });
-});
-
+/* La canción y la carta están juntas en la pantalla final */
 document.getElementById("ir-final").addEventListener("click", function () {
-  pantallaMusica.hidden = true;
+  galeriaFotos.hidden = true;
   pantallaFinal.hidden = false;
   pantallaFinal.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-document.getElementById("volver-musica").addEventListener("click", function () {
+document.getElementById("volver-galeria").addEventListener("click", function () {
   pantallaFinal.hidden = true;
-  pantallaMusica.hidden = false;
-  pantallaMusica.scrollIntoView({ behavior: "smooth", block: "start" });
+  galeriaFotos.hidden = false;
+  galeriaFotos.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-/* LAS CUATRO CARTAS PERSONALES */
+/* LAS CUATRO CARTAS PERSONALES ORIGINALES */
 const mensajesCartas = [
   {
     titulo: "Cómo comenzó nuestra historia ♡",
@@ -1109,7 +1028,6 @@ function abrirCarta(foto) {
 function cerrarCarta() {
   pantallaCarta.hidden = true;
   document.body.style.overflow = "";
-
   if (fotoAnterior) fotoAnterior.focus();
 }
 
