@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -97,36 +98,36 @@ h2 {
 }
 
 .etiquetas {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
   align-items: center;
   width: 100%;
   margin: 0 auto 14px;
   color: #dfa5ce;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: bold;
 }
 
-.etiquetas span { flex: 1; }
+.etiquetas span:nth-child(1) { grid-column: 1 / 3; }
+.etiquetas span:nth-child(2) { grid-column: 3 / 5; }
+.etiquetas span:nth-child(3) { grid-column: 5 / 9; }
 
 .puntos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: clamp(4px, 1.5vw, 7px);
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  justify-items: center;
+  gap: 0;
 }
 
 .punto {
-  width: clamp(22px, 5.8vw, 26px);
-  height: clamp(22px, 5.8vw, 26px);
-  flex: 0 0 auto;
+  width: clamp(21px, 5.8vw, 26px);
+  height: clamp(21px, 5.8vw, 26px);
   border: 2px solid #e9acd6;
   border-radius: 50%;
   background: transparent;
   color: #741451;
   font-family: Arial, sans-serif;
   font-size: 11px;
-  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,6 +201,8 @@ h2 {
   font-size: 12px;
   color: #874a79;
 }
+
+/* CAJITA DEL REGALO */
 
 .zona-regalo {
   position: relative;
@@ -365,6 +368,8 @@ h2 {
 .entrada-recuerdos { margin-top: 18px; }
 .entrada-recuerdos p { font-size: 13px; }
 
+/* GALERÍA */
+
 .galeria {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -388,10 +393,9 @@ h2 {
 
 .galeria img:active { transform: scale(.96); }
 .galeria img:hover { box-shadow: 0 4px 12px #d98ab655; }
-
 .pie-galeria { font-size: 12px; }
 
-/* CARTAS INTERACTIVAS */
+/* CARTAS DE LAS FOTOS */
 
 #pantalla-recuerdos {
   position: fixed;
@@ -483,7 +487,7 @@ h2 {
   100% { opacity: 0; transform: translateY(-100px) scale(1.4); }
 }
 
-/* CASETE ORIGINAL */
+/* CASETE Y REPRODUCTOR MP3 */
 
 .casete {
   margin: 18px auto;
@@ -547,13 +551,12 @@ h2 {
   background: #df9bc4;
 }
 
-.youtube {
+.reproductor-audio {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 0;
-  border-radius: 9px;
-  background: #fbe6f1;
+  margin: 12px auto;
+  border-radius: 12px;
+  accent-color: #b65c95;
 }
 
 .nota-musica {
@@ -562,7 +565,7 @@ h2 {
   color: #874a79;
 }
 
-/* IMAGEN FINAL */
+/* CARTA FINAL E IMAGEN */
 
 .imagen-final {
   display: block;
@@ -598,25 +601,15 @@ h2 {
     margin-left: 3px;
     margin-right: 3px;
   }
-
   .tecla { height: 44px; }
-
   .tarjeta {
     padding-left: 9px;
     padding-right: 9px;
   }
-
   .puntos { gap: 4px; }
-
-  .punto {
-    width: 21px;
-    height: 21px;
-  }
-
+  .punto { width: 21px; height: 21px; }
   .galeria img { height: 130px; }
-
   .carta-interactiva { padding: 20px 14px; }
-
   #mensaje-recuerdo { font-size: 14px; }
 }
 
@@ -639,7 +632,6 @@ h2 {
 </header>
 
 <!-- CONTRASEÑA -->
-
 <section class="tarjeta" id="pantalla-contrasena">
   <div class="corazon">♡</div>
   <h1>Introduce la fecha<br>especial</h1>
@@ -651,16 +643,11 @@ h2 {
       <span>MM</span>
       <span>AAAA</span>
     </div>
-
     <div class="puntos" id="puntos" aria-label="Contraseña de ocho números">
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
+      <span class="punto"></span><span class="punto"></span>
+      <span class="punto"></span><span class="punto"></span>
+      <span class="punto"></span><span class="punto"></span>
+      <span class="punto"></span><span class="punto"></span>
     </div>
   </div>
 
@@ -697,9 +684,7 @@ h2 {
   <p class="mensaje" id="mensaje" aria-live="polite"></p>
 </section>
 
-
 <!-- REGALO -->
-
 <section class="tarjeta" id="pantalla-regalo" hidden>
   <div class="corazon">♡</div>
   <h1>Un regalo para ti</h1>
@@ -753,9 +738,7 @@ h2 {
   </div>
 </section>
 
-
-<!-- GALERÍA ORIGINAL -->
-
+<!-- GALERÍA DE CUATRO FOTOS -->
 <section class="tarjeta" id="galeria-fotos" hidden>
   <div class="corazon">♡</div>
   <h1>♡ Nuestros recuerdos ♡</h1>
@@ -764,38 +747,23 @@ h2 {
   <div class="galeria" id="contenedor-fotos">
     <img
       src="https://i.ibb.co/JRWYk2Sh/IMG-20261009-WA4820.jpg"
-      alt="Recuerdo 1"
-      data-carta="0"
-      tabindex="0"
-      role="button"
-      aria-label="Abrir carta uno"
+      alt="Recuerdo 1" data-carta="0" tabindex="0"
+      role="button" aria-label="Abrir carta uno"
     >
-
     <img
       src="https://i.ibb.co/jvJ90k9T/IMG-20261009-WA3470.jpg"
-      alt="Recuerdo 2"
-      data-carta="1"
-      tabindex="0"
-      role="button"
-      aria-label="Abrir carta dos"
+      alt="Recuerdo 2" data-carta="1" tabindex="0"
+      role="button" aria-label="Abrir carta dos"
     >
-
     <img
       src="https://i.ibb.co/DgPXf2Jk/file-000000006eb081f5a35e417954c5b35f.png"
-      alt="Recuerdo 3"
-      data-carta="2"
-      tabindex="0"
-      role="button"
-      aria-label="Abrir carta tres"
+      alt="Recuerdo 3" data-carta="2" tabindex="0"
+      role="button" aria-label="Abrir carta tres"
     >
-
     <img
       src="https://i.ibb.co/gMgc9n0Z/file-00000000e39081f584329b5a0fc7fa71.png"
-      alt="Recuerdo 4"
-      data-carta="3"
-      tabindex="0"
-      role="button"
-      aria-label="Abrir carta cuatro"
+      alt="Recuerdo 4" data-carta="3" tabindex="0"
+      role="button" aria-label="Abrir carta cuatro"
     >
   </div>
 
@@ -811,13 +779,10 @@ h2 {
   </button>
 </section>
 
-
-<!-- PANTALLA FINAL: CANCIÓN, CARTA E IMAGEN -->
-
+<!-- PANTALLA FINAL: CANCIÓN, CARTA Y FOTO -->
 <section class="tarjeta" id="pantalla-final" hidden>
 
-  <!-- PRIMERO: CANCIÓN -->
-
+  <!-- REPRODUCTOR MP3 -->
   <div class="casete">
     <div class="casete-etiqueta">
       <p>UNA CANCIÓN ESPECIAL</p>
@@ -831,27 +796,19 @@ h2 {
       <span class="carrete"></span>
     </div>
 
-    <iframe
-      class="youtube"
-      src="https://www.youtube.com/embed/NMlKHIqtuO0"
-      title="Caifanes - Viento"
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allow="encrypted-media; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <audio class="reproductor-audio" controls preload="metadata">
+      <source src="viento.mp3" type="audio/mpeg">
+      Tu navegador no puede reproducir este audio.
+    </audio>
 
     <p class="nota-musica">
       Pulsa reproducir para escuchar nuestra canción ♡
     </p>
   </div>
 
-
-  <!-- SEGUNDO: CARTA -->
-
+  <!-- CARTA DE AÑO NUEVO -->
   <div class="mensaje-final">
     <div class="corazon">♡</div>
-
     <h1>Feliz año amor</h1>
 
     <p>
@@ -875,9 +832,7 @@ h2 {
     <p class="firma-final">Te amo mucho bb ♡</p>
   </div>
 
-
-  <!-- TERCERO: IMAGEN SIN TEXTO ENCIMA -->
-
+  <!-- FOTO FINAL -->
   <img
     class="imagen-final"
     src="https://i.ibb.co/208LGTcm/IMG-20261009-WA0449.jpg"
@@ -893,25 +848,20 @@ h2 {
 
 </main>
 
-
-<!-- VENTANA ORIGINAL DE LAS CARTAS -->
-
+<!-- VENTANA DE LAS CARTAS -->
 <section id="pantalla-recuerdos" hidden
   role="dialog" aria-modal="true" aria-labelledby="titulo-recuerdo">
-
   <div class="carta-interactiva">
     <div class="decoracion-carta">♡ ✧ ♡</div>
     <h2 id="titulo-recuerdo">Una carta para ti ♡</h2>
     <img id="foto-grande-recuerdo" src="" alt="Nuestro recuerdo">
     <p id="mensaje-recuerdo"></p>
     <div class="decoracion-carta">♡ ♡ ♡</div>
-
     <button type="button" id="cerrar-recuerdo">
       Volver a nuestros recuerdos ♡
     </button>
   </div>
 </section>
-
 
 <script>
 /* CONTRASEÑA */
@@ -978,7 +928,6 @@ function verificar() {
 document.getElementById("confirmar").addEventListener("click", verificar);
 document.getElementById("descubrir").addEventListener("click", verificar);
 
-
 /* REGALO DE DIEZ TOQUES */
 
 const botonRegalo = document.getElementById("caja-regalo-boton");
@@ -1026,7 +975,6 @@ botonRegalo.addEventListener("click", function () {
   }
 });
 
-
 /* NAVEGACIÓN ENTRE PANTALLAS */
 
 const galeriaFotos = document.getElementById("galeria-fotos");
@@ -1044,7 +992,7 @@ document.getElementById("volver-regalo").addEventListener("click", function () {
   pantallaRegalo.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-/* LA CANCIÓN ABRE DIRECTAMENTE LA PANTALLA FINAL */
+/* LA CANCIÓN ABRE LA PANTALLA FINAL */
 
 document.getElementById("ir-final").addEventListener("click", function () {
   galeriaFotos.hidden = true;
@@ -1052,14 +1000,13 @@ document.getElementById("ir-final").addEventListener("click", function () {
   pantallaFinal.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-/* VOLVER DESDE LA PANTALLA FINAL A LA GALERÍA */
+/* VOLVER A LA GALERÍA */
 
 document.getElementById("volver-galeria-final").addEventListener("click", function () {
   pantallaFinal.hidden = true;
   galeriaFotos.hidden = false;
   galeriaFotos.scrollIntoView({ behavior: "smooth", block: "start" });
 });
-
 
 /* LAS CUATRO CARTAS PERSONALES */
 
@@ -1074,14 +1021,13 @@ const mensajesCartas = [
   },
   {
     titulo: "Nuestros momentos ✨",
-    mensaje: `Cada momento que pasas a mi lado es especial, ya sea que juguemos o platiquemos, o hagamos otras cosas jijiji. Pero lo más importante es que estas siempre estás para míya aunque tenga un mal día siempre me sacas una sonrisa y me llenas de felicidad y sin tu darte cuenta lo haces hasta cuando no sabes que estoy mal. Sé que me conoces bien y sabes cuando algo me pasa y haces todo lo. posible para hacerme sentir mejor.`
+    mensaje: `Cada momento que pasas a mi lado es especial, ya sea que juguemos o platiquemos, o hagamos otras cosas jijiji. Pero lo más importante es que estas siempre estás para mí ya que aunque tenga un mal día siempre me sacas una sonrisa y me llenas de felicidad y sin tu darte cuenta lo haces hasta cuando no sabes que estoy mal. Sé que me conoces bien y sabes cuando algo me pasa y haces todo lo posible para hacerme sentir mejor.`
   },
   {
     titulo: "Mi futuro contigo 💌",
     mensaje: `Sé que puede ser muy apresurado y tonto pues soy muy pequeña para decirlo, pero sé que eres el indicado y también sé que contigo me quiero quedar siempre ya que me lo has demostrado en este año. Anhelo compartir mi vida contigo, al igual quiero hacer tantas cosas a tu lado y deseo formar parte de ti. Te amo 💗`
   }
 ];
-
 
 /* ABRIR Y CERRAR CADA CARTA */
 
