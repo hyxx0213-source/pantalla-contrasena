@@ -460,23 +460,26 @@ h1 {
 
 
 .foto-avatares-placeholder {
-    margin-top: 16px;
-    padding: 8px;
-    border: 1px solid #efc5dc;
-    border-radius: 12px;
-    background: #fff7fb;
-    overflow: hidden;
-}
-
-.foto-avatares-placeholder {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    gap: 18px;
     width: 100%;
     max-width: 360px;
-    margin: 20px auto;
+    margin: 24px auto;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
+.foto-avatares-placeholder img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: contain;
+    background: #fff5fa;
+    padding: 5px;
+    box-sizing: border-box;
+}
 .foto-avatares-placeholder img {
     display: block;
     width: 100%;
