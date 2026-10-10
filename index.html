@@ -624,27 +624,6 @@ h1 {
             <p>Con amor, para ti. 💌</p>
         </div>
 
- <div class="foto-avatares-placeholder">
-    <img
-        src="https://i.ibb.co/JRWYk2Sh/IMG-20261009-WA4820.jpg"
-        alt="Foto 1"
-    >
-
-    <img
-        src="https://i.ibb.co/jvJ90k9T/IMG-20261009-WA3470.jpg"
-        alt="Foto 2"
-    >
-
-    <img
-        src="https://i.ibb.co/DgPXf2Jk/file-000000006eb081f5a35e417954c5b35f.png"
-        alt="Foto 3"
-    >
-
-    <img
-        src="https://i.ibb.co/gMgc9n0Z/file-00000000e39081f584329b5a0fc7fa71.png"
-        alt="Foto 4"
-    >
-</div>
 
 <!-- BOTÓN PARA VER LOS RECUERDOS -->
 <div class="entrada-recuerdos">
@@ -703,6 +682,32 @@ h1 {
         <button type="button" id="cerrar-recuerdo">
             Volver a las fotos ♡
         </button>
+    </div>
+</section>
+<!-- GALERÍA CON LAS CUATRO FOTOS -->
+<section id="galeria-fotos" hidden>
+    <h2>♡ Nuestros momentos juntos ♡</h2>
+
+    <div class="foto-avatares-placeholder">
+        <img
+            src="https://i.ibb.co/JRWYk2Sh/IMG-20261009-WA4820.jpg"
+            alt="Foto 1"
+        >
+
+        <img
+            src="https://i.ibb.co/jvJ90k9T/IMG-20261009-WA3470.jpg"
+            alt="Foto 2"
+        >
+
+        <img
+            src="https://i.ibb.co/DgPXf2Jk/file-000000006eb081f5a35e417954c5b35f.png"
+            alt="Foto 3"
+        >
+
+        <img
+            src="https://i.ibb.co/gMgc9n0Z/file-00000000e39081f584329b5a0fc7fa71.png"
+            alt="Foto 4"
+        >
     </div>
 </section>
 </div>
@@ -774,55 +779,11 @@ const contenidoRegalo = document.getElementById("sorpresa-contenido");
 
 let toquesRegalo = 0;
 
-botonRegalo.addEventListener("click", function () {
-    if (toquesRegalo >= 10) return;
-
-    toquesRegalo++;
-
-    contadorRegalo.textContent = toquesRegalo + " / 10 toques";
-
-    // Aparece un corazón en cada toque
-    const corazon = document.createElement("span");
-    corazon.className = "corazon-animado";
-    corazon.textContent = "♥";
-    corazon.style.left = (20 + Math.random() * 60) + "%";
-    corazon.style.setProperty(
-        "--desplazamiento",
-        (Math.random() * 100 - 50) + "px"
-    );
-
-    zonaRegalo.appendChild(corazon);
-    setTimeout(() => corazon.remove(), 1300);
-
-    // Pequeño movimiento de la caja
-    const regalo = botonRegalo.querySelector(".regalo");
-    regalo.animate(
-        [
-            { transform: "rotate(0deg)" },
-            { transform: "rotate(-5deg)" },
-            { transform: "rotate(5deg)" },
-            { transform: "rotate(0deg)" }
-        ],
-        { duration: 300 }
-    );
-
-    // Al décimo toque se abre el regalo
-    if (toquesRegalo === 10) {
-        botonRegalo.classList.add("abierto");
-        botonRegalo.disabled = true;
-        mensajeRegalo.textContent = "¡Tu regalo se está abriendo! ♡";
-
-        setTimeout(function () {
-            contenidoRegalo.hidden = false;
-            contadorRegalo.textContent = "¡Regalo desbloqueado! ♡";
-            mensajeRegalo.textContent = "Una sorpresa hecha para ti 💗";
-            contenidoRegalo.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest"
-            });
-        }, 850);
-    }
-});
+    botonRegalo.addEventListener("click", function () );
+const botonRecuerdos = document.getElementById("boton-recuerdos");
+const siguientePantalla = document.getElementById("siguiente-pantalla");
+const galeriaFotos = document.getElementById("galeria-fotos");
+botonRecuerdos.addEventListener("click", function () );
 </script>
 
 </body>
