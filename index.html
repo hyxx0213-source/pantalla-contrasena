@@ -1,420 +1,563 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Con Amor ♡</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing: border-box; }
-[hidden] { display: none !important; }
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
 
 body {
-margin: 0;
-min-height: 100vh;
-padding: 20px 12px;
-display: flex;
-justify-content: center;
-align-items: center;
-background: #fbe6f1;
-font-family: 'Playfair Display', serif;
-color: #741451;
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fbe6f1;
+  font-family: 'Playfair Display', serif;
+  color: #741451;
 }
 
 .pantalla {
-width: 100%;
-max-width: 390px;
-padding: 18px 15px 16px;
-background: #f9e0ee;
-text-align: center;
-border: 1px solid #f3d0e5;
-border-radius: 16px;
+  width: 100%;
+  max-width: 390px;
+  padding: 18px 15px 16px;
+  background: #f9e0ee;
+  text-align: center;
+  border: 1px solid #f3d0e5;
+  border-radius: 16px;
 }
 
 .encabezado {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 18px;
-margin: 0 0 26px;
-font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 0 0 26px;
+  font-size: 18px;
 }
 
 .linea {
-height: 2px;
-flex: 1;
-background: #e9b5d7;
+  height: 2px;
+  flex: 1;
+  background: #e9b5d7;
 }
 
 .tarjeta {
-width: 100%;
-padding: 16px 12px 12px;
-background: #fff;
-border-radius: 15px;
+  width: 100%;
+  padding: 16px 12px 12px;
+  background: #fff;
+  border-radius: 15px;
 }
 
 .corazon {
-width: 58px;
-height: 58px;
-margin: 0 auto 10px;
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 50%;
-background: #fbeafa;
-color: #d99bcf;
-font-family: Arial, sans-serif;
-font-size: 45px;
-line-height: 1;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #fbeafa;
+  color: #d99bcf;
+  font-family: Arial, sans-serif;
+  font-size: 45px;
+  line-height: 1;
 }
 
 h1 {
-margin: 8px 0 5px;
-font-size: clamp(25px, 7vw, 29px);
-line-height: 1.12;
-font-weight: bold;
-color: #741451;
+  margin: 8px 0 5px;
+  font-size: clamp(25px, 7vw, 29px);
+  line-height: 1.12;
+  color: #741451;
 }
 
 h2 {
-color: #b65c95;
-text-align: center;
+  color: #b65c95;
+  text-align: center;
 }
 
 .subtitulo {
-margin: 8px 0 17px;
-font-size: 11px;
+  margin: 8px 0 17px;
+  font-size: 11px;
 }
 
 .caja-fecha {
-padding: 12px 5px 15px;
-border: 2px solid #efc3e2;
-border-radius: 6px;
-background: #fff8fd;
+  padding: 12px 5px 15px;
+  border: 2px solid #efc3e2;
+  border-radius: 6px;
+  background: #fff8fd;
 }
 
 .etiquetas {
-display: flex;
-justify-content: space-around;
-align-items: center;
-width: 100%;
-margin: 0 auto 14px;
-color: #dfa5ce;
-font-size: 13px;
-font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 14px;
+  color: #dfa5ce;
+  font-size: 13px;
+  font-weight: bold;
 }
 
-.etiquetas span { flex: 1; }
+.etiquetas span {
+  flex: 1;
+}
 
 .puntos {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: clamp(4px, 1.5vw, 7px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(4px, 1.5vw, 7px);
 }
 
 .punto {
-width: clamp(22px, 5.8vw, 26px);
-height: clamp(22px, 5.8vw, 26px);
-flex: 0 0 auto;
-border: 2px solid #e9acd6;
-border-radius: 50%;
-background: transparent;
-color: #741451;
-font-family: Arial, sans-serif;
-font-size: 11px;
-font-weight: bold;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: background .15s, transform .15s;
+  width: clamp(22px, 5.8vw, 26px);
+  height: clamp(22px, 5.8vw, 26px);
+  flex: 0 0 auto;
+  border: 2px solid #e9acd6;
+  border-radius: 50%;
+  background: transparent;
+  color: #741451;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s, transform .15s;
 }
 
 .punto.lleno {
-background: #f7d9eb;
-border-color: #d88bc1;
-transform: scale(1.04);
+  background: #f7d9eb;
+  border-color: #d88bc1;
+  transform: scale(1.04);
 }
 
 .teclado {
-display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
-gap: 11px 16px;
-margin: 14px 7px 25px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px 16px;
+  margin: 14px 7px 25px;
 }
 
 .tecla {
-height: 47px;
-border: none;
-border-radius: 12px;
-background: #fceafa;
-color: #874a79;
-font-family: Arial, sans-serif;
-font-size: 30px;
-font-weight: 600;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
--webkit-tap-highlight-color: transparent;
-transition: background .12s, transform .12s;
+  height: 47px;
+  border: none;
+  border-radius: 12px;
+  background: #fceafa;
+  color: #874a79;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .tecla:active {
-background: #f2d3eb;
-transform: scale(.96);
+  background: #f2d3eb;
+  transform: scale(.96);
 }
 
 .tecla svg {
-width: 25px;
-height: 25px;
-stroke: currentColor;
-stroke-width: 2.5;
-fill: none;
-stroke-linecap: round;
-stroke-linejoin: round;
+  width: 25px;
+  height: 25px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.descubrir, .boton-secundario {
-width: 100%;
-min-height: 42px;
-border: none;
-border-radius: 11px;
-background: #f3d9ee;
-color: #741451;
-font-family: Georgia, 'Times New Roman', serif;
-font-size: 16px;
-cursor: pointer;
-padding: 10px 8px;
+.descubrir,
+.boton-secundario {
+  width: 100%;
+  min-height: 42px;
+  border: none;
+  border-radius: 11px;
+  background: #f3d9ee;
+  color: #741451;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 8px;
 }
 
-.descubrir:active, .boton-secundario:active {
-background: #eac8e4;
+.descubrir:active,
+.boton-secundario:active {
+  background: #eac8e4;
 }
 
 .mensaje {
-min-height: 18px;
-margin: 8px 0 0;
-font-size: 12px;
-color: #874a79;
+  min-height: 18px;
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #874a79;
 }
 
 .zona-regalo {
-position: relative;
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 210px;
-overflow: hidden;
-background: radial-gradient(circle, #fff5fb 0%, #fff 72%);
-border-radius: 16px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 210px;
+  overflow: hidden;
+  background: radial-gradient(circle, #fff5fb 0%, #fff 72%);
+  border-radius: 16px;
 }
 
 .caja-regalo-boton {
-position: relative;
-border: 0;
-background: transparent;
-padding: 30px;
-cursor: pointer;
--webkit-tap-highlight-color: transparent;
-perspective: 800px;
-animation: flotar-regalo 3s ease-in-out infinite;
+  position: relative;
+  border: 0;
+  background: transparent;
+  padding: 30px;
+  cursor: pointer;
+  perspective: 800px;
+  animation: flotar-regalo 3s ease-in-out infinite;
 }
 
 @keyframes flotar-regalo {
-0%, 100% { transform: translateY(0); }
-50% { transform: translateY(-8px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 .regalo {
-position: relative;
-display: block;
-width: 140px;
-height: 125px;
-filter: drop-shadow(0 8px 5px #e9b5d455);
-transition: transform .4s ease;
+  position: relative;
+  display: block;
+  width: 140px;
+  height: 125px;
+  filter: drop-shadow(0 8px 5px #e9b5d455);
+  transition: transform .4s ease;
 }
 
 .caja-regalo {
-position: absolute;
-bottom: 0;
-left: 5px;
-width: 130px;
-height: 82px;
-display: flex;
-justify-content: center;
-align-items: center;
-background: linear-gradient(135deg, #ffe5f2 0%, #f8b9da 35%, #e987bd 75%, #d966a5 100%);
-border: 2px solid #df86b8;
-border-radius: 5px 5px 12px 12px;
-color: #fff8fd;
-font-size: 30px;
-box-shadow: inset 6px 0 10px #ffffff66, inset -8px -5px 12px #b94f8955, 0 12px 18px #b94f8944;
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  width: 130px;
+  height: 82px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffe5f2, #f8b9da, #d966a5);
+  border: 2px solid #df86b8;
+  border-radius: 5px 5px 12px 12px;
+  color: #fff8fd;
+  font-size: 30px;
+  box-shadow: inset 6px 0 10px #ffffff66, 0 12px 18px #b94f8944;
 }
 
 .tapa-regalo {
-position: absolute;
-z-index: 3;
-top: 24px;
-left: 0;
-width: 140px;
-height: 27px;
-background: linear-gradient(180deg, #ffdaec, #f4b4d8);
-border: 2px solid #df86b8;
-border-radius: 6px;
-transform-origin: 12% 100%;
-transition: transform .7s ease;
+  position: absolute;
+  z-index: 3;
+  top: 24px;
+  left: 0;
+  width: 140px;
+  height: 27px;
+  background: linear-gradient(180deg, #ffdaec, #f4b4d8);
+  border: 2px solid #df86b8;
+  border-radius: 6px;
+  transform-origin: 12% 100%;
+  transition: transform .7s ease;
 }
 
 .lazo-regalo {
-position: absolute;
-z-index: 5;
-top: 15px;
-left: 65px;
-width: 12px;
-height: 12px;
-background: #f2b4d3;
-border-radius: 50%;
-box-shadow: 0 1px 4px #d98ab655;
+  position: absolute;
+  z-index: 5;
+  top: 15px;
+  left: 65px;
+  width: 12px;
+  height: 12px;
+  background: #f2b4d3;
+  border-radius: 50%;
 }
 
-.lazo-regalo::before, .lazo-regalo::after {
-content: '';
-position: absolute;
-top: -5px;
-width: 22px;
-height: 15px;
-border: 3px solid #f2b4d3;
-background: linear-gradient(135deg, #fff0f7, #f5c5df);
-border-radius: 70% 70% 55% 55%;
+.lazo-regalo::before,
+.lazo-regalo::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  width: 22px;
+  height: 15px;
+  border: 3px solid #f2b4d3;
+  background: linear-gradient(135deg, #fff0f7, #f5c5df);
+  border-radius: 70% 70% 55% 55%;
 }
 
 .lazo-regalo::before {
-left: -20px;
-transform: rotate(-25deg);
+  left: -20px;
+  transform: rotate(-25deg);
 }
 
 .lazo-regalo::after {
-left: 10px;
-transform: scaleX(-1) rotate(-25deg);
+  left: 10px;
+  transform: scaleX(-1) rotate(-25deg);
 }
 
 .cinta-vertical {
-position: absolute;
-z-index: 4;
-top: 26px;
-left: 58px;
-width: 24px;
-height: 99px;
-background: linear-gradient(90deg, #d978b1, #f1a6d1, #d978b1);
+  position: absolute;
+  z-index: 4;
+  top: 26px;
+  left: 58px;
+  width: 24px;
+  height: 99px;
+  background: linear-gradient(90deg, #d978b1, #f1a6d1, #d978b1);
 }
 
 .cinta-horizontal {
-position: absolute;
-z-index: 4;
-bottom: 36px;
-left: 5px;
-width: 130px;
-height: 18px;
-background: linear-gradient(180deg, #e998c7, #d978b1);
-pointer-events: none;
+  position: absolute;
+  z-index: 4;
+  bottom: 36px;
+  left: 5px;
+  width: 130px;
+  height: 18px;
+  background: linear-gradient(180deg, #e998c7, #d978b1);
+  pointer-events: none;
 }
 
 .caja-regalo-boton:active .regalo {
-transform: scale(.94);
+  transform: scale(.94);
 }
 
 .caja-regalo-boton.abierto .tapa-regalo {
-transform: translate(0, -20px) rotate(-15deg);
-z-index: 10;
+  transform: translate(0, -20px) rotate(-15deg);
+  z-index: 10;
 }
 
 .caja-regalo-boton.abierto .lazo-regalo {
-opacity: 0;
-transform: translate(20px, -55px) rotate(120deg) scale(.7);
+  opacity: 0;
 }
 
 .caja-regalo-boton.abierto .regalo {
-transform: translateY(-8px) rotateX(-5deg);
-filter: drop-shadow(0 15px 12px #e9b5d477);
+  transform: translateY(-8px) rotateX(-5deg);
 }
 
 #contador-regalo {
-color: #dfa5ce;
-font-size: 14px;
-text-align: center;
+  color: #dfa5ce;
+  font-size: 14px;
 }
 
 .carta-regalo {
-margin-top: 18px;
-padding: 20px;
-border: 1px solid #efc5dc;
-border-radius: 12px;
-background: #fff7fb;
-color: #741451;
-line-height: 1.8;
-text-align: center;
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid #efc5dc;
+  border-radius: 12px;
+  background: #fff7fb;
+  color: #741451;
+  line-height: 1.8;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .imagen-carta {
-display: block;
-width: 100%;
-max-width: 260px;
-max-height: 260px;
-object-fit: contain;
-margin: 14px auto;
-border-radius: 12px;
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  max-height: 260px;
+  object-fit: contain;
+  margin: 14px auto;
+  border-radius: 12px;
 }
 
-.entrada-recuerdos { margin-top: 18px; }
-.entrada-recuerdos p { font-size: 13px; }
+.entrada-recuerdos {
+  margin-top: 18px;
+}
+
+.entrada-recuerdos p {
+  font-size: 13px;
+}
 
 .galeria {
-display: grid;
-grid-template-columns: repeat(2, minmax(0, 1fr));
-gap: 12px;
-margin: 18px auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px auto;
 }
 
 .galeria img {
-display: block;
-width: 100%;
-height: 160px;
-object-fit: contain;
-padding: 5px;
-background: #fff5fa;
-border: 1px solid #f3d0e5;
-border-radius: 12px;
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  padding: 5px;
+  background: #fff5fa;
+  border: 1px solid #f3d0e5;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.pie-galeria { font-size: 12px; }
+.galeria img:active {
+  transform: scale(.96);
+}
+
+.galeria img:hover {
+  box-shadow: 0 4px 12px #d98ab655;
+}
+
+.pie-galeria {
+  font-size: 12px;
+}
+
+/* Pantalla de las cartas interactivas */
+#pantalla-recuerdos {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  padding: 18px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #7c3c625e;
+  backdrop-filter: blur(5px);
+  overflow-y: auto;
+}
+
+.carta-interactiva {
+  position: relative;
+  width: 100%;
+  max-width: 370px;
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 24px 18px 20px;
+  background: #fff9fd;
+  border: 2px solid #f0c3df;
+  border-radius: 18px;
+  box-shadow: 0 12px 40px #6e285344;
+  animation: aparecer-carta .35s ease-out;
+}
+
+@keyframes aparecer-carta {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.decoracion-carta {
+  margin: 2px 0 10px;
+  color: #d98ab9;
+  font-size: 24px;
+  letter-spacing: 8px;
+}
+
+#titulo-recuerdo {
+  margin: 8px 0 14px;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+#foto-grande-recuerdo {
+  display: block;
+  width: 100%;
+  max-height: 230px;
+  object-fit: contain;
+  margin: 0 auto 16px;
+  border-radius: 12px;
+  background: #fbe6f1;
+}
+
+#mensaje-recuerdo {
+  margin: 12px 0 20px;
+  color: #743052;
+  font-size: 15px;
+  line-height: 1.9;
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+#cerrar-recuerdo {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  border-radius: 11px;
+  background: #f3d9ee;
+  color: #741451;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 11px;
+}
+
+#cerrar-recuerdo:active {
+  background: #eac8e4;
+}
 
 @keyframes subir-corazon {
-0% { opacity: 0; transform: translateY(10px) scale(.5); }
-20% { opacity: 1; }
-100% { opacity: 0; transform: translateY(-100px) scale(1.4); }
+  0% { opacity: 0; transform: translateY(10px) scale(.5); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-100px) scale(1.4); }
 }
 
 @media (max-width: 340px) {
-.teclado {
-gap: 9px;
-margin-left: 3px;
-margin-right: 3px;
+  .teclado {
+    gap: 9px;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+  .tecla {
+    height: 44px;
+  }
+
+  .tarjeta {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .puntos {
+    gap: 4px;
+  }
+
+  .punto {
+    width: 21px;
+    height: 21px;
+  }
+
+  .galeria img {
+    height: 130px;
+  }
+
+  .carta-interactiva {
+    padding: 20px 14px;
+  }
+
+  #mensaje-recuerdo {
+    font-size: 14px;
+  }
 }
 
-.tecla { height: 44px; }
-
-.tarjeta {
-padding-left: 9px;
-padding-right: 9px;
-}
-
-.puntos { gap: 4px; }
-.punto { width: 21px; height: 21px; }
-.galeria img { height: 130px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
 }
 </style>
 </head>
@@ -423,143 +566,204 @@ padding-right: 9px;
 <main class="pantalla">
 
 <header class="encabezado" id="encabezado">
-<span class="linea"></span>
-<span>Con Amor</span>
-<span class="linea"></span>
+  <span class="linea"></span>
+  <span>Con Amor</span>
+  <span class="linea"></span>
 </header>
 
+<!-- PANTALLA DE CONTRASEÑA -->
 <section class="tarjeta" id="pantalla-contrasena">
-<div class="corazon">♡</div>
+  <div class="corazon">♡</div>
 
-<h1>Introduce la fecha<br>especial</h1>
-<p class="subtitulo">Una pequeña pista para abrir tu sorpresa</p>
+  <h1>Introduce la fecha<br>especial</h1>
+  <p class="subtitulo">Una pequeña pista para abrir tu sorpresa</p>
 
-<div class="caja-fecha">
-<div class="etiquetas">
-<span>DD</span>
-<span>MM</span>
-<span>AAAA</span>
-</div>
+  <div class="caja-fecha">
+    <div class="etiquetas">
+      <span>DD</span>
+      <span>MM</span>
+      <span>AAAA</span>
+    </div>
 
-<div class="puntos" id="puntos" aria-label="Contraseña de ocho números">
-<span class="punto"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-<span class="punto"></span>
-</div>
-</div>
+    <div class="puntos" id="puntos" aria-label="Contraseña de ocho números">
+      <span class="punto"></span>
+      <span class="punto"></span>
+      <span class="punto"></span>
+      <span class="punto"></span>
+      <span class="punto"></span>
+      <span class="punto"></span>
+      <span class="punto"></span>
+      <span class="punto"></span>
+    </div>
+  </div>
 
-<div class="teclado">
-<button type="button" class="tecla" data-num="1">1</button>
-<button type="button" class="tecla" data-num="2">2</button>
-<button type="button" class="tecla" data-num="3">3</button>
+  <div class="teclado">
+    <button type="button" class="tecla" data-num="1">1</button>
+    <button type="button" class="tecla" data-num="2">2</button>
+    <button type="button" class="tecla" data-num="3">3</button>
 
-<button type="button" class="tecla" data-num="4">4</button>
-<button type="button" class="tecla" data-num="5">5</button>
-<button type="button" class="tecla" data-num="6">6</button>
+    <button type="button" class="tecla" data-num="4">4</button>
+    <button type="button" class="tecla" data-num="5">5</button>
+    <button type="button" class="tecla" data-num="6">6</button>
 
-<button type="button" class="tecla" data-num="7">7</button>
-<button type="button" class="tecla" data-num="8">8</button>
-<button type="button" class="tecla" data-num="9">9</button>
+    <button type="button" class="tecla" data-num="7">7</button>
+    <button type="button" class="tecla" data-num="8">8</button>
+    <button type="button" class="tecla" data-num="9">9</button>
 
-<button type="button" class="tecla" id="borrar" aria-label="Borrar último número">
-<svg viewBox="0 0 24 24">
-<path d="M9 5H21V19H9L2 12Z"/>
-<path d="M12 9L18 15M18 9L12 15"/>
-</svg>
-</button>
+    <button type="button" class="tecla" id="borrar" aria-label="Borrar último número">
+      <svg viewBox="0 0 24 24">
+        <path d="M9 5H21V19H9L2 12Z"/>
+        <path d="M12 9L18 15M18 9L12 15"/>
+      </svg>
+    </button>
 
-<button type="button" class="tecla" data-num="0">0</button>
+    <button type="button" class="tecla" data-num="0">0</button>
 
-<button type="button" class="tecla" id="confirmar" aria-label="Confirmar contraseña">
-<svg viewBox="0 0 24 24">
-<path d="M4 12L10 18L21 6"/>
-</svg>
-</button>
-</div>
+    <button type="button" class="tecla" id="confirmar" aria-label="Confirmar contraseña">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 12L10 18L21 6"/>
+      </svg>
+    </button>
+  </div>
 
-<button type="button" class="descubrir" id="descubrir">Descubrir sorpresa</button>
-<p class="mensaje" id="mensaje" aria-live="polite"></p>
+  <button type="button" class="descubrir" id="descubrir">
+    Descubrir sorpresa
+  </button>
+  <p class="mensaje" id="mensaje" aria-live="polite"></p>
 </section>
 
+<!-- PANTALLA DEL REGALO -->
 <section class="tarjeta" id="pantalla-regalo" hidden>
-<div class="corazon">♡</div>
-<h1>Un regalo para ti</h1>
+  <div class="corazon">♡</div>
+  <h1>Un regalo para ti</h1>
 
-<p class="subtitulo" id="mensaje-regalo">
-Toca la cajita 10 veces para descubrir tu sorpresa ♡
-</p>
+  <p class="subtitulo" id="mensaje-regalo">
+    Toca la cajita 10 veces para descubrir tu sorpresa ♡
+  </p>
 
-<div class="zona-regalo">
-<button type="button" id="caja-regalo-boton" class="caja-regalo-boton" aria-label="Toca para abrir tu regalo">
-<span class="regalo">
-<span class="tapa-regalo"></span>
-<span class="lazo-regalo"></span>
-<span class="cinta-vertical"></span>
-<span class="cinta-horizontal"></span>
-<span class="caja-regalo">♡</span>
-</span>
-</button>
-</div>
+  <div class="zona-regalo">
+    <button type="button" id="caja-regalo-boton"
+      class="caja-regalo-boton" aria-label="Toca para abrir tu regalo">
+      <span class="regalo">
+        <span class="tapa-regalo"></span>
+        <span class="lazo-regalo"></span>
+        <span class="cinta-vertical"></span>
+        <span class="cinta-horizontal"></span>
+        <span class="caja-regalo">♡</span>
+      </span>
+    </button>
+  </div>
 
-<p id="contador-regalo">0 / 10 toques</p>
+  <p id="contador-regalo">0 / 10 toques</p>
 
-<div id="sorpresa-contenido" hidden>
-<h2>¡Una sorpresa para ti! 💗</h2>
+  <div id="sorpresa-contenido" hidden>
+    <h2>¡Una sorpresa para ti! 💗</h2>
 
-<div class="carta-regalo">
-<p>Para alguien muy especial ♡</p>
-<p>
-Quería regalarte algo diferente, un pequeño detalle
-hecho con mucho cariño. Espero que te saque una sonrisa
-y te recuerde lo importante que eres para mí.
-</p>
+    <div class="carta-regalo">
+      <p>Para alguien muy especial ♡</p>
+      <p>
+        Quería regalarte algo diferente, un pequeño detalle
+        hecho con mucho cariño. Espero que te saque una sonrisa
+        y te recuerde lo importante que eres para mí.
+      </p>
 
-<img
-class="imagen-carta"
-src="https://i.ibb.co/BH6xGtgL/file-00000000a03881f69dbf8685b8046f9d.png"
-alt="Un detalle especial"
-onerror="this.hidden=true"
->
+      <img
+        class="imagen-carta"
+        src="https://i.ibb.co/BH6xGtgL/file-00000000a03881f69dbf8685b8046f9d.png"
+        alt="Un detalle especial"
+        onerror="this.hidden=true"
+      >
 
-<p>Con amor, para ti. 💌</p>
-</div>
+      <p>Con amor, para ti. 💌</p>
+    </div>
 
-<div class="entrada-recuerdos">
-<p>♡ Hay más momentos que quiero compartir contigo ♡</p>
-<button type="button" class="boton-secundario" id="boton-recuerdos">
-Ver nuestros recuerdos ♡
-</button>
-</div>
-</div>
+    <div class="entrada-recuerdos">
+      <p>♡ Hay más momentos que quiero compartir contigo ♡</p>
+      <button type="button" class="boton-secundario" id="boton-recuerdos">
+        Ver nuestros recuerdos ♡
+      </button>
+    </div>
+  </div>
 </section>
 
+<!-- GALERÍA DE LAS CUATRO FOTOS -->
 <section class="tarjeta" id="galeria-fotos" hidden>
-<div class="corazon">♡</div>
-<h1>♡ Nuestros recuerdos ♡</h1>
-<p class="subtitulo">Pequeños momentos que significan mucho para mí 💗</p>
+  <div class="corazon">♡</div>
+  <h1>♡ Nuestros recuerdos ♡</h1>
+  <p class="subtitulo">
+    Toca una foto para abrir tu carta especial 💌
+  </p>
 
-<div class="galeria">
-<img src="https://i.ibb.co/JRWYk2Sh/IMG-20261009-WA4820.jpg" alt="Recuerdo 1">
-<img src="https://i.ibb.co/jvJ90k9T/IMG-20261009-WA3470.jpg" alt="Recuerdo 2">
-<img src="https://i.ibb.co/DgPXf2Jk/file-000000006eb081f5a35e417954c5b35f.png" alt="Recuerdo 3">
-<img src="https://i.ibb.co/gMgc9n0Z/file-00000000e39081f584329b5a0fc7fa71.png" alt="Recuerdo 4">
-</div>
+  <div class="galeria" id="contenedor-fotos">
+    <img
+      src="https://i.ibb.co/JRWYk2Sh/IMG-20261009-WA4820.jpg"
+      alt="Recuerdo 1"
+      data-carta="0"
+      tabindex="0"
+      role="button"
+      aria-label="Abrir carta uno"
+    >
 
-<p class="pie-galeria">Con cariño, para ti. ♡</p>
+    <img
+      src="https://i.ibb.co/jvJ90k9T/IMG-20261009-WA3470.jpg"
+      alt="Recuerdo 2"
+      data-carta="1"
+      tabindex="0"
+      role="button"
+      aria-label="Abrir carta dos"
+    >
 
-<button type="button" class="boton-secundario" id="volver-regalo">
-Volver al regalo ♡
-</button>
+    <img
+      src="https://i.ibb.co/DgPXf2Jk/file-000000006eb081f5a35e417954c5b35f.png"
+      alt="Recuerdo 3"
+      data-carta="2"
+      tabindex="0"
+      role="button"
+      aria-label="Abrir carta tres"
+    >
+
+    <img
+      src="https://i.ibb.co/gMgc9n0Z/file-00000000e39081f584329b5a0fc7fa71.png"
+      alt="Recuerdo 4"
+      data-carta="3"
+      tabindex="0"
+      role="button"
+      aria-label="Abrir carta cuatro"
+    >
+  </div>
+
+  <p class="pie-galeria">Con cariño, para ti. ♡</p>
+
+  <button type="button" class="boton-secundario" id="volver-regalo">
+    Volver al regalo ♡
+  </button>
 </section>
 
 </main>
 
+<!-- CARTA QUE SE ABRE AL TOCAR CUALQUIER FOTO -->
+<section id="pantalla-recuerdos" hidden
+  role="dialog" aria-modal="true" aria-labelledby="titulo-recuerdo">
+
+  <div class="carta-interactiva">
+    <div class="decoracion-carta">♡ ✧ ♡</div>
+
+    <h2 id="titulo-recuerdo">Una carta para ti ♡</h2>
+
+    <img id="foto-grande-recuerdo" src="" alt="Nuestro recuerdo">
+
+    <p id="mensaje-recuerdo"></p>
+
+    <div class="decoracion-carta">♡ ♡ ♡</div>
+
+    <button type="button" id="cerrar-recuerdo">
+      Volver a nuestros recuerdos ♡
+    </button>
+  </div>
+</section>
+
 <script>
+/* CONTRASEÑA */
 const CONTRASENA = "19122025";
 let entrada = "";
 
@@ -570,122 +774,129 @@ const pantallaRegalo = document.getElementById("pantalla-regalo");
 const encabezado = document.getElementById("encabezado");
 
 function actualizarPuntos() {
-puntos.forEach((punto, indice) => {
-punto.textContent = entrada[indice] || "";
-punto.classList.toggle("lleno", indice < entrada.length);
-});
+  puntos.forEach((punto, indice) => {
+    punto.textContent = entrada[indice] || "";
+    punto.classList.toggle("lleno", indice < entrada.length);
+  });
 }
 
 function agregarNumero(numero) {
-if (entrada.length >= 8) return;
+  if (entrada.length >= 8) return;
 
-entrada += numero;
-mensaje.textContent = "";
-actualizarPuntos();
+  entrada += numero;
+  mensaje.textContent = "";
+  actualizarPuntos();
 }
 
 document.querySelectorAll("[data-num]").forEach((boton) => {
-boton.addEventListener("click", () => {
-agregarNumero(boton.dataset.num);
-});
+  boton.addEventListener("click", () => {
+    agregarNumero(boton.dataset.num);
+  });
 });
 
 function borrarUltimo() {
-entrada = entrada.slice(0, -1);
-mensaje.textContent = "";
-actualizarPuntos();
+  entrada = entrada.slice(0, -1);
+  mensaje.textContent = "";
+  actualizarPuntos();
 }
 
 document.getElementById("borrar").addEventListener("click", borrarUltimo);
 
 function verificar() {
-if (entrada.length !== 8) {
-mensaje.textContent = "Completa los ocho números ♡";
-return;
-}
+  if (entrada.length !== 8) {
+    mensaje.textContent = "Completa los ocho números ♡";
+    return;
+  }
 
-if (entrada === CONTRASENA) {
-pantallaContrasena.hidden = true;
-encabezado.hidden = true;
-pantallaRegalo.hidden = false;
-} else {
-mensaje.textContent = "Inténtalo de nuevo ♡";
-entrada = "";
-actualizarPuntos();
-}
+  if (entrada === CONTRASENA) {
+    pantallaContrasena.hidden = true;
+    encabezado.hidden = true;
+    pantallaRegalo.hidden = false;
+    pantallaRegalo.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  } else {
+    mensaje.textContent = "Inténtalo de nuevo ♡";
+    entrada = "";
+    actualizarPuntos();
+  }
 }
 
 document.getElementById("confirmar").addEventListener("click", verificar);
 document.getElementById("descubrir").addEventListener("click", verificar);
 
+/* REGALO DE DIEZ TOQUES */
 const botonRegalo = document.getElementById("caja-regalo-boton");
 const contadorRegalo = document.getElementById("contador-regalo");
 const mensajeRegalo = document.getElementById("mensaje-regalo");
 const contenidoRegalo = document.getElementById("sorpresa-contenido");
+const zonaRegalo = document.querySelector(".zona-regalo");
+
 let toquesRegalo = 0;
 
 botonRegalo.addEventListener("click", function () {
-if (toquesRegalo >= 10) return;
+  if (toquesRegalo >= 10) return;
 
-toquesRegalo++;
-contadorRegalo.textContent = toquesRegalo + " / 10 toques";
+  toquesRegalo++;
+  contadorRegalo.textContent = toquesRegalo + " / 10 toques";
 
-const corazon = document.createElement("span");
-corazon.textContent = "♥";
-corazon.style.position = "absolute";
-corazon.style.left = (20 + Math.random() * 60) + "%";
-corazon.style.bottom = "20px";
-corazon.style.color = "#e879b5";
-corazon.style.fontSize = "24px";
-corazon.style.pointerEvents = "none";
-corazon.style.animation = "subir-corazon 1.2s ease-out forwards";
+  const corazon = document.createElement("span");
+  corazon.textContent = "♥";
+  corazon.style.position = "absolute";
+  corazon.style.left = (20 + Math.random() * 60) + "%";
+  corazon.style.bottom = "20px";
+  corazon.style.color = "#e879b5";
+  corazon.style.fontSize = "24px";
+  corazon.style.pointerEvents = "none";
+  corazon.style.animation = "subir-corazon 1.2s ease-out forwards";
 
-document.querySelector(".zona-regalo").appendChild(corazon);
-setTimeout(() => corazon.remove(), 1300);
+  zonaRegalo.appendChild(corazon);
+  setTimeout(() => corazon.remove(), 1300);
 
-if (toquesRegalo === 10) {
-botonRegalo.classList.add("abierto");
-botonRegalo.disabled = true;
-mensajeRegalo.textContent = "¡Tu regalo se está abriendo! ♡";
+  if (toquesRegalo === 10) {
+    botonRegalo.classList.add("abierto");
+    botonRegalo.disabled = true;
+    mensajeRegalo.textContent = "¡Tu regalo se está abriendo! ♡";
 
-setTimeout(function () {
-contenidoRegalo.hidden = false;
-contadorRegalo.textContent = "¡Regalo desbloqueado! ♡";
-mensajeRegalo.textContent = "Una sorpresa hecha para ti 💗";
-contenidoRegalo.scrollIntoView({
-behavior: "smooth",
-block: "nearest"
+    setTimeout(function () {
+      contenidoRegalo.hidden = false;
+      contadorRegalo.textContent = "¡Regalo desbloqueado! ♡";
+      mensajeRegalo.textContent = "Una sorpresa hecha para ti 💗";
+
+      contenidoRegalo.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }, 850);
+  }
 });
-}, 850);
-}
-});
 
+/* NAVEGACIÓN ENTRE REGALO Y GALERÍA */
 const botonRecuerdos = document.getElementById("boton-recuerdos");
 const galeriaFotos = document.getElementById("galeria-fotos");
 
 botonRecuerdos.addEventListener("click", function () {
-pantallaRegalo.hidden = true;
-galeriaFotos.hidden = false;
-galeriaFotos.scrollIntoView({
-behavior: "smooth",
-block: "start"
-});
+  pantallaRegalo.hidden = true;
+  galeriaFotos.hidden = false;
+
+  galeriaFotos.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 });
 
 document.getElementById("volver-regalo").addEventListener("click", function () {
-galeriaFotos.hidden = true;
-pantallaRegalo.hidden = false;
-pantallaRegalo.scrollIntoView({
-behavior: "smooth",
-block: "start"
+  galeriaFotos.hidden = true;
+  pantallaRegalo.hidden = false;
+
+  pantallaRegalo.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 });
-});
 
-const botonRecuerdos = document.getElementById("boton-recuerdos");
-const galeriaFotos = document.getElementById("galeria-fotos");
-
-
-
+/* LOS CUATRO MENSAJES PERSONALES */
 const mensajesCartas = [
   {
     titulo: "Cómo comenzó nuestra historia ♡",
@@ -705,37 +916,63 @@ const mensajesCartas = [
   }
 ];
 
-const fotosGaleria = document.querySelectorAll("#galeria-fotos img");
+/* ABRIR Y CERRAR CADA CARTA */
+const fotosGaleria = document.querySelectorAll("#contenedor-fotos img");
 const pantallaCarta = document.getElementById("pantalla-recuerdos");
 const tituloCarta = document.getElementById("titulo-recuerdo");
 const fotoCarta = document.getElementById("foto-grande-recuerdo");
 const mensajeCarta = document.getElementById("mensaje-recuerdo");
 const botonCerrarCarta = document.getElementById("cerrar-recuerdo");
 
-fotosGaleria.forEach((foto, indice) => {
-  foto.style.cursor = "pointer";
-  foto.addEventListener("click", () => {
-    const carta = mensajesCartas[indice];
-    if (!carta || !pantallaCarta) return;
+let fotoAnterior = null;
 
-    tituloCarta.textContent = carta.titulo;
-    mensajeCarta.textContent = carta.mensaje;
-    fotoCarta.src = foto.src;
-    fotoCarta.alt = foto.alt || carta.titulo;
+function abrirCarta(foto) {
+  const indice = Number(foto.dataset.carta);
+  const carta = mensajesCartas[indice];
 
-    pantallaCarta.hidden = false;
-    pantallaCarta.classList.add("carta-abierta");
+  if (!carta) return;
+
+  fotoAnterior = foto;
+
+  tituloCarta.textContent = carta.titulo;
+  mensajeCarta.textContent = carta.mensaje;
+  fotoCarta.src = foto.src;
+  fotoCarta.alt = foto.alt || carta.titulo;
+
+  pantallaCarta.hidden = false;
+  document.body.style.overflow = "hidden";
+  botonCerrarCarta.focus();
+}
+
+function cerrarCarta() {
+  pantallaCarta.hidden = true;
+  document.body.style.overflow = "";
+
+  if (fotoAnterior) {
+    fotoAnterior.focus();
+  }
+}
+
+fotosGaleria.forEach((foto) => {
+  foto.addEventListener("click", () => abrirCarta(foto));
+
+  foto.addEventListener("keydown", (evento) => {
+    if (evento.key === "Enter" || evento.key === " ") {
+      evento.preventDefault();
+      abrirCarta(foto);
+    }
   });
 });
 
-if (botonCerrarCarta && pantallaCarta) {
-  botonCerrarCarta.addEventListener("click", () => {
-    pantallaCarta.classList.remove("carta-abierta");
-    pantallaCarta.hidden = true;
-  });
-}
+botonCerrarCarta.addEventListener("click", cerrarCarta);
 
-
+/* También permite cerrar la carta con la tecla Escape */
+document.addEventListener("keydown", (evento) => {
+  if (evento.key === "Escape" && !pantallaCarta.hidden) {
+    cerrarCarta();
+  }
+});
 </script>
+
 </body>
 </html>
