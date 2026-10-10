@@ -91,21 +91,27 @@ h2 {
 }
 
 .caja-fecha {
-  padding: 12px 5px 15px;
+  padding: 12px 8px 15px;
   border: 2px solid #efc3e2;
   border-radius: 6px;
   background: #fff8fd;
+  width: 100%;
+  overflow: hidden;
 }
 
 .etiquetas {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  align-items: center;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   width: 100%;
   margin: 0 auto 14px;
   color: #dfa5ce;
   font-size: 11px;
   font-weight: bold;
+}
+
+.etiquetas span {
+  text-align: center;
+  white-space: nowrap;
 }
 
 .etiquetas span:nth-child(1) { grid-column: 1 / 3; }
@@ -116,6 +122,8 @@ h2 {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
   justify-items: center;
+  align-items: center;
+  width: 100%;
   gap: 0;
 }
 
@@ -554,6 +562,7 @@ h2 {
 .reproductor-audio {
   display: block;
   width: 100%;
+  max-width: 100%;
   margin: 12px auto;
   border-radius: 12px;
   accent-color: #b65c95;
@@ -601,12 +610,15 @@ h2 {
     margin-left: 3px;
     margin-right: 3px;
   }
+
   .tecla { height: 44px; }
+
   .tarjeta {
     padding-left: 9px;
     padding-right: 9px;
   }
-  .puntos { gap: 4px; }
+
+  .puntos { gap: 0; }
   .punto { width: 21px; height: 21px; }
   .galeria img { height: 130px; }
   .carta-interactiva { padding: 20px 14px; }
@@ -631,7 +643,7 @@ h2 {
   <span class="linea"></span>
 </header>
 
-<!-- CONTRASEÑA -->
+<!-- PANTALLA DE CONTRASEÑA -->
 <section class="tarjeta" id="pantalla-contrasena">
   <div class="corazon">♡</div>
   <h1>Introduce la fecha<br>especial</h1>
@@ -643,11 +655,16 @@ h2 {
       <span>MM</span>
       <span>AAAA</span>
     </div>
+
     <div class="puntos" id="puntos" aria-label="Contraseña de ocho números">
-      <span class="punto"></span><span class="punto"></span>
-      <span class="punto"></span><span class="punto"></span>
-      <span class="punto"></span><span class="punto"></span>
-      <span class="punto"></span><span class="punto"></span>
+      <span class="punto"></span>
+      <span class="punto"></span>
+      <span class="punto"></span>
+      <span class="punto"></span>
+      <span class="punto"></span>
+      <span class="punto"></span>
+      <span class="punto"></span>
+      <span class="punto"></span>
     </div>
   </div>
 
@@ -750,16 +767,19 @@ h2 {
       alt="Recuerdo 1" data-carta="0" tabindex="0"
       role="button" aria-label="Abrir carta uno"
     >
+
     <img
       src="https://i.ibb.co/jvJ90k9T/IMG-20261009-WA3470.jpg"
       alt="Recuerdo 2" data-carta="1" tabindex="0"
       role="button" aria-label="Abrir carta dos"
     >
+
     <img
       src="https://i.ibb.co/DgPXf2Jk/file-000000006eb081f5a35e417954c5b35f.png"
       alt="Recuerdo 3" data-carta="2" tabindex="0"
       role="button" aria-label="Abrir carta tres"
     >
+
     <img
       src="https://i.ibb.co/gMgc9n0Z/file-00000000e39081f584329b5a0fc7fa71.png"
       alt="Recuerdo 4" data-carta="3" tabindex="0"
@@ -782,7 +802,6 @@ h2 {
 <!-- PANTALLA FINAL: CANCIÓN, CARTA Y FOTO -->
 <section class="tarjeta" id="pantalla-final" hidden>
 
-  <!-- REPRODUCTOR MP3 -->
   <div class="casete">
     <div class="casete-etiqueta">
       <p>UNA CANCIÓN ESPECIAL</p>
@@ -797,7 +816,7 @@ h2 {
     </div>
 
     <audio class="reproductor-audio" controls preload="metadata">
-      <source src="viento.mp3" type="audio/mpeg">
+      <source src="./viento.mp3" type="audio/mpeg">
       Tu navegador no puede reproducir este audio.
     </audio>
 
@@ -806,7 +825,6 @@ h2 {
     </p>
   </div>
 
-  <!-- CARTA DE AÑO NUEVO -->
   <div class="mensaje-final">
     <div class="corazon">♡</div>
     <h1>Feliz año amor</h1>
@@ -832,7 +850,6 @@ h2 {
     <p class="firma-final">Te amo mucho bb ♡</p>
   </div>
 
-  <!-- FOTO FINAL -->
   <img
     class="imagen-final"
     src="https://i.ibb.co/208LGTcm/IMG-20261009-WA0449.jpg"
@@ -992,15 +1009,11 @@ document.getElementById("volver-regalo").addEventListener("click", function () {
   pantallaRegalo.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-/* LA CANCIÓN ABRE LA PANTALLA FINAL */
-
 document.getElementById("ir-final").addEventListener("click", function () {
   galeriaFotos.hidden = true;
   pantallaFinal.hidden = false;
   pantallaFinal.scrollIntoView({ behavior: "smooth", block: "start" });
 });
-
-/* VOLVER A LA GALERÍA */
 
 document.getElementById("volver-galeria-final").addEventListener("click", function () {
   pantallaFinal.hidden = true;
