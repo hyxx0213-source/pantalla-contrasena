@@ -45,11 +45,7 @@ body {
   font-size: 18px;
 }
 
-.linea {
-  height: 2px;
-  flex: 1;
-  background: #e9b5d7;
-}
+.linea { height: 2px; flex: 1; background: #e9b5d7; }
 
 .tarjeta {
   width: 100%;
@@ -80,15 +76,9 @@ h1 {
   color: #741451;
 }
 
-h2 {
-  color: #b65c95;
-  text-align: center;
-}
+h2 { color: #b65c95; text-align: center; }
 
-.subtitulo {
-  margin: 8px 0 17px;
-  font-size: 11px;
-}
+.subtitulo { margin: 8px 0 17px; font-size: 11px; }
 
 .caja-fecha {
   padding: 12px 8px 15px;
@@ -96,14 +86,13 @@ h2 {
   border-radius: 6px;
   background: #fff8fd;
   width: 100%;
-  overflow: hidden;
 }
 
 .etiquetas {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
   width: 100%;
-  margin: 0 auto 14px;
+  margin: 0 0 14px;
   color: #dfa5ce;
   font-size: 13px;
   font-weight: bold;
@@ -116,34 +105,9 @@ h2 {
   text-align: center;
 }
 
-.etiquetas span:nth-child(1) {
-  grid-column: 1 / 3;
-}
-
-.etiquetas span:nth-child(2) {
-  grid-column: 3 / 5;
-}
-
-.etiquetas span:nth-child(3) {
-  grid-column: 5 / 9;
-}
-.puntos {
-  display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-  justify-items: center;
-  align-items: center;
-  width: 100%;
-  gap: 0;
-}
- 
-.puntos {
-  display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-  justify-items: center;
-  align-items: center;
-  width: 100%;
-  gap: 0;
-}
+.etiquetas span:nth-child(1) { grid-column: 1 / 3; }
+.etiquetas span:nth-child(2) { grid-column: 3 / 5; }
+.etiquetas span:nth-child(3) { grid-column: 5 / 9; }
 
 .puntos {
   display: grid;
@@ -163,6 +127,7 @@ h2 {
   color: #741451;
   font-family: Arial, sans-serif;
   font-size: 11px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,10 +163,7 @@ h2 {
   -webkit-tap-highlight-color: transparent;
 }
 
-.tecla:active {
-  background: #f2d3eb;
-  transform: scale(.96);
-}
+.tecla:active { background: #f2d3eb; transform: scale(.96); }
 
 .tecla svg {
   width: 25px;
@@ -226,9 +188,7 @@ h2 {
   padding: 10px 8px;
 }
 
-.descubrir:active, .boton-secundario:active {
-  background: #eac8e4;
-}
+.descubrir:active, .boton-secundario:active { background: #eac8e4; }
 
 .mensaje {
   min-height: 18px;
@@ -237,7 +197,7 @@ h2 {
   color: #874a79;
 }
 
-/* CAJITA DEL REGALO */
+/* REGALO */
 
 .zona-regalo {
   position: relative;
@@ -327,15 +287,8 @@ h2 {
   border-radius: 70% 70% 55% 55%;
 }
 
-.lazo-regalo::before {
-  left: -20px;
-  transform: rotate(-25deg);
-}
-
-.lazo-regalo::after {
-  left: 10px;
-  transform: scaleX(-1) rotate(-25deg);
-}
+.lazo-regalo::before { left: -20px; transform: rotate(-25deg); }
+.lazo-regalo::after { left: 10px; transform: scaleX(-1) rotate(-25deg); }
 
 .cinta-vertical {
   position: absolute;
@@ -358,9 +311,7 @@ h2 {
   pointer-events: none;
 }
 
-.caja-regalo-boton:active .regalo {
-  transform: scale(.94);
-}
+.caja-regalo-boton:active .regalo { transform: scale(.94); }
 
 .caja-regalo-boton.abierto .tapa-regalo {
   transform: translate(0, -20px) rotate(-15deg);
@@ -368,15 +319,9 @@ h2 {
 }
 
 .caja-regalo-boton.abierto .lazo-regalo { opacity: 0; }
+.caja-regalo-boton.abierto .regalo { transform: translateY(-8px) rotateX(-5deg); }
 
-.caja-regalo-boton.abierto .regalo {
-  transform: translateY(-8px) rotateX(-5deg);
-}
-
-#contador-regalo {
-  color: #dfa5ce;
-  font-size: 14px;
-}
+#contador-regalo { color: #dfa5ce; font-size: 14px; }
 
 .carta-regalo {
   margin-top: 18px;
@@ -473,11 +418,7 @@ h2 {
   letter-spacing: 8px;
 }
 
-#titulo-recuerdo {
-  margin: 8px 0 14px;
-  font-size: 24px;
-  line-height: 1.3;
-}
+#titulo-recuerdo { margin: 8px 0 14px; font-size: 24px; line-height: 1.3; }
 
 #foto-grande-recuerdo {
   display: block;
@@ -514,15 +455,7 @@ h2 {
   padding: 11px;
 }
 
-#cerrar-recuerdo:active { background: #eac8e4; }
-
-@keyframes subir-corazon {
-  0% { opacity: 0; transform: translateY(10px) scale(.5); }
-  20% { opacity: 1; }
-  100% { opacity: 0; transform: translateY(-100px) scale(1.4); }
-}
-
-/* CASETE Y REPRODUCTOR MP3 */
+/* PANTALLA FINAL Y CASETE */
 
 .casete {
   margin: 18px auto;
@@ -601,21 +534,6 @@ h2 {
   color: #874a79;
 }
 
-/* CARTA FINAL E IMAGEN */
-
-.imagen-final {
-  display: block;
-  width: 100%;
-  max-width: 310px;
-  max-height: 380px;
-  object-fit: contain;
-  margin: 18px auto;
-  border: 3px solid #f3d0e5;
-  border-radius: 12px;
-  background: #fff8fd;
-  box-shadow: 0 6px 18px #b94f8922;
-}
-
 .mensaje-final {
   padding: 16px 12px;
   background: #fff7fb;
@@ -631,22 +549,25 @@ h2 {
   font-style: italic;
 }
 
+.imagen-final {
+  display: block;
+  width: 100%;
+  max-width: 310px;
+  max-height: 380px;
+  object-fit: contain;
+  margin: 18px auto;
+  border: 3px solid #f3d0e5;
+  border-radius: 12px;
+  background: #fff8fd;
+  box-shadow: 0 6px 18px #b94f8922;
+}
+
 @media (max-width: 340px) {
-  .teclado {
-    gap: 9px;
-    margin-left: 3px;
-    margin-right: 3px;
-  }
-
+  .teclado { gap: 9px; margin-left: 3px; margin-right: 3px; }
   .tecla { height: 44px; }
-
-  .tarjeta {
-    padding-left: 9px;
-    padding-right: 9px;
-  }
-
+  .tarjeta { padding-left: 9px; padding-right: 9px; }
   .puntos { gap: 0; }
-  .punto { width: 21px; height: 21px; }
+  .punto { width: 20px; height: 20px; }
   .galeria img { height: 130px; }
   .carta-interactiva { padding: 20px 14px; }
   #mensaje-recuerdo { font-size: 14px; }
@@ -670,26 +591,24 @@ h2 {
   <span class="linea"></span>
 </header>
 
-<!-- PANTALLA DE CONTRASEÑA -->
+<!-- CONTRASEÑA -->
 <section class="tarjeta" id="pantalla-contrasena">
   <div class="corazon">♡</div>
   <h1>Introduce la fecha<br>especial</h1>
   <p class="subtitulo">Una pequeña pista para abrir tu sorpresa</p>
 
- <div class="etiquetas">
-  <span>DD</span>
-  <span>MM</span>
-  <span>AAAA</span>
-</div>
+  <div class="caja-fecha">
+    <div class="etiquetas">
+      <span>DD</span>
+      <span>MM</span>
+      <span>AAAA</span>
+    </div>
+
     <div class="puntos" id="puntos" aria-label="Contraseña de ocho números">
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
-      <span class="punto"></span>
+      <span class="punto"></span><span class="punto"></span>
+      <span class="punto"></span><span class="punto"></span>
+      <span class="punto"></span><span class="punto"></span>
+      <span class="punto"></span><span class="punto"></span>
     </div>
   </div>
 
@@ -705,24 +624,15 @@ h2 {
     <button type="button" class="tecla" data-num="9">9</button>
 
     <button type="button" class="tecla" id="borrar" aria-label="Borrar último número">
-      <svg viewBox="0 0 24 24">
-        <path d="M9 5H21V19H9L2 12Z"/>
-        <path d="M12 9L18 15M18 9L12 15"/>
-      </svg>
+      <svg viewBox="0 0 24 24"><path d="M9 5H21V19H9L2 12Z"/><path d="M12 9L18 15M18 9L12 15"/></svg>
     </button>
-
     <button type="button" class="tecla" data-num="0">0</button>
-
     <button type="button" class="tecla" id="confirmar" aria-label="Confirmar contraseña">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 12L10 18L21 6"/>
-      </svg>
+      <svg viewBox="0 0 24 24"><path d="M4 12L10 18L21 6"/></svg>
     </button>
   </div>
 
-  <button type="button" class="descubrir" id="descubrir">
-    Descubrir sorpresa
-  </button>
+  <button type="button" class="descubrir" id="descubrir">Descubrir sorpresa</button>
   <p class="mensaje" id="mensaje" aria-live="polite"></p>
 </section>
 
@@ -730,14 +640,10 @@ h2 {
 <section class="tarjeta" id="pantalla-regalo" hidden>
   <div class="corazon">♡</div>
   <h1>Un regalo para ti</h1>
-
-  <p class="subtitulo" id="mensaje-regalo">
-    Toca la cajita 10 veces para descubrir tu sorpresa ♡
-  </p>
+  <p class="subtitulo" id="mensaje-regalo">Toca la cajita 10 veces para descubrir tu sorpresa ♡</p>
 
   <div class="zona-regalo">
-    <button type="button" id="caja-regalo-boton"
-      class="caja-regalo-boton" aria-label="Toca para abrir tu regalo">
+    <button type="button" id="caja-regalo-boton" class="caja-regalo-boton" aria-label="Toca para abrir tu regalo">
       <span class="regalo">
         <span class="tapa-regalo"></span>
         <span class="lazo-regalo"></span>
@@ -752,80 +658,43 @@ h2 {
 
   <div id="sorpresa-contenido" hidden>
     <h2>¡Una sorpresa para ti! 💗</h2>
-
     <div class="carta-regalo">
       <p>Para alguien muy especial ♡</p>
-      <p>
-        Quería regalarte algo diferente, un pequeño detalle
-        hecho con mucho cariño. Espero que te saque una sonrisa
-        y te recuerde lo importante que eres para mí.
-      </p>
-
-      <img
-        class="imagen-carta"
-        src="https://i.ibb.co/BH6xGtgL/file-00000000a03881f69dbf8685b8046f9d.png"
-        alt="Un detalle especial"
-        onerror="this.hidden=true"
-      >
-
+      <p>Quería regalarte algo diferente, un pequeño detalle hecho con mucho cariño. Espero que te saque una sonrisa y te recuerde lo importante que eres para mí.</p>
+      <img class="imagen-carta" src="https://i.ibb.co/BH6xGtgL/file-00000000a03881f69dbf8685b8046f9d.png" alt="Un detalle especial" onerror="this.hidden=true">
       <p>Con amor, para ti. 💌</p>
     </div>
 
     <div class="entrada-recuerdos">
       <p>♡ Hay más momentos que quiero compartir contigo ♡</p>
-      <button type="button" class="boton-secundario" id="boton-recuerdos">
-        Ver nuestros recuerdos ♡
-      </button>
+      <button type="button" class="boton-secundario" id="boton-recuerdos">Ver nuestros recuerdos ♡</button>
     </div>
   </div>
 </section>
 
-<!-- GALERÍA DE CUATRO FOTOS -->
+<!-- GALERÍA -->
 <section class="tarjeta" id="galeria-fotos" hidden>
   <div class="corazon">♡</div>
   <h1>♡ Nuestros recuerdos ♡</h1>
   <p class="subtitulo">Toca una foto para abrir tu carta especial 💌</p>
 
   <div class="galeria" id="contenedor-fotos">
-    <img
-      src="https://i.ibb.co/JRWYk2Sh/IMG-20261009-WA4820.jpg"
-      alt="Recuerdo 1" data-carta="0" tabindex="0"
-      role="button" aria-label="Abrir carta uno"
-    >
-
-    <img
-      src="https://i.ibb.co/jvJ90k9T/IMG-20261009-WA3470.jpg"
-      alt="Recuerdo 2" data-carta="1" tabindex="0"
-      role="button" aria-label="Abrir carta dos"
-    >
-
-    <img
-      src="https://i.ibb.co/DgPXf2Jk/file-000000006eb081f5a35e417954c5b35f.png"
-      alt="Recuerdo 3" data-carta="2" tabindex="0"
-      role="button" aria-label="Abrir carta tres"
-    >
-
-    <img
-      src="https://i.ibb.co/gMgc9n0Z/file-00000000e39081f584329b5a0fc7fa71.png"
-      alt="Recuerdo 4" data-carta="3" tabindex="0"
-      role="button" aria-label="Abrir carta cuatro"
-    >
+    <img src="https://i.ibb.co/JRWYk2Sh/IMG-20261009-WA4820.jpg" alt="Recuerdo 1" data-carta="0" tabindex="0" role="button">
+    <img src="https://i.ibb.co/jvJ90k9T/IMG-20261009-WA3470.jpg" alt="Recuerdo 2" data-carta="1" tabindex="0" role="button">
+    <img src="https://i.ibb.co/DgPXf2Jk/file-000000006eb081f5a35e417954c5b35f.png" alt="Recuerdo 3" data-carta="2" tabindex="0" role="button">
+    <img src="https://i.ibb.co/gMgc9n0Z/file-00000000e39081f584329b5a0fc7fa71.png" alt="Recuerdo 4" data-carta="3" tabindex="0" role="button">
   </div>
 
   <p class="pie-galeria">Con cariño, para ti. ♡</p>
-
-  <button type="button" class="boton-secundario" id="volver-regalo">
-    Volver al regalo ♡
-  </button>
-
-  <button type="button" class="boton-secundario"
-    id="ir-final" style="margin-top:10px">
-    Nuestra canción 🎶
-  </button>
+  <button type="button" class="boton-secundario" id="volver-regalo">Volver al regalo ♡</button>
+  <button type="button" class="boton-secundario" id="ir-final" style="margin-top:10px">Nuestra canción 🎶</button>
 </section>
 
-<!-- PANTALLA FINAL: CANCIÓN, CARTA Y FOTO -->
+<!-- PANTALLA FINAL -->
 <section class="tarjeta" id="pantalla-final" hidden>
+  <div class="corazon">♡</div>
+  <h1>Nuestra canción</h1>
+  <p class="subtitulo">Una canción que quiero compartir contigo 💗</p>
 
   <div class="casete">
     <div class="casete-etiqueta">
@@ -840,78 +709,47 @@ h2 {
       <span class="carrete"></span>
     </div>
 
-  <audio
-  class="reproductor-audio"
-  controls
-  preload="auto"
-  playsinline>
-  <source src="viento.mp3" type="audio/mpeg">
-  Tu navegador no puede reproducir este audio.
-</audio>
-
-<p class="nota-musica">
-  Pulsa reproducir para escuchar nuestra canción ♡
-</p>
-</div>
+    <audio class="reproductor-audio" controls preload="metadata" playsinline>
+      <source src="./viento.mp3" type="audio/mpeg">
+      Tu navegador no puede reproducir este audio.
+    </audio>
+    <p class="nota-musica">Pulsa reproducir para escuchar nuestra canción ♡</p>
+  </div>
 
   <div class="mensaje-final">
     <div class="corazon">♡</div>
     <h1>Feliz año amor</h1>
 
-    <p>
-      No sabes lo feliz q me has hecho este año, espero seguir así
-      y que nuestro amor no tenga fin, pues por mi parte tengo
-      mucho amor que darte.
-    </p>
+    <p>No sabes lo feliz q me has hecho este año, espero seguir así y que nuestro amor no tenga fin, pues por mi parte tengo mucho amor que darte.</p>
 
-    <p>
-      Gracias por darme la oportunidad de conocerme y de ser tu novia,
-      enserio que te estoy muy agradecida ya que gracias a eso pude
-      conocer más al amor de mi vida.
-    </p>
+    <p>Gracias por darme la oportunidad de conocerme y de ser tu novia, enserio que te estoy muy agradecida ya que gracias a eso pude conocer más al amor de mi vida.</p>
 
-    <p>
-      Quiero tenerte conmigo toda la vida sin importar la distancia,
-      se que un día vamos a estar juntos y cuando llegue ese día
-      darte todo el amor que te mereces.
-    </p>
+    <p>Quiero tenerte conmigo toda la vida sin importar la distancia, se que un día vamos a estar juntos y cuando llegue ese día darte todo el amor que te mereces.</p>
 
     <p class="firma-final">Te amo mucho bb ♡</p>
   </div>
 
-  <img
-    class="imagen-final"
-    src="https://i.ibb.co/208LGTcm/IMG-20261009-WA0449.jpg"
-    alt="Un recuerdo especial"
-    loading="lazy"
-    onerror="this.hidden=true"
-  >
+  <img class="imagen-final" src="https://i.ibb.co/208LGTcm/IMG-20261009-WA0449.jpg" alt="Un recuerdo especial" loading="lazy" onerror="this.hidden=true">
 
-  <button type="button" class="boton-secundario" id="volver-galeria-final">
-    Volver a nuestros recuerdos ♡
-  </button>
+  <button type="button" class="boton-secundario" id="volver-galeria-final">Volver a nuestros recuerdos ♡</button>
 </section>
 
 </main>
 
-<!-- VENTANA DE LAS CARTAS -->
-<section id="pantalla-recuerdos" hidden
-  role="dialog" aria-modal="true" aria-labelledby="titulo-recuerdo">
+<!-- CARTAS DE LAS FOTOS -->
+<section id="pantalla-recuerdos" hidden role="dialog" aria-modal="true" aria-labelledby="titulo-recuerdo">
   <div class="carta-interactiva">
     <div class="decoracion-carta">♡ ✧ ♡</div>
     <h2 id="titulo-recuerdo">Una carta para ti ♡</h2>
     <img id="foto-grande-recuerdo" src="" alt="Nuestro recuerdo">
     <p id="mensaje-recuerdo"></p>
     <div class="decoracion-carta">♡ ♡ ♡</div>
-    <button type="button" id="cerrar-recuerdo">
-      Volver a nuestros recuerdos ♡
-    </button>
+    <button type="button" id="cerrar-recuerdo">Volver a nuestros recuerdos ♡</button>
   </div>
 </section>
 
 <script>
 /* CONTRASEÑA */
-
 const CONTRASENA = "19122025";
 let entrada = "";
 
@@ -936,18 +774,14 @@ function agregarNumero(numero) {
 }
 
 document.querySelectorAll("[data-num]").forEach((boton) => {
-  boton.addEventListener("click", () => {
-    agregarNumero(boton.dataset.num);
-  });
+  boton.addEventListener("click", () => agregarNumero(boton.dataset.num));
 });
 
-function borrarUltimo() {
+document.getElementById("borrar").addEventListener("click", () => {
   entrada = entrada.slice(0, -1);
   mensaje.textContent = "";
   actualizarPuntos();
-}
-
-document.getElementById("borrar").addEventListener("click", borrarUltimo);
+});
 
 function verificar() {
   if (entrada.length !== 8) {
@@ -959,11 +793,7 @@ function verificar() {
     pantallaContrasena.hidden = true;
     encabezado.hidden = true;
     pantallaRegalo.hidden = false;
-
-    pantallaRegalo.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    pantallaRegalo.scrollIntoView({ behavior: "smooth", block: "start" });
   } else {
     mensaje.textContent = "Inténtalo de nuevo ♡";
     entrada = "";
@@ -975,18 +805,15 @@ document.getElementById("confirmar").addEventListener("click", verificar);
 document.getElementById("descubrir").addEventListener("click", verificar);
 
 /* REGALO DE DIEZ TOQUES */
-
 const botonRegalo = document.getElementById("caja-regalo-boton");
 const contadorRegalo = document.getElementById("contador-regalo");
 const mensajeRegalo = document.getElementById("mensaje-regalo");
 const contenidoRegalo = document.getElementById("sorpresa-contenido");
 const zonaRegalo = document.querySelector(".zona-regalo");
-
 let toquesRegalo = 0;
 
 botonRegalo.addEventListener("click", function () {
   if (toquesRegalo >= 10) return;
-
   toquesRegalo++;
   contadorRegalo.textContent = toquesRegalo + " / 10 toques";
 
@@ -999,7 +826,6 @@ botonRegalo.addEventListener("click", function () {
   corazon.style.fontSize = "24px";
   corazon.style.pointerEvents = "none";
   corazon.style.animation = "subir-corazon 1.2s ease-out forwards";
-
   zonaRegalo.appendChild(corazon);
   setTimeout(() => corazon.remove(), 1300);
 
@@ -1008,70 +834,62 @@ botonRegalo.addEventListener("click", function () {
     botonRegalo.disabled = true;
     mensajeRegalo.textContent = "¡Tu regalo se está abriendo! ♡";
 
-    setTimeout(function () {
+    setTimeout(() => {
       contenidoRegalo.hidden = false;
       contadorRegalo.textContent = "¡Regalo desbloqueado! ♡";
       mensajeRegalo.textContent = "Una sorpresa hecha para ti 💗";
-
-      contenidoRegalo.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-      });
+      contenidoRegalo.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }, 850);
   }
 });
 
-/* NAVEGACIÓN ENTRE PANTALLAS */
-
+/* NAVEGACIÓN */
 const galeriaFotos = document.getElementById("galeria-fotos");
 const pantallaFinal = document.getElementById("pantalla-final");
 
-document.getElementById("boton-recuerdos").addEventListener("click", function () {
+document.getElementById("boton-recuerdos").addEventListener("click", () => {
   pantallaRegalo.hidden = true;
   galeriaFotos.hidden = false;
   galeriaFotos.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-document.getElementById("volver-regalo").addEventListener("click", function () {
+document.getElementById("volver-regalo").addEventListener("click", () => {
   galeriaFotos.hidden = true;
   pantallaRegalo.hidden = false;
   pantallaRegalo.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-document.getElementById("ir-final").addEventListener("click", function () {
+document.getElementById("ir-final").addEventListener("click", () => {
   galeriaFotos.hidden = true;
   pantallaFinal.hidden = false;
   pantallaFinal.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-document.getElementById("volver-galeria-final").addEventListener("click", function () {
+document.getElementById("volver-galeria-final").addEventListener("click", () => {
   pantallaFinal.hidden = true;
   galeriaFotos.hidden = false;
   galeriaFotos.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-/* LAS CUATRO CARTAS PERSONALES */
-
+/* MENSAJES DE LAS CUATRO CARTAS */
 const mensajesCartas = [
   {
     titulo: "Cómo comenzó nuestra historia ♡",
-    mensaje: `Recuerdo cuando entre al clan y te voy a ser sincera no estaba segura de entrar, pues sabía que no cumpliría con lo horarios, pero decidí hacerlo y la verdad no me arrepiento pues conocí a la persona que más amo en mi vida. Cuando me enamoré de tí pensé que sería algo imposible pues no te conocía del todo y mucho menos sabía como acercarme a ti. Pero el mini esfuerzo rindió frutos y ahora estamos aquí, cumpliendo un año.`
+    mensaje: `Recuerdo cuando entre al clan y te voy a ser sincera no estaba segura de entrar, pues sabía que no cumpliría con lo horarios pero decidí hacerlo y la verdad no me arrepiento pues conocí a la persona que más amo en mi vida. Cuando me enamoré de ti pensé que sería algo imposible pues no te conocía del todo y mucho menos saber como acercarme a ti. Pero el mini esfuerzo rindió frutos y ahora estamos aquí, cumpliendo un año juntos.`
   },
   {
     titulo: "Lo que amo de ti 💗",
-    mensaje: `Eres una persona muy divertida siempre estas haciéndome reír con tus ocurrencias y es lo que más me gusta. Y no solo eso me gusta; también el como eres conmigo, te has vuelto super amoroso y lo sé porque antes no eras así y me encanta ese cambio, porque tal vez te he dado la confianza para serlo. Igual me tratas muy bien a veces un poco bromista pero me gusta. Por esas y muchas más cosas te amo y siempre lo haré sin importar que.`
+    mensaje: `Eres una persona muy divertida siempre estas haciéndome reír con tus ocurrencias y es lo que más me gusta de tí. Y no solo eso me gusta también el como eres conmigo, te has vuelto super amoroso y lo sé porque antes no eras así y me encanta ese cambio, porque se que a lo mejor te he dado la confianza para serlo, al igual me tratas muy bien a veces un poco bromista pero me gusta. Por esas y muchas más cosas te amo y siempre lo haré no importa que.`
   },
   {
     titulo: "Nuestros momentos ✨",
-    mensaje: `Cada momento que pasas a mi lado es especial, ya sea que juguemos o platiquemos, o hagamos otras cosas jijiji. Pero lo más importante es que estas siempre estás para mí ya que aunque tenga un mal día siempre me sacas una sonrisa y me llenas de felicidad y sin tu darte cuenta lo haces hasta cuando no sabes que estoy mal. Sé que me conoces bien y sabes cuando algo me pasa y haces todo lo posible para hacerme sentir mejor.`
+    mensaje: `Cada momento que pasas a mi lado es especial, ya sea que juguemos o platiquemos, o hagamos otras cosas jijiji. Pero lo más importante del caso es q estas siempre para mí y aunque tu no sepas q tuve un mal día porque decido no cortártelo para evitar agobiarte con mis problemas, siempre me sacas una sonrisa y me llenas de felicidad sin tu darte cuenta. Aunque ya me conoces bien y sabes cuando algo me pasa siempre me haces sentir mejor.`
   },
   {
     titulo: "Mi futuro contigo 💌",
-    mensaje: `Sé que puede ser muy apresurado y tonto pues soy muy pequeña para decirlo, pero sé que eres el indicado y también sé que contigo me quiero quedar siempre ya que me lo has demostrado en este año. Anhelo compartir mi vida contigo, al igual quiero hacer tantas cosas a tu lado y deseo formar parte de ti. Te amo 💗`
+    mensaje: `Se que puede ser muy apresurado y tonto pues soy muy pequeña para decirlo, pero se que eres el indicado y también se que contigo me quiero quedar siempre pues me lo has demostrado en este año. Y se que quiero compartir mi vida contigo, quiero hacer tantas cosas a tu lado y quiero formar parte de ti. Te amo 💗`
   }
 ];
-
-/* ABRIR Y CERRAR CADA CARTA */
 
 const fotosGaleria = document.querySelectorAll("#contenedor-fotos img");
 const pantallaCarta = document.getElementById("pantalla-recuerdos");
@@ -1079,12 +897,10 @@ const tituloCarta = document.getElementById("titulo-recuerdo");
 const fotoCarta = document.getElementById("foto-grande-recuerdo");
 const mensajeCarta = document.getElementById("mensaje-recuerdo");
 const botonCerrarCarta = document.getElementById("cerrar-recuerdo");
-
 let fotoAnterior = null;
 
 function abrirCarta(foto) {
-  const indice = Number(foto.dataset.carta);
-  const carta = mensajesCartas[indice];
+  const carta = mensajesCartas[Number(foto.dataset.carta)];
   if (!carta) return;
 
   fotoAnterior = foto;
@@ -1092,7 +908,6 @@ function abrirCarta(foto) {
   mensajeCarta.textContent = carta.mensaje;
   fotoCarta.src = foto.src;
   fotoCarta.alt = foto.alt || carta.titulo;
-
   pantallaCarta.hidden = false;
   document.body.style.overflow = "hidden";
   botonCerrarCarta.focus();
@@ -1101,13 +916,11 @@ function abrirCarta(foto) {
 function cerrarCarta() {
   pantallaCarta.hidden = true;
   document.body.style.overflow = "";
-
   if (fotoAnterior) fotoAnterior.focus();
 }
 
 fotosGaleria.forEach((foto) => {
   foto.addEventListener("click", () => abrirCarta(foto));
-
   foto.addEventListener("keydown", (evento) => {
     if (evento.key === "Enter" || evento.key === " ") {
       evento.preventDefault();
@@ -1119,9 +932,7 @@ fotosGaleria.forEach((foto) => {
 botonCerrarCarta.addEventListener("click", cerrarCarta);
 
 document.addEventListener("keydown", (evento) => {
-  if (evento.key === "Escape" && !pantallaCarta.hidden) {
-    cerrarCarta();
-  }
+  if (evento.key === "Escape" && !pantallaCarta.hidden) cerrarCarta();
 });
 </script>
 </body>
