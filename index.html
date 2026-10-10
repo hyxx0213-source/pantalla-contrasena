@@ -605,11 +605,87 @@ h1 {
             <p>Con amor, para ti. 💌</p>
         </div>
 
-       <div class="foto-avatares-placeholder">
+ <div class="foto-avatares-placeholder">
     <img
-        src="https://i.ibb.co/BH6xGtgL/file-00000000a03881f69dbf8685b8046f9d.png"
-        alt="Nuestra foto de avatares"
+        src="https://i.ibb.co/JRWYk2Sh/IMG-20261009-WA4820.jpg"
+        alt="Foto 1"
     >
+
+    <img
+        src="https://i.ibb.co/jvJ90k9T/IMG-20261009-WA3470.jpg"
+        alt="Foto 2"
+    >
+
+    <img
+        src="https://i.ibb.co/DgPXf2Jk/file-000000006eb081f5a35e417954c5b35f.png"
+        alt="Foto 3"
+    >
+
+    <img
+        src="https://i.ibb.co/gMgc9n0Z/file-00000000e39081f584329b5a0fc7fa71.png"
+        alt="Foto 4"
+    >
+</div>
+
+<!-- BOTÓN PARA VER LOS RECUERDOS -->
+<div class="entrada-recuerdos">
+    <p>♡ Hay más momentos que quiero compartir contigo ♡</p>
+
+    <button type="button" id="boton-recuerdos">
+        Ver nuestros recuerdos ♡
+    </button>
+</div>
+
+<!-- NUEVA PANTALLA DE RECUERDOS -->
+<section id="pantalla-recuerdos" hidden>
+    <h2>♡ Nuestros recuerdos ♡</h2>
+
+    <p class="texto-recuerdos">
+        Pequeños momentos que significan mucho para mí 💗
+    </p>
+
+    <div class="album-recuerdos">
+
+        <button class="foto-recuerdo" data-recuerdo="0">
+            <span class="foto-placeholder">📸</span>
+            <span>Un momento especial ♡</span>
+        </button>
+
+        <button class="foto-recuerdo" data-recuerdo="1">
+            <span class="foto-placeholder">🎮</span>
+            <span>Nuestras aventuras ♡</span>
+        </button>
+
+        <button class="foto-recuerdo" data-recuerdo="2">
+            <span class="foto-placeholder">💗</span>
+            <span>Un recuerdo bonito ♡</span>
+        </button>
+
+        <button class="foto-recuerdo" data-recuerdo="3">
+            <span class="foto-placeholder">🧸</span>
+            <span>Un día especial ♡</span>
+        </button>
+
+        <button class="foto-recuerdo" data-recuerdo="4">
+            <span class="foto-placeholder">💕</span>
+            <span>Un momento juntos ♡</span>
+        </button>
+
+    </div>
+
+    <!-- AQUÍ SE MOSTRARÁ CADA RECUERDO -->
+    <div id="detalle-recuerdo" hidden>
+        <h3 id="titulo-recuerdo"></h3>
+
+        <div id="foto-grande-recuerdo"></div>
+
+        <p id="mensaje-recuerdo"></p>
+
+        <button type="button" id="cerrar-recuerdo">
+            Volver a las fotos ♡
+        </button>
+    </div>
+</section>
 </div>
     </div>
 </section>
