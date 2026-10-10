@@ -26,6 +26,14 @@ body {
   color: #741451;
 }
 
+button, img {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+}
+
 .pantalla {
   width: 100%;
   max-width: 390px;
@@ -45,7 +53,11 @@ body {
   font-size: 18px;
 }
 
-.linea { height: 2px; flex: 1; background: #e9b5d7; }
+.linea {
+  height: 2px;
+  flex: 1;
+  background: #e9b5d7;
+}
 
 .tarjeta {
   width: 100%;
@@ -76,61 +88,48 @@ h1 {
   color: #741451;
 }
 
-h2 { color: #b65c95; text-align: center; }
+h2 {
+  color: #b65c95;
+  text-align: center;
+}
 
-.subtitulo { margin: 8px 0 17px; font-size: 11px; }
+.subtitulo {
+  margin: 8px 0 17px;
+  font-size: 11px;
+}
+
+/* CONTRASEÑA */
 
 .caja-fecha {
+  width: 100%;
   padding: 12px 8px 15px;
   border: 2px solid #efc3e2;
   border-radius: 6px;
   background: #fff8fd;
-  width: 100%;
 }
 
-
-/* Etiquetas alineadas con los 8 círculos */
+/* Las tres etiquetas se centran entre sí, independientemente
+   de la posición de los ocho círculos de abajo. */
 .etiquetas {
-    display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    width: 100%;
-    margin: 0 auto 14px;
-    padding: 0;
-    text-align: center;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 14px;
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
 }
 
-.etiquetas span:nth-child(1) {
-    grid-column: 1 / span 2;
+.etiquetas span {
+  display: block;
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+  white-space: nowrap;
 }
 
-.etiquetas span:nth-child(2) {
-    grid-column: 3 / span 2;
-}
-
-.etiquetas span:nth-child(3) {
-    grid-column: 5 / span 4;
-}
-
-/* Los 8 círculos usan la misma cuadrícula */
-.puntos {
-    display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    width: 100%;
-    gap: 0;
-    justify-items: center;
-    align-items: center;
-}
-
-.punto {
-    box-sizing: border-box;
-    width: clamp(20px, 5.5vw, 25px);
-    height: clamp(20px, 5.5vw, 25px);
-    min-width: 0;
-    flex: none;
-    border-radius: 50%;
-}
-
+/* Los círculos conservan su propia distribución */
 .puntos {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
@@ -143,6 +142,7 @@ h2 { color: #b65c95; text-align: center; }
 .punto {
   width: clamp(21px, 5.8vw, 26px);
   height: clamp(21px, 5.8vw, 26px);
+  padding: 0;
   border: 2px solid #e9acd6;
   border-radius: 50%;
   background: transparent;
@@ -185,7 +185,10 @@ h2 { color: #b65c95; text-align: center; }
   -webkit-tap-highlight-color: transparent;
 }
 
-.tecla:active { background: #f2d3eb; transform: scale(.96); }
+.tecla:active {
+  background: #f2d3eb;
+  transform: scale(.96);
+}
 
 .tecla svg {
   width: 25px;
@@ -210,7 +213,9 @@ h2 { color: #b65c95; text-align: center; }
   padding: 10px 8px;
 }
 
-.descubrir:active, .boton-secundario:active { background: #eac8e4; }
+.descubrir:active, .boton-secundario:active {
+  background: #eac8e4;
+}
 
 .mensaje {
   min-height: 18px;
@@ -234,12 +239,27 @@ h2 { color: #b65c95; text-align: center; }
 
 .caja-regalo-boton {
   position: relative;
+  z-index: 2;
   border: 0;
   background: transparent;
   padding: 30px;
   cursor: pointer;
   perspective: 800px;
   animation: flotar-regalo 3s ease-in-out infinite;
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.caja-regalo-boton:focus,
+.caja-regalo-boton:focus-visible {
+  outline: none;
+}
+
+.caja-regalo-boton:disabled {
+  cursor: default;
 }
 
 @keyframes flotar-regalo {
@@ -309,8 +329,15 @@ h2 { color: #b65c95; text-align: center; }
   border-radius: 70% 70% 55% 55%;
 }
 
-.lazo-regalo::before { left: -20px; transform: rotate(-25deg); }
-.lazo-regalo::after { left: 10px; transform: scaleX(-1) rotate(-25deg); }
+.lazo-regalo::before {
+  left: -20px;
+  transform: rotate(-25deg);
+}
+
+.lazo-regalo::after {
+  left: 10px;
+  transform: scaleX(-1) rotate(-25deg);
+}
 
 .cinta-vertical {
   position: absolute;
@@ -320,6 +347,7 @@ h2 { color: #b65c95; text-align: center; }
   width: 24px;
   height: 99px;
   background: linear-gradient(90deg, #d978b1, #f1a6d1, #d978b1);
+  pointer-events: none;
 }
 
 .cinta-horizontal {
@@ -333,17 +361,58 @@ h2 { color: #b65c95; text-align: center; }
   pointer-events: none;
 }
 
-.caja-regalo-boton:active .regalo { transform: scale(.94); }
+.caja-regalo-boton:active .regalo {
+  transform: scale(.94);
+}
 
 .caja-regalo-boton.abierto .tapa-regalo {
   transform: translate(0, -20px) rotate(-15deg);
   z-index: 10;
 }
 
-.caja-regalo-boton.abierto .lazo-regalo { opacity: 0; }
-.caja-regalo-boton.abierto .regalo { transform: translateY(-8px) rotateX(-5deg); }
+.caja-regalo-boton.abierto .lazo-regalo {
+  opacity: 0;
+}
 
-#contador-regalo { color: #dfa5ce; font-size: 14px; }
+.caja-regalo-boton.abierto .regalo {
+  transform: translateY(-8px) rotateX(-5deg);
+}
+
+#contador-regalo {
+  color: #dfa5ce;
+  font-size: 14px;
+}
+
+/* CORAZONES ANIMADOS */
+
+.corazon-flotante {
+  position: absolute;
+  z-index: 5;
+  left: var(--pos-x);
+  top: var(--pos-y);
+  color: #e879b5;
+  font-size: var(--tamano);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  animation: subir-corazon 1.5s ease-out forwards;
+}
+
+@keyframes subir-corazon {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(.5) rotate(0deg);
+  }
+  15% { opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translate(
+      calc(-50% + var(--deriva)),
+      -125px
+    ) scale(1.35) rotate(var(--giro));
+  }
+}
 
 .carta-regalo {
   margin-top: 18px;
@@ -440,7 +509,11 @@ h2 { color: #b65c95; text-align: center; }
   letter-spacing: 8px;
 }
 
-#titulo-recuerdo { margin: 8px 0 14px; font-size: 24px; line-height: 1.3; }
+#titulo-recuerdo {
+  margin: 8px 0 14px;
+  font-size: 24px;
+  line-height: 1.3;
+}
 
 #foto-grande-recuerdo {
   display: block;
@@ -588,7 +661,6 @@ h2 { color: #b65c95; text-align: center; }
   .teclado { gap: 9px; margin-left: 3px; margin-right: 3px; }
   .tecla { height: 44px; }
   .tarjeta { padding-left: 9px; padding-right: 9px; }
-  .puntos { gap: 0; }
   .punto { width: 20px; height: 20px; }
   .galeria img { height: 130px; }
   .carta-interactiva { padding: 20px 14px; }
@@ -826,7 +898,7 @@ function verificar() {
 document.getElementById("confirmar").addEventListener("click", verificar);
 document.getElementById("descubrir").addEventListener("click", verificar);
 
-/* REGALO DE DIEZ TOQUES */
+/* REGALO: DIEZ TOQUES Y CORAZONES FLOTANTES */
 const botonRegalo = document.getElementById("caja-regalo-boton");
 const contadorRegalo = document.getElementById("contador-regalo");
 const mensajeRegalo = document.getElementById("mensaje-regalo");
@@ -836,20 +908,44 @@ let toquesRegalo = 0;
 
 botonRegalo.addEventListener("click", function () {
   if (toquesRegalo >= 10) return;
+
   toquesRegalo++;
   contadorRegalo.textContent = toquesRegalo + " / 10 toques";
 
-  const corazon = document.createElement("span");
-  corazon.textContent = "♥";
-  corazon.style.position = "absolute";
-  corazon.style.left = (20 + Math.random() * 60) + "%";
-  corazon.style.bottom = "20px";
-  corazon.style.color = "#e879b5";
-  corazon.style.fontSize = "24px";
-  corazon.style.pointerEvents = "none";
-  corazon.style.animation = "subir-corazon 1.2s ease-out forwards";
-  zonaRegalo.appendChild(corazon);
-  setTimeout(() => corazon.remove(), 1300);
+  const cantidad = 3 + Math.floor(Math.random() * 3);
+
+  for (let i = 0; i < cantidad; i++) {
+    const corazon = document.createElement("span");
+    corazon.className = "corazon-flotante";
+    corazon.textContent = Math.random() > 0.5 ? "♥" : "♡";
+
+    corazon.style.setProperty(
+      "--pos-x",
+      (25 + Math.random() * 50) + "%"
+    );
+    corazon.style.setProperty(
+      "--pos-y",
+      (35 + Math.random() * 35) + "%"
+    );
+    corazon.style.setProperty(
+      "--tamano",
+      (16 + Math.random() * 18) + "px"
+    );
+    corazon.style.setProperty(
+      "--deriva",
+      (-35 + Math.random() * 70) + "px"
+    );
+    corazon.style.setProperty(
+      "--giro",
+      (-45 + Math.random() * 90) + "deg"
+    );
+
+    zonaRegalo.appendChild(corazon);
+
+    corazon.addEventListener("animationend", () => {
+      corazon.remove();
+    });
+  }
 
   if (toquesRegalo === 10) {
     botonRegalo.classList.add("abierto");
@@ -860,12 +956,15 @@ botonRegalo.addEventListener("click", function () {
       contenidoRegalo.hidden = false;
       contadorRegalo.textContent = "¡Regalo desbloqueado! ♡";
       mensajeRegalo.textContent = "Una sorpresa hecha para ti 💗";
-      contenidoRegalo.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      contenidoRegalo.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
     }, 850);
   }
 });
 
-/* NAVEGACIÓN */
+/* NAVEGACIÓN ENTRE PANTALLAS */
 const galeriaFotos = document.getElementById("galeria-fotos");
 const pantallaFinal = document.getElementById("pantalla-final");
 
@@ -943,6 +1042,7 @@ function cerrarCarta() {
 
 fotosGaleria.forEach((foto) => {
   foto.addEventListener("click", () => abrirCarta(foto));
+
   foto.addEventListener("keydown", (evento) => {
     if (evento.key === "Enter" || evento.key === " ") {
       evento.preventDefault();
@@ -954,7 +1054,9 @@ fotosGaleria.forEach((foto) => {
 botonCerrarCarta.addEventListener("click", cerrarCarta);
 
 document.addEventListener("keydown", (evento) => {
-  if (evento.key === "Escape" && !pantallaCarta.hidden) cerrarCarta();
+  if (evento.key === "Escape" && !pantallaCarta.hidden) {
+    cerrarCarta();
+  }
 });
 </script>
 </body>
