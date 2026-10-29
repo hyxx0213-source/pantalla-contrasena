@@ -30,9 +30,7 @@ button, img {
   -webkit-tap-highlight-color: transparent;
 }
 
-button {
-  font-family: inherit;
-}
+button { font-family: inherit; }
 
 .pantalla {
   width: 100%;
@@ -108,8 +106,6 @@ h2 {
   background: #fff8fd;
 }
 
-/* Las tres etiquetas se centran entre sí, independientemente
-   de la posición de los ocho círculos de abajo. */
 .etiquetas {
   display: flex;
   align-items: center;
@@ -129,7 +125,6 @@ h2 {
   white-space: nowrap;
 }
 
-/* Los círculos conservan su propia distribución */
 .puntos {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
@@ -755,7 +750,10 @@ h2 {
     <div class="carta-regalo">
       <p>Para alguien muy especial ♡</p>
       <p>Quería regalarte algo diferente, un pequeño detalle hecho con mucho cariño. Espero que te saque una sonrisa y te recuerde lo importante que eres para mí.</p>
-      <img class="imagen-carta" src="https://i.ibb.co/BH6xGtgL/file-00000000a03881f69dbf8685b8046f9d.png" alt="Un detalle especial" onerror="this.hidden=true">
+
+      <!-- IMAGEN PRINCIPAL: RUTA ACTUALIZADA -->
+      <img class="imagen-carta" src="./archivo_00000000a03881f69dbf8685b8046f9d.png" alt="Un detalle especial">
+
       <p>Con amor, para ti. 💌</p>
     </div>
 
@@ -772,11 +770,12 @@ h2 {
   <h1>♡ Nuestros recuerdos ♡</h1>
   <p class="subtitulo">Toca una foto para abrir tu carta especial 💌</p>
 
+  <!-- LAS CUATRO IMÁGENES: RUTAS ACTUALIZADAS -->
   <div class="galeria" id="contenedor-fotos">
-    <img src="https://i.ibb.co/JRWYk2Sh/IMG-20261009-WA4820.jpg" alt="Recuerdo 1" data-carta="0" tabindex="0" role="button">
-    <img src="https://i.ibb.co/jvJ90k9T/IMG-20261009-WA3470.jpg" alt="Recuerdo 2" data-carta="1" tabindex="0" role="button">
-    <img src="https://i.ibb.co/DgPXf2Jk/file-000000006eb081f5a35e417954c5b35f.png" alt="Recuerdo 3" data-carta="2" tabindex="0" role="button">
-    <img src="https://i.ibb.co/gMgc9n0Z/file-00000000e39081f584329b5a0fc7fa71.png" alt="Recuerdo 4" data-carta="3" tabindex="0" role="button">
+    <img src="./IMG-20261009-WA4820.jpg" alt="Recuerdo 1" data-carta="0" tabindex="0" role="button">
+    <img src="./IMG-20261009-WA3470.jpg" alt="Recuerdo 2" data-carta="1" tabindex="0" role="button">
+    <img src="./archivo_000000006eb081f5a35e417954c5b35f.png" alt="Recuerdo 3" data-carta="2" tabindex="0" role="button">
+    <img src="./archivo_00000000e39081f584329b5a0fc7fa71.png" alt="Recuerdo 4" data-carta="3" tabindex="0" role="button">
   </div>
 
   <p class="pie-galeria">Con cariño, para ti. ♡</p>
@@ -816,24 +815,25 @@ h2 {
 
     <p>No sabes lo feliz que me has hecho este año, espero seguir así y que nuestro amor no tenga fin, pues por mi parte tengo mucho amor que darte.</p>
 
-<p>A veces pienso en lo bonito que es haberte encontrado y en lo afortunada que me siento de compartir una parte de mi vida contigo. Gracias por cada momento, por las conversaciones que parecen no terminar nunca, por las pequeñas cosas que haces y por permitirme conocerte poquito a poquito. Quizá no siempre encuentre las palabras correctas para demostrarte lo mucho que significas para mí, pero quiero que nunca dudes de que tu presencia hace que muchos de mis días sean más bonitos. Gracias por ser tú, incluso en esos días en los que ni tú mismo sabes cuánto vales.</p>
+    <p>A veces pienso en lo bonito que es haberte encontrado y en lo afortunada que me siento de compartir una parte de mi vida contigo. Gracias por cada momento, por las conversaciones que parecen no terminar nunca, por las pequeñas cosas que haces y por permitirme conocerte poquito a poquito. Quizá no siempre encuentre las palabras correctas para demostrarte lo mucho que significas para mí, pero quiero que nunca dudes de que tu presencia hace que muchos de mis días sean más bonitos. Gracias por ser tú, incluso en esos días en los que ni tú mismo sabes cuánto vales.</p>
 
-<p>Quiero que recuerdes que no tienes que ser perfecto para merecer todo el amor del mundo, y mucho menos para merecer el mío. Me gustan tus ocurrencias, tu manera de ser, tus pequeños detalles y hasta esas cosas que quizá tú consideras insignificantes. Quiero acompañarte en tus días felices, escucharte cuando necesites hablar y recordarte lo importante que eres cuando las cosas no salgan como esperabas. No quiero que sientas que tienes que poder con todo tú solo. Me hace feliz conocerte de verdad y poder compartir contigo tanto los momentos bonitos como los difíciles.</p>
+    <p>Quiero que recuerdes que no tienes que ser perfecto para merecer todo el amor del mundo, y mucho menos para merecer el mío. Me gustan tus ocurrencias, tu manera de ser, tus pequeños detalles y hasta esas cosas que quizá tú consideras insignificantes. Quiero acompañarte en tus días felices, escucharte cuando necesites hablar y recordarte lo importante que eres cuando las cosas no salgan como esperabas. No quiero que sientas que tienes que poder con todo tú solo. Me hace feliz conocerte de verdad y poder compartir contigo tanto los momentos bonitos como los difíciles.</p>
 
-<p>Hay momentos en los que quisiera tenerte cerquita, poder abrazarte. A veces me descubro imaginando cómo sería compartir contigo hasta los momentos más simples, como caminar juntos, reírnos por cualquier tontería o simplemente estar uno al lado del otro sin necesitar decir nada. Es curioso cómo alguien puede hacerte falta incluso después de haber hablado con esa persona y me haces más falta sabiendo que la única forma de tenerte cerca es por medio del celular. </p>
+    <p>Hay momentos en los que quisiera tenerte cerquita, poder abrazarte. A veces me descubro imaginando cómo sería compartir contigo hasta los momentos más simples, como caminar juntos, reírnos por cualquier tontería o simplemente estar uno al lado del otro sin necesitar decir nada. Es curioso cómo alguien puede hacerte falta incluso después de haber hablado con esa persona y me haces más falta sabiendo que la única forma de tenerte cerca es por medio del celular.</p>
 
-<p>Cuando pienso en el futuro, me gusta imaginar todas esas cosas que algún día podríamos vivir juntos. Las fotos que nos faltan, los lugares que queremos conocer, las bromas que solo nosotros entenderemos y las historias que algún día recordaremos con una sonrisa. No sé exactamente qué nos espera ni cómo cambiarán las cosas con el tiempo, pero sí sé que me gustaría seguir conociéndote, aprender contigo y construir recuerdos bonitos a tu lado. No necesito que todo sea perfecto; me basta con que podamos ser sinceros, cuidarnos y elegirnos con cariño. </p>
+    <p>Cuando pienso en el futuro, me gusta imaginar todas esas cosas que algún día podríamos vivir juntos. Las fotos que nos faltan, los lugares que queremos conocer, las bromas que solo nosotros entenderemos y las historias que algún día recordaremos con una sonrisa. No sé exactamente qué nos espera ni cómo cambiarán las cosas con el tiempo, pero sí sé que me gustaría seguir conociéndote, aprender contigo y construir recuerdos bonitos a tu lado. No necesito que todo sea perfecto; me basta con que podamos ser sinceros, cuidarnos y elegirnos con cariño.</p>
 
-<p>Gracias por darme la oportunidad de conocerme y de ser tu novia, enserio que te estoy muy agradecida ya que gracias a eso pude conocer más al amor de mi vida.</p>
+    <p>Gracias por darme la oportunidad de conocerme y de ser tu novia, enserio que te estoy muy agradecida ya que gracias a eso pude conocer más al amor de mi vida.</p>
 
-<p>Quiero tenerte conmigo para siempre sin importar la distancia, se que un día vamos a estar juntos y cuando llegue ese día darte todo el amor que te mereces.</p>
+    <p>Quiero tenerte conmigo para siempre sin importar la distancia, se que un día vamos a estar juntos y cuando llegue ese día darte todo el amor que te mereces.</p>
 
-<p>Y si después de tantas palabras todavía me preguntaras cuánto te amo, probablemente volvería a escribirte otra carta, porque siento que siempre me faltará algo por decirte. Quiero que guardes estas palabras y las recuerdes cuando necesites una razón para sonreír: hay alguien que piensa en ti con muchísimo cariño, que se alegra de tenerte en su vida y que encuentra algo bonito en el simple hecho de que existas. Ese alguien soy yo. Y hoy, como cualquier otro día, volvería a elegir conocerte, escucharte y compartir contigo todo. Te amo, mi niño bonito. ♡</p>
+    <p>Y si después de tantas palabras todavía me preguntaras cuánto te amo, probablemente volvería a escribirte otra carta, porque siento que siempre me faltará algo por decirte. Quiero que guardes estas palabras y las recuerdes cuando necesites una razón para sonreír: hay alguien que piensa en ti con muchísimo cariño, que se alegra de tenerte en su vida y que encuentra algo bonito en el simple hecho de que existas. Ese alguien soy yo. Y hoy, como cualquier otro día, volvería a elegir conocerte, escucharte y compartir contigo todo. Te amo, mi niño bonito. ♡</p>
 
     <p class="firma-final">Te amo mucho bb ♡</p>
   </div>
 
-  <img class="imagen-final" src="https://i.ibb.co/208LGTcm/IMG-20261009-WA0449.jpg" alt="Un recuerdo especial" loading="lazy" onerror="this.hidden=true">
+  <!-- IMAGEN FINAL: RUTA ACTUALIZADA -->
+  <img class="imagen-final" src="./IMG-20261009-WA0449.jpg" alt="Un recuerdo especial" loading="lazy">
 
   <button type="button" class="boton-secundario" id="volver-galeria-final">Volver a nuestros recuerdos ♡</button>
 </section>
@@ -929,26 +929,11 @@ botonRegalo.addEventListener("click", function () {
     corazon.className = "corazon-flotante";
     corazon.textContent = Math.random() > 0.5 ? "♥" : "♡";
 
-    corazon.style.setProperty(
-      "--pos-x",
-      (25 + Math.random() * 50) + "%"
-    );
-    corazon.style.setProperty(
-      "--pos-y",
-      (35 + Math.random() * 35) + "%"
-    );
-    corazon.style.setProperty(
-      "--tamano",
-      (16 + Math.random() * 18) + "px"
-    );
-    corazon.style.setProperty(
-      "--deriva",
-      (-35 + Math.random() * 70) + "px"
-    );
-    corazon.style.setProperty(
-      "--giro",
-      (-45 + Math.random() * 90) + "deg"
-    );
+    corazon.style.setProperty("--pos-x", (25 + Math.random() * 50) + "%");
+    corazon.style.setProperty("--pos-y", (35 + Math.random() * 35) + "%");
+    corazon.style.setProperty("--tamano", (16 + Math.random() * 18) + "px");
+    corazon.style.setProperty("--deriva", (-35 + Math.random() * 70) + "px");
+    corazon.style.setProperty("--giro", (-45 + Math.random() * 90) + "deg");
 
     zonaRegalo.appendChild(corazon);
 
